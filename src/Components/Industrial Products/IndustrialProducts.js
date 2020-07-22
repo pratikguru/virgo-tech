@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import { media } from "../../Utils/media.js";
 
-import UniMotorFM from "../../Assets/Industrial Products/unimotor-fm.jpg";
+import { HVACProductImageList } from "../../IndustrialPageConfiguration.js";
 
 const ParentContainer = styled(motion.div)`
   display: flex;
@@ -159,16 +159,6 @@ const CustomButton = styled(motion.div)`
   text-align: center;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 `;
-
-const HVACProductImageList = [
-  {
-    id: "UniMotor FM",
-    img: UniMotorFM,
-    sub_header: "Performance AC Brushless Servo Motor",
-    information:
-      "Unimotor FM is a brushless AC servo motor range performance matched for use with Servo drives.",
-  },
-];
 
 export default class ProductListing extends Component {
   constructor() {

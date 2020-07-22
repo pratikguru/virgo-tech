@@ -76,6 +76,7 @@ const SplashScreenFooter = styled.div`
 `;
 
 const CustomButton = styled(motion.div)`
+  display: flex;
   width: 120px;
   height: 35px;
   border-radius: 3px;
@@ -155,7 +156,7 @@ export default class CustomModal extends Component {
               whileTap={{ scale: 0.89 }}
               transition={{ duration: 0.2 }}
             >
-              READ MORE
+              <div>READ MORE</div>
               <img src={ReadMore} />
             </CustomButton>
           </SplashScreenFooter>
