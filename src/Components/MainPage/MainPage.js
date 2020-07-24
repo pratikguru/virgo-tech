@@ -11,6 +11,7 @@ import HomePage from "../HomePage/HomePage.js";
 import ClientPage from "../ClientPage/ClientPage.js";
 import ProductListing from "../HVAC Products/HVACProducts.js";
 import IndustrialProducts from "../Industrial Products/IndustrialProducts.js";
+import WaterMeterPage from "../WaterMeterPage/WaterMeter.js";
 
 const MainContainer = styled.div`
   display: flex;
@@ -106,13 +107,16 @@ const NavigationLinks = [
   "Clients",
   "Industrial Products",
   "HVAC Products",
+  "Water Meter",
   "Services",
 ];
+
 const CurrentPage = {
   Home: <HomePage />,
   "Industrial Products": <IndustrialProducts />,
   Clients: <ClientPage />,
   "HVAC Products": <ProductListing />,
+  "Water Meter": <WaterMeterPage />,
 };
 
 export default class MainPage extends Component {
@@ -137,7 +141,7 @@ export default class MainPage extends Component {
           </LogoContainer>
           <NavigationButtonContainer
             animate={{ opacity: [0, 1] }}
-            transition={{ delay: 0.5 }}
+            transition={{ delay: 0.2, ease: "linear" }}
           >
             {NavigationLinks.map((value, index) => (
               <NavigationButtons

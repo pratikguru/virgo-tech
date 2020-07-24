@@ -146,7 +146,7 @@ export default class CustomModal extends Component {
           <SplashScreenBody>
             <img
               src={this.props.img}
-              alt={""}
+              alt={"some image"}
               style={{ transform: "scale(0.7)" }}
             />
             {this.props.information}
@@ -157,7 +157,7 @@ export default class CustomModal extends Component {
               transition={{ duration: 0.2 }}
             >
               <div>READ MORE</div>
-              <img src={ReadMore} />
+              <img src={ReadMore} alt="some image" />
             </CustomButton>
           </SplashScreenFooter>
         </SplashScreen>

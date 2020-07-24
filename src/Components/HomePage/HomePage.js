@@ -162,11 +162,7 @@ export default class HomePage extends Component {
         animate={{ opacity: [0, 1] }}
         transition={{ delay: 0.1 }}
       >
-        <Container
-          initial={{ opacity: 0 }}
-          animate={{ opacity: [0, 1] }}
-          transition={{ delay: 0.1 }}
-        >
+        <Container>
           <ContainerHeader>WHAT WE DO?</ContainerHeader>
           <ContainerBody>
             <HexContainer className="container">
@@ -181,7 +177,7 @@ export default class HomePage extends Component {
                         className="hexagon"
                       >
                         {value2.text}
-                        <img src={value2.icon} />
+                        <img src={value2.icon} alt="some image" />
                       </Hexagon>
                     ) : (
                       <Hexagon key={index2} className="hexagon-center">
@@ -199,10 +195,10 @@ export default class HomePage extends Component {
             (formerly Emerson) and Yasakawa/VFD, & Produal Finland for Field
             Devices. We partner with M/S. Schneider Electric for the BMS system
             to provide Advanced technology Building Automation System. Our
-            solutions range from implementing simple field control system to
-            complete vision systems. We provide proven cost-effective, quality-
-            engineered solutions, working in partnership to meet and exceed the
-            expectations of our valued customers. Also.
+            solutions ranComponentge from implementing simple field control
+            system to complete vision systems. We provide proven cost-effective,
+            quality- engineered solutions, working in partnership to meet and
+            exceed the expectations of our valued customers.
           </ContainerFooter>
         </Container>
         <PartnerList>
@@ -210,15 +206,11 @@ export default class HomePage extends Component {
           <PartnerListBody
             initial={{ opacity: 0 }}
             animate={{ opacity: [0, 1] }}
-            transition={{ delay: 0.3 }}
+            transition={{ delay: 0.1 }}
           >
             {PartnerListImages.map((value, index) => (
-              <PartnerCubes
-                key={index}
-                whileTap={{ scale: 0.88 }}
-                animate={{ opacity: [0, 1], delay: 0.1 }}
-              >
-                <img src={value} alt={index} />
+              <PartnerCubes>
+                <img src={value} alt={index} alt="some image" />
               </PartnerCubes>
             ))}
           </PartnerListBody>

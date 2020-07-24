@@ -116,7 +116,7 @@ export default class ClientPage extends Component {
                 key={index}
                 animate={{ opacity: [0, 1] }}
                 transition={{ duration: 0.1 }}
-                whileTap={{ scale: 0.88 }}
+                whileTap={{ scale: 0.98 }}
               >
                 <img
                   src={value.logo}
