@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import { media } from "../../Utils/media.js";
+import { media, mediaType } from "../../Utils/media.js";
+import YouTube from "react-youtube";
 
 import WaterMeter from "../../Assets/Water Meter/meter.svg";
+import RainbowResidency from "../../Assets/Water Meter/rainbow-residency.png";
 
 const ParentContainer = styled(motion.div)`
   display: flex;
@@ -63,11 +65,20 @@ const MiddleOrderItem = styled.div`
   justify-content: space-around;
 
   ${media.phone`
+    
+    flex-direction: column;
+    padding: 0;
+    padding-top: 30px;
+  `}
+`;
 
+const MiddleOrderItemHybrid = styled(MiddleOrderItem)`
+  ${media.phone`
+  align-items: center;
   flex-direction: column;
   padding: 0;
   padding-top: 30px;
-  `}
+`}
 `;
 
 const BottomOrderItem = styled.div`
@@ -104,6 +115,13 @@ const CarouselCards = styled(motion.div)`
   justify-contents: flex-start;
   color: black;
   margin: 5px;
+`;
+
+const CarouselCardsHybrid = styled(CarouselCards)`
+  align-self: center;
+  ${media.phone`
+    width : auto;
+  `}
 `;
 
 const CarouselCardHeader = styled.div`
@@ -162,6 +180,174 @@ const CarouselBottomContainer = styled(motion.div)`\
   align-items: center;
   margin: 5px;
 `;
+
+const ContentContainer = styled.div`
+  display: flex;
+  width: 95%;
+  height: auto;
+  padding: 5px;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+
+  flex-direction: column;
+`;
+
+const ContentRowBars = styled(motion.div)`
+  display: flex;
+  width: 90%;
+
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin-top: 12px;
+  flex-direction: column;
+`;
+
+const ContentRowBarsHeader = styled(motion.div)`
+  display: flex;
+  width: auto;
+  height: auto;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 2px;
+  padding-left: 10px;
+  align-self: flex-start;
+  font-size: 24px;
+  color: #13567c;
+  font-weight: 400;
+  padding-top: 10px;
+  user-select: none;
+  cursor: pointer;
+  flex-direction: column;
+`;
+
+const ContentRowBarsBody = styled(motion.div)`
+  width: auto;
+  height: auto;
+  padding: 5px;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+  margin-top: 20px;
+  font-size: 14px;
+  font-size: 450;
+`;
+
+const ImageContainer = styled.div`
+  width: 80%;
+  height: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  ${media.phone`
+    width: 100%;
+    height: 100%;
+  `};
+`;
+
+const YouTubeContainer = styled.div`
+  position: relative;
+  width: 80%;
+  height: 0;
+  padding-bottom: 56.25%;
+  overflow: hidden;
+  margin-bottom: 50px;
+
+  ${media.phone`
+    width: 100%;
+  `};
+`;
+
+const YouTubePlayer = styled(YouTube)`
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+`;
+
+const DropDownContent = [
+  {
+    header: "Benefits",
+    content:
+      "MULTICAL® 21 / flowIQ® 210x is an ultrasonic water meter optimised for residential use. Contrary to traditional mechanical meters, MULTICAL® 21 / flowIQ® 210x is a static meter protected against water ingress with no moving parts. Therefore, it maintains a high and stable accuracy throughout its lifetime of up to 16 years. MULTICAL® 21 / flowIQ® 210x has a very low error margin, an industry-leading accuracy and an optimised low start flow which ensures that even the smallest consumption is measured accurately \\ Intelligent alarms from the ultrasonic water meter lets you detect leaks and bursts or other irregularities such as tampering attempts or reverse flows quickly and effectively. This limits water loss as well as any collateral damage and enables you to provide a more proactive customer service.",
+  },
+  {
+    header: "Battery Life",
+    content: "",
+  },
+  {
+    header: "Communication & Remote Reading",
+    content: "",
+  },
+  {
+    header: "Construction & Packaging",
+    content: "",
+  },
+];
+
+class DropDownContentDisplay extends Component {
+  constructor() {
+    super();
+    this.state = {
+      dropDownStates: DropDownContent,
+    };
+  }
+
+  componentDidMount() {
+    let restructuredDropDownContents = DropDownContent.map((value, index) => ({
+      header: value.header,
+      content: value.content,
+      drop: false,
+    }));
+
+    this.setState({
+      dropDownStates: restructuredDropDownContents,
+    });
+  }
+
+  handleDropDown = (index) => {
+    console.log(index);
+
+    let dropDownState = this.state.dropDownStates;
+    dropDownState[index].drop = !this.state.dropDownStates[index].drop;
+    this.setState(
+      {
+        dropDownStates: dropDownState,
+      },
+      () => {
+        console.log(this.state.dropDownStates);
+      }
+    );
+  };
+
+  render() {
+    return (
+      <ContentContainer>
+        {this.state.dropDownStates.map((value, index) => (
+          <ContentRowBars
+            key={index}
+            onClick={() => this.handleDropDown(index)}
+            animate={{
+              height: value.drop ? "auto" : "80px",
+            }}
+            transition={{ duration: 0.1, ease: "linear" }}
+          >
+            <ContentRowBarsHeader>{value.header}</ContentRowBarsHeader>
+            <ContentRowBarsBody
+              initial={{ opacity: 0 }}
+              animate={{ opacity: [0, 1] }}
+              transition={{ duration: 0.3, ease: "linear" }}
+            >
+              {value.drop && value.content}
+            </ContentRowBarsBody>
+          </ContentRowBars>
+        ))}
+      </ContentContainer>
+    );
+  }
+}
 
 class Carousel extends Component {
   constructor() {
@@ -305,6 +491,10 @@ export default class WaterMeterPage extends Component {
     super();
   }
 
+  onReady(event) {
+    event.target.pauseVideo();
+  }
+
   render() {
     return (
       <ParentContainer>
@@ -329,7 +519,69 @@ export default class WaterMeterPage extends Component {
             </div>
           </BottomOrderItem>
         </Container>
-        <Container></Container>
+        <Container>
+          <MiddleOrderItemHybrid
+            style={{
+              width: "100%",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
+            <YouTubeContainer style={{ width: "80%", height: "40%" }}>
+              <YouTubePlayer
+                videoId="n3bWbg9xmgM"
+                opts={{ autoplay: 1 }}
+                onReady={this.onReady}
+              />
+            </YouTubeContainer>
+
+            <CarouselCardsHybrid
+              style={{ width: "80%" }}
+              initial={{ opacity: 0, scale: 0.88 }}
+              animate={{ opacity: [0, 1], scale: [0.88, 1] }}
+              transition={{ delay: 3.5, ease: [0.04, 0.96, 1, 1] }}
+            >
+              <CarouselCardHeader>
+                Intelligent design and automated production.
+              </CarouselCardHeader>
+              <CarouselCardBody style={{ marginTop: "50px" }}>
+                MULTICAL® 21 / flowIQ® 210x is made from 100% eco-friendly and
+                durable composite. The water meter is fully watertight and can
+                be installed without any risk of water ingress or condensation
+                in the display. Our fully automated production process ensures
+                consistent quality and hygienic, accurately calibrated meters.
+              </CarouselCardBody>
+            </CarouselCardsHybrid>
+          </MiddleOrderItemHybrid>
+        </Container>
+        <Container style={{ justifyContent: "center" }}>
+          <CarouselCardHeader style={{ alignSelf: "end" }}>
+            Hear from our clients!
+          </CarouselCardHeader>
+          <MiddleOrderItemHybrid style={{ marginTop: "30px" }}>
+            <YouTubeContainer style={{ width: "80%", height: "40%" }}>
+              <YouTubePlayer
+                videoId="5vdH1Yd3EKs"
+                opts={{ autoplay: 1 }}
+                onReady={this.onReady}
+              />
+            </YouTubeContainer>
+          </MiddleOrderItemHybrid>
+          <CarouselCardHeader style={{ marginTop: "30px", alignSelf: "end" }}>
+            Rainbow Residency Case Study
+          </CarouselCardHeader>
+          <ImageContainer>
+            <img
+              style={{ marginTop: "30px", height: "80%", width: "80%" }}
+              src={RainbowResidency}
+              alt="some-image"
+            />
+          </ImageContainer>
+        </Container>
+
+        <Container style={{ justifyContent: "center" }}>
+          <DropDownContentDisplay />
+        </Container>
       </ParentContainer>
     );
   }
