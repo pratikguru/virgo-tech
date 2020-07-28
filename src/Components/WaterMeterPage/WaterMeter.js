@@ -142,6 +142,7 @@ const CarouselCardBody = styled(CarouselCardHeader)`
   display: flex;
   justify-self: center;
   flex-direction: column;
+  align-self: center;
 `;
 
 const CarouselButton = styled(motion.div)`
@@ -265,6 +266,32 @@ const YouTubePlayer = styled(YouTube)`
   position: absolute;
   top: 0;
   left: 0;
+`;
+
+const CustomButton = styled(motion.div)`
+  width: 120px;
+  height: 35px;
+  border-radius: 5px;
+  display: flex;
+  color: black;
+  background-color: #98dcb3;
+  font-size: 12px;
+  justify-content: center;
+  align-items: center;
+  font-weight: 450;
+  user-select: none;
+  cursor: pointer;
+  text-align: center;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  align-self: flex-start;
+  ${media.phone`
+    align-self: center;
+    margin-top: 20px;
+    margin-left: 0;
+  `};
 `;
 
 const DropDownContent = [
@@ -455,6 +482,11 @@ const CarouselCardsContent = [
       "Kamstrup ultrasonic smart water meter enables induvidual users to measure and monitor their water consumption in real time and comes equipped with leakage, reverse-flow and burst detection.",
   },
   {
+    header: "Invest in the future!",
+    content:
+      "Invest in our future-proof smart ultrasound water meter with a ROI in less than 2 years!",
+  },
+  {
     header: "Pay ONLY for what you use!",
     content:
       "Many residential apartments do not monitor the induvidual consumption of water and are being charged a a Many residential apartments do not monitor the induvidual consumption of water and are being charged a a fixed rate. This makes people unaware of their water usage resulting in water wastage.",
@@ -577,6 +609,10 @@ export default class WaterMeterPage extends Component {
               alt="some-image"
             />
           </ImageContainer>
+          <CustomButton whileTap={{ scale: 0.88 }}>
+            {" "}
+            DOWNLOAD BROCHURE{" "}
+          </CustomButton>
         </Container>
 
         <Container style={{ justifyContent: "center" }}>
