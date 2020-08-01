@@ -76,6 +76,26 @@ const SearchBar = styled.input`
   padding: 10px;
   font-size: 12px;
 `;
+
+const container = {
+  hidden: { opacity: 1, scale: 0 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      when: "beforeChildren",
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const item = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+  },
+};
 export default class ClientPage extends Component {
   constructor() {
     super();
@@ -94,14 +114,8 @@ export default class ClientPage extends Component {
   };
   render() {
     return (
-      <ParentContainer
-        initial={{ opacity: 0 }}
-        animate={{ opacity: [0, 1], delay: 0.4 }}
-      >
-        <Container
-          initial={{ opacity: 0 }}
-          animate={{ opacity: [0, 1], delay: 0.5 }}
-        >
+      <ParentContainer>
+        <Container variants={container} initial="hidden" animate="visible">
           <ContainerHeader>
             OUR CLIENTS
             <SearchBar
@@ -113,9 +127,8 @@ export default class ClientPage extends Component {
           {this.state.filteredClients.length > 0 ? (
             this.state.filteredClients.map((value, index) => (
               <ClientPods
+                variants={item}
                 key={index}
-                animate={{ opacity: [0, 1] }}
-                transition={{ duration: 0.1 }}
                 whileTap={{ scale: 0.98 }}
               >
                 <img

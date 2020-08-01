@@ -1,6 +1,12 @@
-import React, { Component } from "react";
+import React, { Component, useEffect } from "react";
 import styled from "styled-components";
-import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import {
+  motion,
+  useAnimation,
+  AnimatePresence,
+  AnimateSharedLayout,
+} from "framer-motion";
 import { media, mediaType } from "../../Utils/media.js";
 import YouTube from "react-youtube";
 
@@ -352,25 +358,35 @@ class DropDownContentDisplay extends Component {
   render() {
     return (
       <ContentContainer>
-        {this.state.dropDownStates.map((value, index) => (
-          <ContentRowBars
-            key={index}
-            onClick={() => this.handleDropDown(index)}
-            animate={{
-              height: value.drop ? "auto" : "80px",
-            }}
-            transition={{ duration: 0.1, ease: "linear" }}
-          >
-            <ContentRowBarsHeader>{value.header}</ContentRowBarsHeader>
-            <ContentRowBarsBody
-              initial={{ opacity: 0 }}
-              animate={{ opacity: [0, 1] }}
-              transition={{ duration: 0.3, ease: "linear" }}
+        <AnimateSharedLayout>
+          {this.state.dropDownStates.map((value, index) => (
+            <ContentRowBars
+              key={index}
+              onClick={() => this.handleDropDown(index)}
+              animate={{
+                height: value.drop ? "auto" : "80px",
+              }}
             >
-              {value.drop && value.content}
-            </ContentRowBarsBody>
-          </ContentRowBars>
-        ))}
+              <ContentRowBarsHeader>{value.header}</ContentRowBarsHeader>
+              <ContentRowBarsBody
+                initial={{ opacity: 0 }}
+                animate={{ opacity: [0, 1] }}
+              >
+                {value.drop && (
+                  <AnimatePresence>
+                    <motion.div
+                      initial={{ opacity: 0.1 }}
+                      animate={{ opacity: [0, 1] }}
+                      exit={{ opacity: [1, 0] }}
+                    >
+                      {value.content}
+                    </motion.div>
+                  </AnimatePresence>
+                )}
+              </ContentRowBarsBody>
+            </ContentRowBars>
+          ))}
+        </AnimateSharedLayout>
       </ContentContainer>
     );
   }
@@ -518,6 +534,28 @@ const CertificationList = [
   },
 ];
 
+function HybridCard() {
+  return (
+    <CarouselCardsHybrid
+      style={{ width: "80%" }}
+      initial={{ opacity: 0, scale: 0.88 }}
+      animate={{ opacity: [0, 1], scale: [0.88, 1] }}
+      transition={{ delay: 3.5, ease: [0.04, 0.96, 1, 1] }}
+    >
+      <CarouselCardHeader>
+        Intelligent design and automated production.
+      </CarouselCardHeader>
+      <CarouselCardBody style={{ marginTop: "50px" }}>
+        MULTICAL® 21 / flowIQ® 210x is made from 100% eco-friendly and durable
+        composite. The water meter is fully watertight and can be installed
+        without any risk of water ingress or condensation in the display. Our
+        fully automated production process ensures consistent quality and
+        hygienic, accurately calibrated meters.
+      </CarouselCardBody>
+    </CarouselCardsHybrid>
+  );
+}
+
 export default class WaterMeterPage extends Component {
   constructor() {
     super();
@@ -566,24 +604,7 @@ export default class WaterMeterPage extends Component {
                 onReady={this.onReady}
               />
             </YouTubeContainer>
-
-            <CarouselCardsHybrid
-              style={{ width: "80%" }}
-              initial={{ opacity: 0, scale: 0.88 }}
-              animate={{ opacity: [0, 1], scale: [0.88, 1] }}
-              transition={{ delay: 3.5, ease: [0.04, 0.96, 1, 1] }}
-            >
-              <CarouselCardHeader>
-                Intelligent design and automated production.
-              </CarouselCardHeader>
-              <CarouselCardBody style={{ marginTop: "50px" }}>
-                MULTICAL® 21 / flowIQ® 210x is made from 100% eco-friendly and
-                durable composite. The water meter is fully watertight and can
-                be installed without any risk of water ingress or condensation
-                in the display. Our fully automated production process ensures
-                consistent quality and hygienic, accurately calibrated meters.
-              </CarouselCardBody>
-            </CarouselCardsHybrid>
+            {HybridCard()}
           </MiddleOrderItemHybrid>
         </Container>
         <Container style={{ justifyContent: "center" }}>

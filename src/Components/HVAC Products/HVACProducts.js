@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { media } from "../../Utils/media.js";
-
+import ModalProductShowcase from "../ModalProductShowCase/ModalProductShowcase.js";
 import { HVACProductImageList } from "../../HVACProductPageConfiguration.js";
 
 const ParentContainer = styled(motion.div)`
@@ -62,14 +62,14 @@ const ContainerBody = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 450;
 `;
 
 const ProductPods = styled(motion.div)`
   width: 450px;
+  min-height: 450px;
 
-  height: 450px;
   border-radius: 10px;
   display: flex;
   justify-content: space-between;
@@ -116,7 +116,7 @@ const ProductPodSubHeader = styled.div`
   justify-content: flex-start;
 `;
 
-const ProductContainer = styled.div`
+const ProductContainer = styled(motion.div)`
   width: -webkit-fill-available;
   height: auto;
   display: flex;
@@ -141,6 +141,7 @@ const ProductPodFooter = styled.div`
   padding: 15px;
   display: flex;
   margin-top: auto;
+  flex-direction: column;
 `;
 
 const CustomButton = styled(motion.div)`
@@ -160,6 +161,26 @@ const CustomButton = styled(motion.div)`
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 `;
 
+const container = {
+  hidden: { opacity: 1, scale: 0 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      when: "beforeChildren",
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const item = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+  },
+};
+
 export default class ProductListing extends Component {
   constructor() {
     super();
@@ -174,6 +195,40 @@ export default class ProductListing extends Component {
     );
     this.setState({
       filteredProducts: filteredClients,
+    });
+  };
+
+  componentDidMount() {
+    let compiledList = HVACProductImageList.map((value, index) => ({
+      id: value.id,
+      img: value.img,
+      sub_header: value.sub_header,
+      information: value.sub_header,
+      child_products: value.child_products,
+      showChildProducts: false,
+    }));
+    this.setState({
+      filteredProducts: compiledList,
+    });
+  }
+
+  handleChildProductsPage = (value, index) => {
+    console.log(value, index);
+    let current_state = this.state.filteredProducts;
+    current_state[index]["showChildProducts"] = !this.state.filteredProducts[
+      index
+    ]["showChildProducts"];
+
+    this.setState({
+      filteredProducts: current_state,
+    });
+  };
+
+  handleProductShowCaseClosure = (value, index) => {
+    let current_state = this.state.filteredProducts;
+    current_state[index]["showChildProducts"] = false;
+    this.setState({
+      filteredProducts: current_state,
     });
   };
 
@@ -196,29 +251,85 @@ export default class ProductListing extends Component {
             We trade one of the best products in town.
           </ContainerSubHeader>
 
-          <ProductContainer>
+          <ProductContainer
+            variants={container}
+            initial="hidden"
+            animate="visible"
+          >
             {this.state.filteredProducts.length > 0 ? (
               this.state.filteredProducts.map((value, index) => (
-                <ProductPods
-                  key={index}
-                  animate={{ opacity: [0, 1] }}
-                  transition={{ duration: 0.1 }}
-                >
-                  <ProductPodHeader>{value.id}</ProductPodHeader>
-                  <ProductPodSubHeader>{value.sub_header}</ProductPodSubHeader>
-                  <img
-                    src={value.img}
-                    alt={index}
-                    style={{ transform: "scale(0.7)" }}
-                  />
-                  <ContainerBody>{value.information}</ContainerBody>
-                  <ProductPodFooter>
-                    <CustomButton whileTap={{ scale: 0.88 }}>
-                      {" "}
-                      DOWNLOAD BROCHURE{" "}
-                    </CustomButton>
-                  </ProductPodFooter>
-                </ProductPods>
+                <>
+                  {this.state.filteredProducts[index]["child_products"] && (
+                    <ModalProductShowcase
+                      showModal={value.showChildProducts}
+                      title={"Kamstrup Products"}
+                      onClose={() =>
+                        this.handleProductShowCaseClosure(value, index)
+                      }
+                      information={value["child_products"].map(
+                        (value2, index2) => (
+                          <ProductPods
+                            key={index2}
+                            animate={{ opacity: [0, 1] }}
+                          >
+                            <ProductPodHeader>{value2.id}</ProductPodHeader>
+                            <ProductPodSubHeader>
+                              {value2.sub_header}
+                            </ProductPodSubHeader>
+                            <img
+                              style={{ height: "150px", width: "200px" }}
+                              src={value2.img}
+                              alt={index2}
+                            />
+                            <ContainerBody>{value2.information}</ContainerBody>
+                            <ProductPodFooter>
+                              <CustomButton whileTap={{ scale: 0.88 }}>
+                                {" "}
+                                DOWNLOAD BROCHURE{" "}
+                              </CustomButton>
+                            </ProductPodFooter>
+                          </ProductPods>
+                        )
+                      )}
+                    ></ModalProductShowcase>
+                  )}
+
+                  <ProductPods
+                    variants={item}
+                    onClick={() => this.handleChildProductsPage(value, index)}
+                    key={index}
+                  >
+                    <ProductPodHeader>{value.id}</ProductPodHeader>
+                    <ProductPodSubHeader>
+                      {value.sub_header}
+                    </ProductPodSubHeader>
+                    <img
+                      src={value.img}
+                      alt={index}
+                      style={{ transform: "scale(0.7)" }}
+                    />
+                    <ContainerBody>{value.information}</ContainerBody>
+                    <ProductPodFooter>
+                      {value.child_products && (
+                        <div
+                          style={{
+                            alignSelf: "flex-end",
+                            fontSize: "12px",
+                            fontWeight: 450,
+                          }}
+                        >
+                          {" "}
+                          {value.child_products.length} more products.{" "}
+                        </div>
+                      )}
+
+                      <CustomButton whileTap={{ scale: 0.88 }}>
+                        {" "}
+                        DOWNLOAD BROCHURE{" "}
+                      </CustomButton>
+                    </ProductPodFooter>
+                  </ProductPods>
+                </>
               ))
             ) : (
               <div>No Products here.</div>

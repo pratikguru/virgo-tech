@@ -19,6 +19,7 @@ const Wrapper = styled(motion.div)`
   backdrop-filter: blur(35px);
   justify-content: center;
   align-items: center;
+  overflow-y: hidden;
 `;
 
 const SplashScreen = styled(motion.div)`
@@ -29,19 +30,20 @@ const SplashScreen = styled(motion.div)`
   border: none;
   border-radius: 10px;
   width: 80%;
+  height: 60%;
   box-shadow: 20px 20px 60px rgba(170, 231, 209, 0.25),
     -20px -20px 60px rgba(163, 230, 189, 0.25);
   flex-direction: column;
+  align-items: center;
 `;
 
 const SplashScreenHeader = styled.div`
   display: flex;
-  width : 100%:
+  width: -webkit-fill-available;
   height: auto;
-  
+
   justify-content: space-between;
   align-items: center;
-
 `;
 
 const Title = styled.div`
@@ -94,7 +96,7 @@ const CustomButton = styled(motion.div)`
 `;
 
 const SplashScreenSubheader = styled.div`
-  width: 100%:
+  width: -webkit-fill-available;
   height: auto;
   padding: 2px;
   display: flex;
@@ -131,6 +133,11 @@ export default class CustomModal extends Component {
           initial={{ opacity: 0 }}
           animate={{ opacity: [0, 1] }}
           transition={{ delay: 0.3, ease: "linear" }}
+          style={{
+            height: this.props.fullScreen ? "100%" : "50%",
+            width: this.props.fullScreen ? "100%" : "50%",
+            borderRadius: this.props.fullScreen ? "0px" : "10px",
+          }}
         >
           <SplashScreenHeader>
             <Title>{this.props.header}</Title>
@@ -144,11 +151,13 @@ export default class CustomModal extends Component {
           <SplashScreenSubheader>{this.props.subHeader}</SplashScreenSubheader>
 
           <SplashScreenBody>
-            <img
-              src={this.props.img}
-              alt={"some image"}
-              style={{ transform: "scale(0.7)" }}
-            />
+            {this.props.img && (
+              <img
+                src={this.props.img}
+                alt={"some image"}
+                style={{ transform: "scale(0.7)" }}
+              />
+            )}
             {this.props.information}
           </SplashScreenBody>
           <SplashScreenFooter>

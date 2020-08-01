@@ -121,8 +121,27 @@ const PartnerCubes = styled(motion.div)`
 `;
 
 const Hexagon = styled(motion.div)``;
-const HexContainer = styled.div``;
+const HexContainer = styled(motion.div)``;
 const Row = styled.div``;
+const container = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+
+    transition: {
+      when: "beforeChildren",
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const item = {
+  hidden: { y: 15, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+  },
+};
 
 export default class HomePage extends Component {
   constructor() {
@@ -157,20 +176,22 @@ export default class HomePage extends Component {
 
   render() {
     return (
-      <ParentContainer
-        initial={{ opacity: 0 }}
-        animate={{ opacity: [0, 1] }}
-        transition={{ delay: 0.1 }}
-      >
+      <ParentContainer variants={container} initial="hidden" animate="visible">
         <Container>
           <ContainerHeader>WHAT WE DO?</ContainerHeader>
           <ContainerBody>
-            <HexContainer className="container">
+            <HexContainer
+              className="container"
+              variants={container}
+              initial="hidden"
+              animate="visible"
+            >
               {HexaGrid.map((value, index) => (
                 <Row className="row" key={index}>
                   {value.map((value2, index2) =>
                     value2.type ? (
                       <Hexagon
+                        variants={item}
                         onClick={() => this.handlePopup(index, index2)}
                         key={index2}
                         whileTap={{ scale: 0.89 }}

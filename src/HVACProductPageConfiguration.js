@@ -5,6 +5,10 @@ import SchneiderBMS from "./Assets/HVACProducts/schneider-bms.png";
 import VFDDrivers from "./Assets/HVACProducts/vfd-drivers.png";
 import YaskawaLowHarmonicVFD from "./Assets/HVACProducts/yaskawa-low-harmonic-vfd.png";
 
+/* Child products for Kamstrup BTU meters. */
+import Multical302 from "./Assets/HVACProducts/multical-302.png";
+import Multical403 from "./Assets/HVACProducts/multical-403.png";
+
 export const HVACProductImageList = [
   {
     id: "Kamstrup BTU Meter",
@@ -12,6 +16,22 @@ export const HVACProductImageList = [
     sub_header: "Heat metering with ULTRAFLOW® 54",
     information:
       "Kamstrup’s heat meters are based on state of the art heat technology",
+    child_products: [
+      {
+        id: "MULTICAL®302 ",
+        img: Multical302,
+        sub_header: "The Ultra-compact meter",
+        information:
+          "As with all MULTICAL® energy meters, this heat meter employs the highly accurate ultrasonic technology. Every conceivable drop is measured due to the dynamic range 1600:1 from saturation flow to start flow (250:1 from qp:qi) reducing loss of distributed energy.",
+      },
+      {
+        id: "MULTICAL®403",
+        img: Multical403,
+        sub_header: "The compact and flexible meter",
+        information:
+          "With the new built-in 2-way communication in MULTICAL® 403 and a READy remote meter reading system, it is now possible to perform remote configuration of the ultrasonic heat meters and reading of the log without direct access to the installation. Discover the possibilities within flexible and easy remote configuration of heat meters – for less hassle for both the utility and the consumer.",
+      },
+    ],
   },
   {
     id: "EFC Fan Coilt Unit Controller",
