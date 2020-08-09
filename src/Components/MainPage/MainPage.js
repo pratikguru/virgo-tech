@@ -27,7 +27,7 @@ const TopHeader = styled.div`
   width: 100%;
   height: auto;
   margin: 5px;
-
+  flex-wrap: wrap;
   justify-content: space-between;
 
   ${media.phone`
@@ -46,6 +46,7 @@ const LogoContainer = styled.div`
   margin-left: 10px;
   margin-top: 10px;
 `;
+
 const NavigationButtonContainer = styled(motion.div)`
   display: flex;
   width: auto;
@@ -53,6 +54,7 @@ const NavigationButtonContainer = styled(motion.div)`
   justify-content: center;
   align-items: center;
   padding: 5px;
+  flex-wrap: wrap;
 
   ${media.phone`
     justify-content: center;
@@ -78,6 +80,7 @@ const NavigationButtons = styled(motion.div)`
 
   user-select: none;
   cursor: pointer;
+
   ${media.phone`
     height: 50px;
     background-color: "#005C45";
@@ -102,6 +105,29 @@ const Body = styled.div`
   `}
 `;
 
+const NavigationTrayOpen = styled(motion.div)`
+  width: 30px;
+  height: 20px;
+  align-self: flex-start;
+  display: flex;
+  border-radius: 5px;
+  box-shadow: 5px 5px 20px #dcdbdb;
+  background-color: white;
+  margin-top: 10px;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  padding: 5px;
+`;
+
+const NavigationTrayOpenButtonContent = styled.div`
+  width: 100%;
+  height: 3px;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  border-radius: 10px;
+`;
+
 const NavigationLinks = [
   "Home",
   "Clients",
@@ -124,7 +150,20 @@ export default class MainPage extends Component {
     super();
     this.state = {
       selectedPage: "Home",
+      openNav: true,
     };
+  }
+
+  componentDidMount() {
+    if (mediaType.phone === true) {
+      this.setState({
+        openNav: false,
+      });
+    } else {
+      this.setState({
+        openNav: true,
+      });
+    }
   }
 
   handleSelectedLink = (route) => {
@@ -132,6 +171,7 @@ export default class MainPage extends Component {
       selectedPage: route,
     });
   };
+
   render() {
     return (
       <MainContainer>
@@ -143,24 +183,53 @@ export default class MainPage extends Component {
             animate={{ opacity: [0, 1] }}
             transition={{ delay: 0.2, ease: "linear" }}
           >
-            {NavigationLinks.map((value, index) => (
-              <NavigationButtons
-                key={index}
-                onClick={() => this.handleSelectedLink(value)}
-                whileHover={{
-                  backgroundColor: "#005C45",
-                  color: "rgba(255, 255, 255, 1)",
-                }}
-                transition={{ duration: 0.1, ease: "linear" }}
-                whileTap={{
-                  scale: 0.91,
-                  backgroundColor: "#005C45",
-                  color: "rgba(255, 255, 255, 1)",
-                }}
+            {this.state.openNav ? (
+              <>
+                {NavigationLinks.map((value, index) => (
+                  <NavigationButtons
+                    key={index}
+                    onClick={() => this.handleSelectedLink(value)}
+                    whileHover={{
+                      backgroundColor: "#005C45",
+                      color: "rgba(255, 255, 255, 1)",
+                    }}
+                    transition={{ duration: 0.1, ease: "linear" }}
+                    whileTap={{
+                      scale: 0.91,
+                      backgroundColor: "#005C45",
+                      color: "rgba(255, 255, 255, 1)",
+                    }}
+                    animate={{
+                      backgroundColor:
+                        this.state.selectedPage === value ? "#005C45" : "",
+                      color:
+                        this.state.selectedPage === value ? "white" : "black",
+                    }}
+                  >
+                    {NavigationLinks[index]}
+                  </NavigationButtons>
+                ))}
+                <NavigationTrayOpen
+                  onClick={() =>
+                    this.setState({ openNav: !this.state.openNav })
+                  }
+                  whileTap={{ scale: 0.88 }}
+                >
+                  <NavigationTrayOpenButtonContent />
+                  <NavigationTrayOpenButtonContent />
+                  <NavigationTrayOpenButtonContent />
+                </NavigationTrayOpen>
+              </>
+            ) : (
+              <NavigationTrayOpen
+                onClick={() => this.setState({ openNav: !this.state.openNav })}
+                whileTap={{ scale: 0.88 }}
               >
-                {NavigationLinks[index]}
-              </NavigationButtons>
-            ))}
+                <NavigationTrayOpenButtonContent />
+                <NavigationTrayOpenButtonContent />
+                <NavigationTrayOpenButtonContent />
+              </NavigationTrayOpen>
+            )}
           </NavigationButtonContainer>
         </TopHeader>
         <Body>

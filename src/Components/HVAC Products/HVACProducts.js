@@ -243,7 +243,7 @@ export default class ProductListing extends Component {
             HVAC Products
             <SearchBar
               type="search"
-              placeholder="Search Client..."
+              placeholder="Search Products..."
               onChange={(e) => this.handleSearch(e)}
             ></SearchBar>
           </ContainerHeader>

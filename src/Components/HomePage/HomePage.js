@@ -15,6 +15,11 @@ const ParentContainer = styled(motion.div)`
   justify-content: center;
   width: 100%;
   padding-bottom: 100px;
+
+  ${media.phone`
+    width: auto;
+  
+  `};
 `;
 
 const Container = styled(motion.div)`
@@ -66,7 +71,7 @@ const ContainerBody = styled(motion.div)`
   align-items: center;
   padding: 10px;
   ${media.phone`
-    width : 90%;
+    width : auto;
   `}
 `;
 

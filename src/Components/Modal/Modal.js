@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import { media } from "../../Utils/media.js";
 import Modal from "react-bootstrap/Modal";
 
 import "./modal-styles.css";
@@ -29,12 +30,17 @@ const SplashScreen = styled(motion.div)`
   padding: 10px;
   border: none;
   border-radius: 10px;
-  width: 80%;
+  width: 60%;
   height: 60%;
   box-shadow: 20px 20px 60px rgba(170, 231, 209, 0.25),
     -20px -20px 60px rgba(163, 230, 189, 0.25);
   flex-direction: column;
   align-items: center;
+
+  ${media.phone`
+    width: 100%;
+    height: 100%;
+  `};
 `;
 
 const SplashScreenHeader = styled.div`
@@ -44,6 +50,11 @@ const SplashScreenHeader = styled.div`
 
   justify-content: space-between;
   align-items: center;
+
+  ${media.phone`
+    padding: 10px
+  
+  `};
 `;
 
 const Title = styled.div`
@@ -93,6 +104,10 @@ const CustomButton = styled(motion.div)`
   text-align: center;
   cursor: pointer;
   user-select: none;
+
+  ${media.phone`
+    margin-left: 10px;
+  `};
 `;
 
 const SplashScreenSubheader = styled.div`
@@ -104,11 +119,15 @@ const SplashScreenSubheader = styled.div`
   font-weight: 400;
   color: #878787;
   margin-top: -10px;
+
+  ${media.phone`
+    margin-left: 10px;
+  `};
 `;
 
 const SplashScreenBody = styled.div`
-  width: 100%:
-  height: 300px;
+  width: 80%:
+  height: 60%;
   overflow-x: auto;
   padding: 3px;
   display: flex;
@@ -133,11 +152,6 @@ export default class CustomModal extends Component {
           initial={{ opacity: 0 }}
           animate={{ opacity: [0, 1] }}
           transition={{ delay: 0.3, ease: "linear" }}
-          style={{
-            height: this.props.fullScreen ? "100%" : "50%",
-            width: this.props.fullScreen ? "100%" : "50%",
-            borderRadius: this.props.fullScreen ? "0px" : "10px",
-          }}
         >
           <SplashScreenHeader>
             <Title>{this.props.header}</Title>
@@ -155,7 +169,7 @@ export default class CustomModal extends Component {
               <img
                 src={this.props.img}
                 alt={"some image"}
-                style={{ transform: "scale(0.7)" }}
+                style={{ width: "auto", height: "auto" }}
               />
             )}
             {this.props.information}

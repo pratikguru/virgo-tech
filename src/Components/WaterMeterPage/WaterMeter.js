@@ -154,9 +154,9 @@ const CarouselCardBody = styled(CarouselCardHeader)`
 const CarouselButton = styled(motion.div)`
   width: 0;
   height: 0;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  border-left: 10px solid #0041be;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-left: 20px solid #0041be;
   border-radius: 3px;
 `;
 
