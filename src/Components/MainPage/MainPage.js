@@ -167,9 +167,16 @@ export default class MainPage extends Component {
   }
 
   handleSelectedLink = (route) => {
-    this.setState({
-      selectedPage: route,
-    });
+    this.setState(
+      {
+        selectedPage: route,
+      },
+      () => {
+        this.setState({
+          openNav: false,
+        });
+      }
+    );
   };
 
   render() {
