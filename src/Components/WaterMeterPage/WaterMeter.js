@@ -149,6 +149,7 @@ const CarouselCardBody = styled(CarouselCardHeader)`
   justify-self: center;
   flex-direction: column;
   align-self: center;
+  height: 200px;
 `;
 
 const CarouselButton = styled(motion.div)`
@@ -452,16 +453,26 @@ class Carousel extends Component {
               {this.props.content[this.state.currentPageCount]["header"]}
             </CarouselCardHeader>
             <CarouselCardBody>
-              {this.props.content[this.state.currentPageCount]["content"]}
-              {this.props.content[this.state.currentPageCount][
-                "bulletPoints"
-              ] ? (
-                this.props.content[this.state.currentPageCount][
+              <div
+                style={{
+                  height: "100%",
+                  width: "100%",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                }}
+              >
+                {this.props.content[this.state.currentPageCount]["content"]}
+                {this.props.content[this.state.currentPageCount][
                   "bulletPoints"
-                ].map((value2, index2) => <li> {value2} </li>)
-              ) : (
-                <div></div>
-              )}
+                ] ? (
+                  this.props.content[this.state.currentPageCount][
+                    "bulletPoints"
+                  ].map((value2, index2) => <li> {value2} </li>)
+                ) : (
+                  <div></div>
+                )}
+              </div>
             </CarouselCardBody>
           </CarouselCards>
 
@@ -506,6 +517,11 @@ const CarouselCardsContent = [
     header: "Pay ONLY for what you use!",
     content:
       "Many residential apartments do not monitor the induvidual consumption of water and are being charged a a Many residential apartments do not monitor the induvidual consumption of water and are being charged a a fixed rate. This makes people unaware of their water usage resulting in water wastage.",
+  },
+  {
+    header: "Trust in technology!",
+    content:
+      "Trust is our accurate meter reading since we employ ultrasonic technology with over 25 years of experience.",
   },
   {
     header: "Reduction in Non-Revenue Water",

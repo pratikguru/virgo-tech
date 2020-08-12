@@ -12,6 +12,7 @@ import ClientPage from "../ClientPage/ClientPage.js";
 import ProductListing from "../HVAC Products/HVACProducts.js";
 import IndustrialProducts from "../Industrial Products/IndustrialProducts.js";
 import WaterMeterPage from "../WaterMeterPage/WaterMeter.js";
+import Services from "../ServicesPage/ServicesPage.js";
 
 const MainContainer = styled.div`
   display: flex;
@@ -143,6 +144,7 @@ const CurrentPage = {
   Clients: <ClientPage />,
   "HVAC Products": <ProductListing />,
   "Water Meter": <WaterMeterPage />,
+  Services: <Services />,
 };
 
 export default class MainPage extends Component {
@@ -172,9 +174,11 @@ export default class MainPage extends Component {
         selectedPage: route,
       },
       () => {
-        this.setState({
-          openNav: false,
-        });
+        if (mediaType.phone === true) {
+          this.setState({
+            openNav: false,
+          });
+        }
       }
     );
   };
