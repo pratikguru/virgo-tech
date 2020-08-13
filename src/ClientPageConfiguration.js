@@ -25,8 +25,98 @@ import Embassy from "./Assets/Clients/embassy.png";
 import Kalyani from "./Assets/Clients/kalyani.jpg";
 import Bhartiya from "./Assets/Clients/bhartiya.jpg";
 import Total from "./Assets/Clients/total.png";
+import Apple from "./Assets/Clients/apple.png";
+import ZF from "./Assets/Clients/zf.png";
+import Marriot from "./Assets/Clients/marriot.jpg";
+import Bosch from "./Assets/Clients/bosh.jpg";
+import Aster from "./Assets/Clients/aster.svg";
+import Hilton from "./Assets/Clients/hilton.png";
+import RainbowHospital from "./Assets/Clients/rainbow-hospital.png";
+import Quest from "./Assets/Clients/quest.jpeg";
+import PentagonMech from "./Assets/Clients/pentagon-mech.png";
+import ABSCompleteSolutions from "./Assets/Clients/abs-complete-solutions.jpeg";
+import Voltas from "./Assets/Clients/voltas.png";
+import PJP from "./Assets/Clients/pjp.png";
+import VkBuildingServices from "./Assets/Clients/vk-building.png";
+import PavaniEngineers from "./Assets/Clients/pavani-engineers.jpeg";
+import Sterlings from "./Assets/Clients/sterlings.jpeg";
+import HTLAircon from "./Assets/Clients/htl-aircon.jpeg";
+import BlueStar from "./Assets/Clients/blue-star.png";
+import Zamil from "./Assets/Clients/zamil.png";
 
 export const ClientsList = [
+  {
+    id: "Zamil",
+    logo: Zamil,
+  },
+  {
+    id: "Blue Star",
+    logo: BlueStar,
+  },
+  {
+    id: "HTL Aircons",
+    logo: HTLAircon,
+  },
+  {
+    id: "Sterlings Wilson",
+    logo: Sterlings,
+  },
+  {
+    id: "Pavani Engineers",
+    logo: PavaniEngineers,
+  },
+  {
+    id: "VK Building Services",
+    logo: VkBuildingServices,
+  },
+  {
+    id: "PJP",
+    logo: PJP,
+  },
+  {
+    id: "Voltas",
+    logo: Voltas,
+  },
+  {
+    id: "ABS Complete Solutions",
+    logo: ABSCompleteSolutions,
+  },
+  {
+    id: "Pentagon Mech",
+    logo: PentagonMech,
+  },
+  {
+    id: "Qeust",
+    logo: Quest,
+  },
+  {
+    id: "Rainbow Hospital",
+    logo: RainbowHospital,
+  },
+  {
+    id: "Hilton",
+    logo: Hilton,
+  },
+  {
+    id: "Aster",
+    logo: Aster,
+  },
+  {
+    id: "Bosch",
+    logo: Bosch,
+  },
+  {
+    id: "Marriot",
+    logo: Marriot,
+  },
+  {
+    id: "ZF",
+    logo: ZF,
+  },
+  {
+    id: "Apple",
+    logo: Apple,
+  },
   {
     id: "All State",
     logo: AllState,

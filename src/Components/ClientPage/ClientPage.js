@@ -66,6 +66,7 @@ const ContainerHeader = styled.div`
   justify-content: space-between;
   ${media.phone`
     justify-content: space-between;
+    flex-direction: column;
   `}
 `;
 
@@ -75,6 +76,12 @@ const SearchBar = styled.input`
   font-family: Montserrat;
   padding: 10px;
   font-size: 12px;
+`;
+
+const ClientCount = styled.div`
+  font-size: 18px;
+  font-weight: 400;
+  color: grey;
 `;
 
 const container = {
@@ -118,12 +125,14 @@ export default class ClientPage extends Component {
         <Container variants={container} initial="hidden" animate="visible">
           <ContainerHeader>
             OUR CLIENTS
+            <ClientCount>{ClientsList.length} CLIENTS</ClientCount>
             <SearchBar
               type="search"
               placeholder="Search Client..."
               onChange={(e) => this.handleSearch(e)}
             ></SearchBar>
           </ContainerHeader>
+
           {this.state.filteredClients.length > 0 ? (
             this.state.filteredClients.map((value, index) => (
               <ClientPods
@@ -134,7 +143,7 @@ export default class ClientPage extends Component {
                 <img
                   src={value.logo}
                   alt={index.logo}
-                  style={{ transform: "scale(0.7)" }}
+                  style={{ width: "150px", height: "90px" }}
                 />
               </ClientPods>
             ))
