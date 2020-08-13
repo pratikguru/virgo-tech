@@ -47,7 +47,7 @@ const HeaderItem = styled.div`
 `;
 
 const ServiceCardsContainer = styled(motion.div)`
-  width: 40%;
+  width: 80%;
   min-height: 80px;
   height: auto;
   display: flex;
@@ -100,16 +100,8 @@ export default class ServicesPage extends Component {
           <HeaderItem>Services</HeaderItem>
           {ServiceList.map((value, index) => (
             <ServiceCardsContainer
-              animate={{
-                x:
-                  index % 2
-                    ? mediaType.phone
-                      ? 0
-                      : -100
-                    : mediaType.phone
-                    ? 0
-                    : 100,
-              }}
+              variants={item}
+              key={index}
               whileTap={{ scale: 0.88 }}
               whileHover={{ boxShadow: "5px 5px 15px #e6d6d6" }}
               transition={{ duration: 0.6, ease: "linear" }}
@@ -119,7 +111,9 @@ export default class ServicesPage extends Component {
                 alt={index}
                 style={{ height: "30px", width: "30px" }}
               />
-              <div style={{ margin: "10px" }}>{value.content}</div>
+              <div key={index} style={{ margin: "10px" }}>
+                {value.content}
+              </div>
             </ServiceCardsContainer>
           ))}
         </Container>
