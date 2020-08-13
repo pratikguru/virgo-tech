@@ -31,7 +31,7 @@ const SplashScreen = styled(motion.div)`
   border: none;
   border-radius: 10px;
   width: 60%;
-  height: 60%;
+  height: auto;
   box-shadow: 20px 20px 60px rgba(170, 231, 209, 0.25),
     -20px -20px 60px rgba(163, 230, 189, 0.25);
   flex-direction: column;
@@ -86,6 +86,7 @@ const SplashScreenFooter = styled.div`
   padding: 5px;
   justify-self: flex-end;
   flex-direction: column;
+  margin-top: auto;
 `;
 
 const CustomButton = styled(motion.div)`
@@ -127,7 +128,7 @@ const SplashScreenSubheader = styled.div`
 
 const SplashScreenBody = styled.div`
   width: 80%:
-  height: 60%;
+  height: auto;
   overflow-x: auto;
   padding: 3px;
   display: flex;
@@ -135,6 +136,25 @@ const SplashScreenBody = styled.div`
   align-items: center;
   flex-direction: column;
 `;
+
+const container = {
+  hidden: { opacity: 1 },
+  visible: {
+    opacity: 1,
+
+    transition: {
+      when: "beforeChildren",
+      staggerChildren: 0.4,
+    },
+  },
+};
+
+const item = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+  },
+};
 
 export default class CustomModal extends Component {
   constructor() {
@@ -145,13 +165,13 @@ export default class CustomModal extends Component {
     return (
       <Wrapper
         style={{ display: this.props.showModal ? "flex" : "none" }}
-        animate={{ opacity: [0, 1] }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: this.props.showModal ? 1 : [1, 0] }}
         transition={{ duration: 0.2, ease: "linear" }}
       >
         <SplashScreen
-          initial={{ opacity: 0 }}
-          animate={{ opacity: [0, 1] }}
-          transition={{ delay: 0.3, ease: "linear" }}
+          animate={{ opacity: [0, 10, 40, 80, 100] }}
+          transition={{ duration: 0.5, ease: "linear" }}
         >
           <SplashScreenHeader>
             <Title>{this.props.header}</Title>
@@ -169,10 +189,20 @@ export default class CustomModal extends Component {
               <img
                 src={this.props.img}
                 alt={"some image"}
-                style={{ width: "auto", height: "auto" }}
+                style={{ transform: "scale(0.7)" }}
               />
             )}
-            {this.props.information}
+            <div
+              style={{
+                maxHeight: "300px",
+                overflowY: "auto",
+              }}
+            >
+              {this.props.information &&
+                this.props.information.map((value, index) => (
+                  <li style={{ marginTop: "10px" }}>{value}</li>
+                ))}
+            </div>
           </SplashScreenBody>
           <SplashScreenFooter>
             <CustomButton

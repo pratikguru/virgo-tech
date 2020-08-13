@@ -187,7 +187,13 @@ export default class MainPage extends Component {
     return (
       <MainContainer>
         <TopHeader>
-          <LogoContainer>
+          <LogoContainer
+            onClick={() => {
+              this.setState({
+                selectedPage: "Home",
+              });
+            }}
+          >
             <img src={MainLogo} alt="logo" />
           </LogoContainer>
           <NavigationButtonContainer
