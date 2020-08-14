@@ -189,11 +189,16 @@ export default class CustomModal extends Component {
               <img
                 src={this.props.img}
                 alt={"some image"}
-                style={{ transform: "scale(0.7)" }}
+                style={{
+                  transform: `scale(${this.props.scale})`,
+                }}
               />
             )}
             <div
               style={{
+                display: "flex",
+                flexDirection: "column",
+                marginTop: "-30px",
                 maxHeight: "300px",
                 overflowY: "auto",
               }}

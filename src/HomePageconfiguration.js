@@ -27,13 +27,14 @@ import WaterMeter from "./Assets/BMSImages/water-meter.svg";
 /* START OF EXPORTS OF CENTRAL GRID PHOTS AND ICONS LINKING THE GRID.
 /*--------------------------------------------------------------*/
 
+import WaterMeterBTU from "./Assets/HVACProducts/meter.svg";
 import KamstrupBTUMeter from "./Assets/HVACProducts/kamstrup-btu-meter.png";
 import EFCFanCoilUnitController from "./Assets/HVACProducts/efc-fan-coil-unit-controller.png";
 import EVCVAVUnitController from "./Assets/HVACProducts/evc-vav-unit-controller.png";
 import SchneiderBMS from "./Assets/HVACProducts/schneider-bms.png";
 import VFDDrivers from "./Assets/HVACProducts/vfd-drivers.png";
 import YaskawaLowHarmonicVFD from "./Assets/HVACProducts/yaskawa-low-harmonic-vfd.png";
-import SensorsImage from "./Assets/HVACProducts/produal.png";
+import SensorsImage from "./Assets/HVACProducts/sensors.jpg";
 
 /*--------------------------------------------------------------*/
 /* END OF EXPORTS OF PARTNER IMAGES AND LOGOS..
@@ -62,6 +63,7 @@ export const HexaGrid = [
       icon: vfd,
       img: VFDDrivers,
       type: 1,
+      scale: 0.7,
       information: [
         [
           `Control Techniques Unidrive M400 variable frequency AC drive (VFD) minimizes downtime with an optional plain-text, multi-language backlit LCD keypad enabling rapid setup and clear diagnostic help.
@@ -84,41 +86,7 @@ export const HexaGrid = [
       text: "BTU Meter",
       icon: BTUMeter,
       type: 1,
-      img: KamstrupBTUMeter,
-      information: "",
-      header: "Kamstrup BTU Meter",
-      sub_header: "Heat metering with ULTRAFLOW",
-    },
-  ],
-  [
-    {
-      text: "Sensors",
-      icon: Sensors,
-      type: 1,
-      img: SensorsImage,
-      information: [
-        [
-          `We aim to be the one-stop-shop partner for measurement and control for all our customers operating in the evolving business of building automation.`,
-        ],
-        [
-          `Our wide product offering includes over 1000 products for controlling, measuring, actuating and commissioning, completed with system components.`,
-        ],
-        [
-          `Our design principles ensure a selection of accurate, multifunctional and easy-to-install products, and our quality system is ISO certified.`,
-        ],
-      ],
-      header: "Produal Sensors",
-      sub_header: "Efficient solutions for high quality OEM products.",
-    },
-    {
-      text: "Building Management System",
-      icon: "",
-      type: 0,
-    },
-    {
-      text: "Water Meter",
-      icon: WaterMeter,
-      type: 1,
+      scale: 0.7,
       img: KamstrupBTUMeter,
       information: [
         [
@@ -141,6 +109,57 @@ export const HexaGrid = [
           Imagine, that the meter’s log can be read in order for abnormal consumption patterns to be investigated – without having to disturb the customer unnecessarily`,
         ],
       ],
+      header: "Kamstrup BTU Meter",
+      sub_header: "Heat metering with ULTRAFLOW",
+    },
+  ],
+  [
+    {
+      text: "Sensors",
+      icon: Sensors,
+      type: 1,
+      scale: 0.5,
+      img: SensorsImage,
+      information: [
+        [
+          `5 Years' warranty for the Produal products from ISO 9001 DNV.GL certified Manufacturing .
+          Produal is from Finland. CE Certified.`,
+        ],
+        [
+          `We aim to be the one-stop-shop partner for measurement and control for all our customers operating in the evolving business of building automation.`,
+        ],
+        [
+          `Our wide product offering includes over 1000 products for controlling, measuring, actuating and commissioning, completed with system components.`,
+        ],
+        [
+          `Our design principles ensure a selection of accurate, multifunctional and easy-to-install products, and our quality system is ISO certified.`,
+        ],
+      ],
+      header: "Produal Sensors",
+      sub_header: "Efficient solutions for high quality OEM products.",
+    },
+    {
+      text: "Building Management System",
+      icon: "",
+      type: 0,
+    },
+    {
+      text: "Water Meter",
+      icon: WaterMeter,
+      type: 1,
+      img: WaterMeterBTU,
+      scale: 0.5,
+      information: [
+        [
+          `MULTICAL® 21 / flowIQ® 210x is the state-of-art and future proof smart water meter that employs ultrasonic technology which kamstrup has expertise over 21 years.`,
+        ],
+        [
+          `Intelligent alarms from the ultrasonic water meter lets you detect leaks and bursts or other irregularities such as tampering attempts or reverse flows quickly and effectively. This limits water loss as well as any collateral damage.`,
+        ],
+        [
+          `As an ultasonic water meter, MULTICAL® 21 / flowIQ® 210x has a low start flow down to 2 l/hour which ensures that even very low flows are measured.`,
+        ],
+      ],
       header: "BTU water meters.",
       sub_header: "Heat metering with ULTRAFLOW.",
     },
@@ -150,6 +169,7 @@ export const HexaGrid = [
       text: "VAV",
       icon: VAV,
       type: 1,
+      scale: 0.7,
       information: [
         [
           `The VAV unit controllers from Neptronic are packed with the most sophisticated features bringing the best in class technology for building management systems.`,
@@ -174,6 +194,7 @@ export const HexaGrid = [
       text: "HVAC",
       icon: HVACControl,
       type: 1,
+      scale: 0.7,
       information: [
         [
           `Yaskawa is the largest global variable frequency drives manufacturer with over 30 years of Building Automation System (BAS) and HVAC experience. Our variable frequency drives are designed for HVAC applications, which include air handlers, cooling towers, and pumps, by combining reduced size and cost with advances in performance and quality.`,

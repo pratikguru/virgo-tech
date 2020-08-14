@@ -157,6 +157,7 @@ export default class HomePage extends Component {
       selectedHeader: "",
       selectedImage: "",
       selectedSubheader: "",
+      scale: 0.7,
     };
   }
 
@@ -170,6 +171,7 @@ export default class HomePage extends Component {
       selectedHeader: HexaGrid[index][index2].header,
       selectedImage: HexaGrid[index][index2].img,
       selectedSubheader: HexaGrid[index][index2].sub_header,
+      scale: HexaGrid[index][index2].scale,
     });
   };
 
@@ -248,6 +250,7 @@ export default class HomePage extends Component {
           information={this.state.selectedInformation}
           subHeader={this.state.selectedSubheader}
           header={this.state.selectedHeader}
+          scale={this.state.scale}
         ></CustomModal>
       </ParentContainer>
     );
