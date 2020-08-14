@@ -309,15 +309,18 @@ const DropDownContent = [
   },
   {
     header: "Battery Life",
-    content: "",
+    content:
+      "MULTICAL® 21 / flowIQ® 210x is fitted with a lithium battery. Depending on use and setup, the lifetime is up to 16 years.",
   },
   {
     header: "Communication & Remote Reading",
-    content: "",
+    content:
+      "MULTICAL® 21 / flowIQ® 210x comes with integrated communication that allows for safe and easy remote reading via either drive-by or a fixed network.",
   },
   {
     header: "Construction & Packaging",
-    content: "",
+    content:
+      "The smaller water meters are made from eco-friendly and durable composite while the larger meters are made with brass or metal. Meter houses are vacuum sealed and fully watertight. ",
   },
 ];
 
