@@ -9,6 +9,8 @@ import ProdualSensors from "./Assets/HVACProducts/produal.png";
 /* Child products for Kamstrup BTU meters. */
 import Multical302 from "./Assets/HVACProducts/multical-302.png";
 import Multical403 from "./Assets/HVACProducts/multical-403.png";
+import Multical603 from "./Assets/HVACProducts/mulitcal-603.png";
+import Multical803 from "./Assets/HVACProducts/multical-803.png";
 import VelocitySensors from "./Assets/HVACProducts/velocity-sensor-produal.png";
 
 export const HVACProductImageList = [
@@ -23,15 +25,85 @@ export const HVACProductImageList = [
         id: "MULTICAL®302 ",
         img: Multical302,
         sub_header: "The Ultra-compact meter",
-        information:
-          "As with all MULTICAL® energy meters, this heat meter employs the highly accurate ultrasonic technology. Every conceivable drop is measured due to the dynamic range 1600:1 from saturation flow to start flow (250:1 from qp:qi) reducing loss of distributed energy.",
+        information: [
+          [`Small and compact design`],
+          [
+            `Integrated remote reading options are wired
+        M-Bus or wireless M-Bus`,
+          ],
+          [`On-site configuration.`],
+          [`Flow sensor range DN15…20`],
+          [`Flow sensor cable length 1.2 m`],
+          [
+            `Permanent condensation accepted for flow
+        sensor and temperature sensor pair (IP68 rating)`,
+          ],
+          [
+            `One temperature sensor is always mounted in
+        the flow sensor`,
+          ],
+        ],
       },
       {
         id: "MULTICAL®403",
         img: Multical403,
         sub_header: "The compact and flexible meter",
-        information:
-          "With the new built-in 2-way communication in MULTICAL® 403 and a READy remote meter reading system, it is now possible to perform remote configuration of the ultrasonic heat meters and reading of the log without direct access to the installation. Discover the possibilities within flexible and easy remote configuration of heat meters – for less hassle for both the utility and the consumer.",
+        information: [
+          [
+            `Remote reading with communication module via
+        wired/wireless* M-Bus, Modbus, BACnet etc`,
+          ],
+          [`On-site configuration available`],
+          [`Flow sensor range DN15…50`],
+          [`Flow sensor cable length 1.5 m`],
+          [`Permanent condensation accepted (IP68 rating)`],
+          [`Can be insulated`],
+          [
+            `Possibility for direct temperature sensor mounting
+        in flow sensor`,
+          ],
+        ],
+      },
+      {
+        id: "MULTICAL®603",
+        img: Multical603,
+        sub_header: "The compact and flexible meter",
+        information: [
+          [`Auto Detect`],
+          [
+            `Remote reading with communication module
+        via wired/wireless* M-Bus, Modbus, BACnet etc`,
+          ],
+          [`Direct temperature sensor mounting up to DN40`],
+          [`Can be insulated`],
+          [
+            `Cable lengths 2.5…10 m (can be extended to 100
+        m)`,
+          ],
+          [`Permanent condensation accepted`],
+          [`On-site configuration`],
+          [`IP65 rating`],
+        ],
+      },
+      {
+        id: "MULTICAL®803",
+        img: Multical803,
+        sub_header: "The compact and flexible meter",
+        information: [
+          [`Auto Detect`],
+          [
+            `Remote reading with communication module via
+        wired/wireless* M-Bus, Modbus, BACnet etc.`,
+          ],
+          [`4 slots for communication modules`],
+
+          [`Direct temperature sensor mounting up to DN40`],
+          [`Can be insulated`],
+          [`Cable lengths 2.5…10 m (can be extended to 100 m)`],
+          [`Permanent condensation accepted*`],
+          [`On-site configuration`],
+          [`IP65 rating`],
+        ],
       },
     ],
   },
@@ -79,8 +151,12 @@ export const HVACProductImageList = [
         id: "Air Velocity Sensors",
         img: VelocitySensors,
         sub_header: "Active Air Velocity Sensors.",
-        information:
-          "IVL air velocity transmitters are designed for measuring air velocity and temperature inside the duct",
+
+        information: [
+          [
+            `IVL air velocity transmitters are designed for measuring air velocity and temperature inside the duct`,
+          ],
+        ],
       },
     ],
   },

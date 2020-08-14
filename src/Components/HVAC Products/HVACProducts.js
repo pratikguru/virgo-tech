@@ -61,9 +61,10 @@ const ContainerBody = styled.div`
   padding: 15px;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   font-size: 13px;
   font-weight: 450;
+  flex-direction: column;
 `;
 
 const ProductPods = styled(motion.div)`
@@ -281,7 +282,12 @@ export default class ProductListing extends Component {
                               src={value2.img}
                               alt={index2}
                             />
-                            <ContainerBody>{value2.information}</ContainerBody>
+                            <ContainerBody>
+                              {value2.information &&
+                                value2.information.map((value3, index3) => (
+                                  <li>{value3}</li>
+                                ))}
+                            </ContainerBody>
                             <ProductPodFooter>
                               <CustomButton whileTap={{ scale: 0.88 }}>
                                 {" "}
