@@ -142,6 +142,21 @@ export const HexaGrid = [
       text: "Building Management System",
       icon: "",
       type: 0,
+      scale: 0.8,
+      img: SchneiderBMS,
+      information: [
+        [
+          `SmartStruxure™ solution enables you to monitor, measure, and optimize your building’s performance throughout its life cycle — saving you money. You can’t control what you don’t measure. SmartStruxure solution, powered by StruxureWare™ Building Operation software, facilitates the exchange and analysis of data from energy, lighting, fire safety, and HVAC`,
+        ],
+        [
+          `At the core of a EcoStruxure Building is a SmartStruxure server device, such as AS-B. AS-B performs key functionality, such as control logic, trend logging, and alarm supervision, provides builtin I/O, and supports communication and connectivity to the field buses.`,
+        ],
+        [
+          `The distributed intelligence of the EcoStruxure Building ensures fault tolerance in the system and provides a fully featured user interface through WorkStation and WebStation.`,
+        ],
+      ],
+      header: "Building Management System",
+      sub_header: "Optimum solutions for Building Management Systems.",
     },
     {
       text: "Water Meter",

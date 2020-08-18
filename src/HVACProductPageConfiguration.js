@@ -36,8 +36,9 @@ export const HVACProductImageList = [
           [`Flow sensor cable length 1.2 m`],
           [
             `Permanent condensation accepted for flow
-        sensor and temperature sensor pair (IP68 rating)`,
+        sensor and temperature sensor pair`,
           ],
+          [`IP68 rating.`],
           [
             `One temperature sensor is always mounted in
         the flow sensor`,
@@ -57,6 +58,7 @@ export const HVACProductImageList = [
           [`Flow sensor range DN15…50`],
           [`Flow sensor cable length 1.5 m`],
           [`Permanent condensation accepted (IP68 rating)`],
+          [`IP68 rating.`],
           [`Can be insulated`],
           [
             `Possibility for direct temperature sensor mounting

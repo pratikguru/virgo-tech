@@ -86,7 +86,7 @@ const SplashScreenFooter = styled.div`
   padding: 5px;
   justify-self: flex-end;
   flex-direction: column;
-  margin-top: auto;
+  margin-top: 30px;
 `;
 
 const CustomButton = styled(motion.div)`
@@ -119,7 +119,7 @@ const SplashScreenSubheader = styled.div`
   font-size: 14px;
   font-weight: 400;
   color: #878787;
-  margin-top: -10px;
+  margin-top: 5px;
 
   ${media.phone`
     margin-left: 10px;
@@ -127,7 +127,7 @@ const SplashScreenSubheader = styled.div`
 `;
 
 const SplashScreenBody = styled.div`
-  width: 80%:
+  width: 80%;
   height: auto;
   overflow-x: auto;
   padding: 3px;
@@ -186,19 +186,20 @@ export default class CustomModal extends Component {
 
           <SplashScreenBody>
             {this.props.img && (
-              <img
-                src={this.props.img}
-                alt={"some image"}
-                style={{
-                  transform: `scale(${this.props.scale})`,
-                }}
-              />
+              <div>
+                <img
+                  src={this.props.img}
+                  alt={"some image"}
+                  style={{
+                    transform: `scale(${this.props.scale})`,
+                  }}
+                />
+              </div>
             )}
             <div
               style={{
                 display: "flex",
                 flexDirection: "column",
-                marginTop: "-30px",
                 maxHeight: "300px",
                 overflowY: "auto",
               }}

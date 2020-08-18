@@ -208,7 +208,11 @@ export default class HomePage extends Component {
                         <img src={value2.icon} alt="some image" />
                       </Hexagon>
                     ) : (
-                      <Hexagon key={index2} className="hexagon-center">
+                      <Hexagon
+                        key={index2}
+                        onClick={() => this.handlePopup(index, index2)}
+                        className="hexagon-center"
+                      >
                         {value2.text}
                       </Hexagon>
                     )

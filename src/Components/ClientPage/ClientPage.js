@@ -143,7 +143,7 @@ export default class ClientPage extends Component {
                 <img
                   src={value.logo}
                   alt={index.logo}
-                  style={{ width: "150px", height: "90px" }}
+                  style={{ transform: `scale(${value.scale})` }}
                 />
               </ClientPods>
             ))
