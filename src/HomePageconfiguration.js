@@ -206,7 +206,7 @@ export const HexaGrid = [
       sub_header: "Unit controller with TFL Thermostat.",
     },
     {
-      text: "HVAC",
+      text: "LHVFD",
       icon: HVACControl,
       type: 1,
       scale: 0.7,

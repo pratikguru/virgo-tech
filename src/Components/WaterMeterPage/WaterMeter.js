@@ -102,7 +102,7 @@ const CarouselContainer = styled.div`
   display: flex;
   width: auto;
   height: auto;
-  padding: 20px;
+
   flex-direction: column;
   justify-content: center;
 `;

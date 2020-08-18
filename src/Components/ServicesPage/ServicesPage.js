@@ -12,6 +12,7 @@ const ParentContainer = styled(motion.div)`
   align-items: center;
   justify-content: center;
   width: 100%;
+  overflow-y: hidden;
 `;
 
 const Container = styled(motion.div)`
@@ -80,7 +81,7 @@ const container = {
 };
 
 const item = {
-  hidden: { y: 15, x: 0, opacity: 0 },
+  hidden: { y: 15, opacity: 0 },
   visible: {
     y: 0,
 

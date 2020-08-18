@@ -13,6 +13,7 @@ import ProductListing from "../HVAC Products/HVACProducts.js";
 import IndustrialProducts from "../Industrial Products/IndustrialProducts.js";
 import WaterMeterPage from "../WaterMeterPage/WaterMeter.js";
 import Services from "../ServicesPage/ServicesPage.js";
+import AboutUs from "../AboutUs/AboutUs.js";
 
 const MainContainer = styled.div`
   display: flex;
@@ -132,19 +133,19 @@ const NavigationTrayOpenButtonContent = styled.div`
 const NavigationLinks = [
   "Home",
   "Clients",
-  "Industrial Products",
   "HVAC Products",
   "Water Meter",
   "Services",
+  "About Us",
 ];
 
 const CurrentPage = {
   Home: <HomePage />,
-  "Industrial Products": <IndustrialProducts />,
   Clients: <ClientPage />,
   "HVAC Products": <ProductListing />,
   "Water Meter": <WaterMeterPage />,
   Services: <Services />,
+  "About Us": <AboutUs />,
 };
 
 export default class MainPage extends Component {
