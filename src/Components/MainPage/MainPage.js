@@ -31,7 +31,7 @@ const TopHeader = styled.div`
   margin: 5px;
   flex-wrap: wrap;
   justify-content: space-between;
-
+  align-items: center;
   ${media.phone`
     flex-direction: column;
     justify-content: center;
@@ -52,7 +52,7 @@ const LogoContainer = styled.div`
 const NavigationButtonContainer = styled(motion.div)`
   display: flex;
   width: auto;
-  height: auto;
+  height: 50px;
   justify-content: center;
   align-items: center;
   padding: 5px;
@@ -64,12 +64,13 @@ const NavigationButtonContainer = styled(motion.div)`
     flex-direction: column;
     width: -webkit-fill-available;
     padding: 10px;
+    height: auto;
   `}
 `;
 
 const NavigationButtons = styled(motion.div)`
   width: auto;
-  min-width: 180px;
+  width: 120px;
   height: 30px;
   display: flex;
   background-color: white;
@@ -78,10 +79,11 @@ const NavigationButtons = styled(motion.div)`
   margin: 5px;
   justify-content: center;
   align-items: center;
-  padding: 2px;
-
+  padding: 7px;
+  font-size : 14px
   user-select: none;
   cursor: pointer;
+
 
   ${media.phone`
     height: 50px;

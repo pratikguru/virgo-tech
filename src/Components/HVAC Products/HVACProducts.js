@@ -71,7 +71,7 @@ const ContainerBody = styled.div`
 `;
 
 const ProductPods = styled(motion.div)`
-  width: 450px;
+  width: 500px;
   height: 600px;
 
   border-radius: 10px;
@@ -105,7 +105,12 @@ const ProductPodHeader = styled.div`
   padding: 10px;
   height: 45px;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
+
+  ${media.phone`
+    flex-direction: column;
+  
+  `};
 `;
 
 const ProductPodSubHeader = styled.div`
@@ -217,6 +222,8 @@ export default class ProductListing extends Component {
       scale: value.scale,
       know_more_link: value?.know_more_link,
       download_content: value?.download_content,
+      sub_header_rhs: value.sub_header_rhs,
+      sub_header_rhs_text: value.sub_header_rhs_text,
     }));
     this.setState({
       filteredProducts: compiledList,
@@ -308,8 +315,9 @@ export default class ProductListing extends Component {
                             </ContainerBody>
                             <ProductPodFooter>
                               <a
-                                href={value.download_content}
-                                download="My_File.pdf"
+                                href={value2.download_content}
+                                download
+                                style={{ textDecoration: "none" }}
                               >
                                 <CustomButton whileTap={{ scale: 0.88 }}>
                                   {" "}
@@ -333,7 +341,34 @@ export default class ProductListing extends Component {
                   )}
 
                   <ProductPods variants={item} key={index}>
-                    <ProductPodHeader>{value.id}</ProductPodHeader>
+                    <ProductPodHeader>
+                      {value.id}{" "}
+                      <motion.div
+                        whileHover={{
+                          fontWeight: [400, 600],
+                        }}
+                        transition={{ duration: 0.2, ease: "linear" }}
+                        style={{
+                          display: "flex",
+                          color: "grey",
+                          fontWeight: 400,
+                          fontSize: "14px",
+                        }}
+                      >
+                        {value.sub_header_rhs_text}
+                        <div>
+                          <img
+                            style={{
+                              height: "20px",
+                              marginLeft: "10px",
+                              borderRadius: "5px",
+                            }}
+                            src={value.sub_header_rhs}
+                            alt="1"
+                          />
+                        </div>
+                      </motion.div>
+                    </ProductPodHeader>
                     <ProductPodSubHeader>
                       {value.sub_header}
                     </ProductPodSubHeader>
@@ -351,7 +386,7 @@ export default class ProductListing extends Component {
                     <ProductPodFooter>
                       <a
                         href={value.download_content}
-                        download="My_File.pdf"
+                        download
                         style={{ textDecoration: "none" }}
                       >
                         <CustomButton whileTap={{ scale: 0.88 }}>

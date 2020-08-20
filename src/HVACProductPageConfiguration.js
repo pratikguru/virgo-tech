@@ -6,6 +6,7 @@ import VFDDrivers from "./Assets/HVACProducts/commander-200_50.png";
 import YaskawaLowHarmonicVFD from "./Assets/HVACProducts/yaskawa-low-harmonic-vfd.png";
 import ProdualSensors from "./Assets/HVACProducts/sensors.png";
 import React from "react";
+
 /* Child products for Kamstrup BTU meters. */
 import Multical302 from "./Assets/HVACProducts/multical-302.png";
 import Multical403 from "./Assets/HVACProducts/multical-403.png";
@@ -18,6 +19,23 @@ import LHVFDU1000 from "./Assets/HVACProducts/U1000-lhvfd.png";
 
 /* PDF's. */
 import CommanderPDF from "./Assets/PDF/commander.pdf";
+import YaskawaLHVFD from "./Assets/PDF/yaskawa-data-sheet.pdf";
+import Multical302PDF from "./Assets/PDF/multical-302.pdf";
+import Multical403PDF from "./Assets/PDF/multical-403.pdf";
+import Multical603PDF from "./Assets/PDF/multical-603.pdf";
+import Multical803PDF from "./Assets/PDF/multical-803.pdf";
+import EFCNeptronic from "./Assets/PDF/neptronic-efc.pdf";
+import NeptronicVAVPDF from "./Assets/PDF/neptronic-vav.pdf";
+import ProdualSensorsPDF from "./Assets/PDF/produal-sensors.pdf";
+import SchneiderBMSPDF from "./Assets/PDF/schneider-bms.pdf";
+
+/* Flags */
+
+import Denmark from "./Assets/flags/denmark.jpg";
+import Canada from "./Assets/flags/canada.jpg";
+import Europe from "./Assets/flags/europe.svg";
+import Finland from "./Assets/flags/finland.jpg";
+import Japan from "./Assets/flags/japan.webp";
 
 export const HVACProductImageList = [
   {
@@ -25,31 +43,33 @@ export const HVACProductImageList = [
     img: KamstrupBTUMeter,
     scale: 0.7,
     sub_header: "Heat metering with ULTRAFLOW® 54",
+    sub_header_rhs: Denmark,
+    sub_header_rhs_text: "Made In Denmark",
     information: [
       [
-        <div>
+        <li>
           Your heat meter is the absolute corner stone in your network. It
           provides you with data needed for billing and optimisation. For that
           purpose, it needs to be accurate and stay accurate for many years.
-        </div>,
+        </li>,
       ],
       [
-        <div style={{ marginTop: "10px" }}>
+        <li style={{ marginTop: "10px" }}>
           During this time, regulations and legislation may change many times
           and your solution needs to change accordingly. This requires a high
           level of flexibility from your meters in terms of installation,
           reconfiguration and updates.
-        </div>,
+        </li>,
       ],
       [
-        <div style={{ marginTop: "10px" }}>
+        <li style={{ marginTop: "10px" }}>
           {" "}
           The value of the data from the intelligent heat meters goes beyond
           correct billing. Put into use, this data can be utilised to optimise
           the performance of your network. To reach the potential of this
           optimisation, you must be able to trust your infrastructure to deliver
           accurate and stable sets of data. Today, tomorrow and in the future.
-        </div>,
+        </li>,
       ],
     ],
     child_products: [
@@ -59,6 +79,7 @@ export const HVACProductImageList = [
         sub_header: "The Ultra-compact meter",
         know_more_link:
           "https://www.kamstrup.com/en-en/heat-solutions/heat-meters/multical-302",
+        download_content: Multical302PDF,
         information: [
           [`Small and compact design`],
           [
@@ -85,6 +106,7 @@ export const HVACProductImageList = [
         sub_header: "The compact and flexible meter",
         know_more_link:
           "https://www.kamstrup.com/en-en/heat-solutions/heat-meters/multical-403",
+        download_content: Multical403PDF,
         information: [
           [
             `Remote reading with communication module via
@@ -108,6 +130,7 @@ export const HVACProductImageList = [
         know_more_link:
           "https://www.kamstrup.com/en-en/heat-solutions/heat-meters/multical-603",
         sub_header: "The compact and flexible meter",
+        download_content: Multical603PDF,
         information: [
           [`Auto Detect`],
           [
@@ -131,6 +154,7 @@ export const HVACProductImageList = [
         know_more_link:
           "https://www.kamstrup.com/en-en/heat-solutions/heat-meters/multical-803",
         sub_header: "The compact and flexible meter",
+        download_content: Multical803PDF,
         information: [
           [`Auto Detect`],
           [
@@ -155,22 +179,42 @@ export const HVACProductImageList = [
     scale: 0.7,
     sub_header: "Unit Controller with TFL Thermostat",
     know_more_link: "https://www.neptronic.com/Controls/Fancoils.aspx",
+    download_content: EFCNeptronic,
+    sub_header_rhs: Canada,
+    sub_header_rhs_text: "Made In Canada",
     information: [
-      [`Controller mounted in fan coil unit.`],
-      [`Connect controller to room thermostat via 3 wires.`],
-      [`BACnet MS/TP communication.`],
-      [`24, 120 or 240Vac.`],
-      [`Up to 10 inputs and 12 outputs.`],
+      [<li>Controller mounted in fan coil unit.</li>],
+      [<li>Connect controller to room thermostat via 3 wires.</li>],
+      [<li>BACnet MS/TP communication.</li>],
+      [<li>24, 120 or 240Vac.</li>],
+      [<li>Up to 10 inputs and 12 outputs.</li>],
     ],
   },
   {
     id: "Schneider BMS",
     img: SchneiderBMS,
     scale: 0.7,
+    download_content: SchneiderBMSPDF,
     sub_header: "EcoStruxure™ series",
+    sub_header_rhs: Europe,
+    sub_header_rhs_text: "Made In Europe",
     information: [
       [
-        "The diverse flagship range of Building Management System products is what sets Schneider Electric India apart as one of the leading high-technology and innovation-driven brands in the country.",
+        <li>
+          EcoStruxure™ Building Operation software is the edge control heart of
+          the EcoStruxure Building system to monitor, manage and control
+          building systems. With an open integration platform, it securely
+          facilitates the exchange of data from both Schneider Electric and
+          third-party energy, lighting, HVAC, fire safety, security and
+          workplace management systems to create future-ready smart buildings.
+        </li>,
+      ],
+      [
+        <li style={{ marginTop: "10px" }}>
+          The diverse flagship range of Building Management System products is
+          what sets Schneider Electric India apart as one of the leading
+          high-technology and innovation-driven brands in the country.
+        </li>,
       ],
     ],
 
@@ -179,6 +223,7 @@ export const HVACProductImageList = [
         id: "EcoStruxure™ Building Operation",
         know_more_link:
           "https://www.se.com/in/en/product-range/62111-ecostruxure%E2%84%A2-building-operation/?parent-subcategory-id=1210&filter=business-2-building-automation-and-control",
+        download_content: SchneiderBMSPDF,
         img: SchniederOperation,
         sub_header: "A single solution for your complex needs.",
         information: [
@@ -198,6 +243,8 @@ export const HVACProductImageList = [
     scale: 0.8,
     sub_header: "Nidec (Formarly Emerson) drives",
     download_content: CommanderPDF,
+    sub_header_rhs: Japan,
+    sub_header_rhs_text: "Made In Japan",
     information: [
       [
         <div style={{ fontSize: "12px", color: "grey" }}>
@@ -205,7 +252,7 @@ export const HVACProductImageList = [
         </div>,
       ],
       [
-        <div>
+        <li style={{ marginTop: "10px" }}>
           Commander variable speed drives have established the standard of
           excellence in motor control since 1983 when Control Techniques
           launched the first world commercial vector drive. Since then,
@@ -214,7 +261,7 @@ export const HVACProductImageList = [
           The new Commander C series has been designed to be a simple and
           compact AC motor speed controller that meets advanced requirements in
           a wide range of applications and provides optimum user experience.
-        </div>,
+        </li>,
       ],
     ],
     child_products: [
@@ -281,6 +328,9 @@ export const HVACProductImageList = [
     img: YaskawaLowHarmonicVFD,
     scale: 0.7,
     sub_header: "U1000 Series Fan & Pump drives",
+    download_content: YaskawaLHVFD,
+    sub_header_rhs: Japan,
+    sub_header_rhs_text: "Made In Japan",
     information: [
       [
         <div style={{ fontSize: "14px", fontWeight: "500" }}>
@@ -450,12 +500,15 @@ export const HVACProductImageList = [
     scale: 0.7,
     sub_header: "Unit Controller with TFL Thermostat",
     know_more_link: "https://www.neptronic.com/Controls/Vav.aspx",
+    download_content: NeptronicVAVPDF,
+    sub_header_rhs: Canada,
+    sub_header_rhs_text: "Made In Canada",
     information: [
-      ["Built-in actuator and optional air pressure sensor."],
-      [`Mounts on jackshaft or damper.`],
-      [`Connects to room thermostat via 3 wires`],
-      [`BACnet MS/TP communication.`],
-      [`Up to 4 inputs and 6 outputs (I/O configuration).`],
+      [<li>Built-in actuator and optional air pressure sensor.</li>],
+      [<li>Mounts on jackshaft or damper.</li>],
+      [<li>Connects to room thermostat via 3 wires</li>],
+      [<li>BACnet MS/TP communication.</li>],
+      [<li>Up to 4 inputs and 6 outputs (I/O configuration).</li>],
     ],
   },
   {
@@ -464,6 +517,9 @@ export const HVACProductImageList = [
     scale: 0.8,
     sub_header: "Produal sensors for environment monitoring.",
     know_more_link: "https://www.produal.com/",
+    download_content: ProdualSensorsPDF,
+    sub_header_rhs: Finland,
+    sub_header_rhs_text: "Made In Finland",
     information: [
       [
         <li>

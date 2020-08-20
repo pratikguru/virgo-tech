@@ -175,12 +175,46 @@ export default class CustomModal extends Component {
         >
           <SplashScreenHeader>
             <Title>{this.props.header}</Title>
-            <CloseButton
-              whileTap={{ scale: 0.88 }}
-              onClick={this.props.onClose}
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
             >
-              X
-            </CloseButton>
+              <motion.div
+                whileHover={{
+                  fontWeight: [400, 600],
+                }}
+                transition={{ duration: 0.2, ease: "linear" }}
+                style={{
+                  display: "flex",
+                  color: "grey",
+                  fontWeight: 400,
+                  fontSize: "14px",
+                  marginRight: "10px",
+                }}
+              >
+                {this.props.sub_header_rhs_text}
+                <div>
+                  <img
+                    style={{
+                      height: "20px",
+                      marginLeft: "10px",
+                      borderRadius: "5px",
+                    }}
+                    src={this.props.sub_header_rhs}
+                    alt="1"
+                  />
+                </div>
+              </motion.div>
+              <CloseButton
+                whileTap={{ scale: 0.88 }}
+                onClick={this.props.onClose}
+              >
+                X
+              </CloseButton>
+            </div>
           </SplashScreenHeader>
           <SplashScreenSubheader>{this.props.subHeader}</SplashScreenSubheader>
 
@@ -211,13 +245,16 @@ export default class CustomModal extends Component {
             </div>
           </SplashScreenBody>
           <SplashScreenFooter>
-            <CustomButton
-              whileTap={{ scale: 0.89 }}
-              transition={{ duration: 0.2 }}
+            <a
+              href={this.props.download_content}
+              download
+              style={{ textDecoration: "none" }}
             >
-              <div>READ MORE</div>
-              <img src={ReadMore} alt="some image" />
-            </CustomButton>
+              <CustomButton whileTap={{ scale: 0.88 }}>
+                {" "}
+                DOWNLOAD BROCHURE{" "}
+              </CustomButton>
+            </a>
           </SplashScreenFooter>
         </SplashScreen>
       </Wrapper>

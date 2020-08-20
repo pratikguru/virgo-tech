@@ -159,6 +159,7 @@ export default class HomePage extends Component {
       selectedImage: "",
       selectedSubheader: "",
       scale: 0.7,
+      download_content: "",
     };
   }
 
@@ -170,6 +171,9 @@ export default class HomePage extends Component {
       selectedImage: HexaGrid[index][index2].img,
       selectedSubheader: HexaGrid[index][index2].sub_header,
       scale: HexaGrid[index][index2].scale,
+      download_content: HexaGrid[index][index2].download_content,
+      sub_header_rhs: HexaGrid[index][index2].sub_header_rhs,
+      sub_header_rhs_text: HexaGrid[index][index2].sub_header_rhs_text,
     });
   };
 
@@ -259,6 +263,9 @@ export default class HomePage extends Component {
           subHeader={this.state.selectedSubheader}
           header={this.state.selectedHeader}
           scale={this.state.scale}
+          download_content={this.state.download_content}
+          sub_header_rhs={this.state.sub_header_rhs}
+          sub_header_rhs_text={this.state.sub_header_rhs_text}
         ></CustomModal>
       </ParentContainer>
     );

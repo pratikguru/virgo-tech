@@ -12,7 +12,7 @@ import YouTube from "react-youtube";
 
 import WaterMeter from "../../Assets/Water Meter/meter.svg";
 import RainbowResidency from "../../Assets/Water Meter/rainbow-residency.png";
-
+import CanadaFlag from "../../Assets/flags/canada.jpg";
 const ParentContainer = styled(motion.div)`
   display: flex;
   flex-direction: column;
@@ -49,12 +49,18 @@ const HeaderItem = styled.div`
   height: auto;
   width: 90%;
   margin: 2px;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
 
   font-size: 32px;
   font-weight: 450;
   font-family: Montserrat;
+
+  ${media.phone`
+  
+    flex-direction: column;
+  
+  `};
 `;
 
 const SubHeaderItem = styled(HeaderItem)`
@@ -583,7 +589,35 @@ export default class WaterMeterPage extends Component {
     return (
       <ParentContainer>
         <Container>
-          <HeaderItem> MULTICAL® 21 / flowIQ® 210x </HeaderItem>
+          <HeaderItem>
+            {" "}
+            MULTICAL® 21 / flowIQ® 210x{" "}
+            <motion.div
+              whileHover={{
+                fontWeight: [400, 600],
+              }}
+              transition={{ duration: 0.2, ease: "linear" }}
+              style={{
+                display: "flex",
+                color: "grey",
+                fontWeight: 400,
+                fontSize: "14px",
+              }}
+            >
+              Made in Canada
+              <div>
+                <img
+                  style={{
+                    height: "20px",
+                    marginLeft: "10px",
+                    borderRadius: "5px",
+                  }}
+                  src={CanadaFlag}
+                  alt="1"
+                />
+              </div>
+            </motion.div>{" "}
+          </HeaderItem>
           <SubHeaderItem>
             Ultrasonic water meter optimised for residential use{" "}
           </SubHeaderItem>

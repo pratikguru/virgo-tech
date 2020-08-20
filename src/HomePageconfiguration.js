@@ -40,6 +40,27 @@ import SensorsImage from "./Assets/HVACProducts/sensors.jpg";
 /* END OF EXPORTS OF PARTNER IMAGES AND LOGOS..
 /*--------------------------------------------------------------*/
 
+/* PDF's. */
+import CommanderPDF from "./Assets/PDF/commander.pdf";
+import YaskawaLHVFD from "./Assets/PDF/yaskawa-data-sheet.pdf";
+import Multical302PDF from "./Assets/PDF/multical-302.pdf";
+import Multical403PDF from "./Assets/PDF/multical-403.pdf";
+import Multical603PDF from "./Assets/PDF/multical-603.pdf";
+import Multical803PDF from "./Assets/PDF/multical-803.pdf";
+import EFCNeptronic from "./Assets/PDF/neptronic-efc.pdf";
+import NeptronicVAVPDF from "./Assets/PDF/neptronic-vav.pdf";
+import ProdualSensorsPDF from "./Assets/PDF/produal-sensors.pdf";
+import MulticalSeries from "./Assets/PDF/multical-series.pdf";
+import SchneiderBMSPDF from "./Assets/PDF/schneider-bms.pdf";
+
+/* Flags */
+
+import Denmark from "./Assets/flags/denmark.jpg";
+import Canada from "./Assets/flags/canada.jpg";
+import Europe from "./Assets/flags/europe.svg";
+import Finland from "./Assets/flags/finland.jpg";
+import Japan from "./Assets/flags/japan.webp";
+
 /*--------------------------------------------------------------*/
 /* PARTNER IMAGE LIST TO BE EXPORTED.
 /*--------------------------------------------------------------*/
@@ -78,10 +99,13 @@ export const HexaGrid = [
   [
     {
       text: "VFD",
+      sub_header_rhs_text: "Made in Japan",
+      sub_header_rhs: Japan,
       icon: vfd,
       img: VFDDrivers,
       type: 1,
       scale: 0.9,
+      download_content: CommanderPDF,
       information: [
         [
           `Control Techniques Unidrive C200 variable frequency AC drive (VFD) minimizes downtime with an optional plain-text, multi-language backlit LCD keypad enabling rapid setup and clear diagnostic help.
@@ -103,9 +127,12 @@ export const HexaGrid = [
     {
       text: "BTU Meter",
       icon: BTUMeter,
+      sub_header_rhs_text: "Made in Denmark",
+      sub_header_rhs: Denmark,
       type: 1,
       scale: 0.7,
       img: KamstrupBTUMeter,
+      download_content: MulticalSeries,
       information: [
         [
           "Kamstrup’s heat meters are based on state of the art heat technology.The advanced calculator, MULTICAL ®602, is used together with the flow sensor, ULTRAFLOW® 54, as well as two temperature sensors for calculation of energy and measurement of flow, power and temperature - with the best measuring accuracy on the market",
@@ -138,6 +165,9 @@ export const HexaGrid = [
       type: 1,
       scale: 0.5,
       img: SensorsImage,
+      sub_header_rhs_text: "Made in Finland",
+      sub_header_rhs: Finland,
+      download_content: ProdualSensorsPDF,
       information: [
         [
           `5 Years' warranty for the Produal products from ISO 9001 DNV.GL certified Manufacturing .
@@ -162,6 +192,9 @@ export const HexaGrid = [
       type: 0,
       scale: 0.8,
       img: SchneiderBMS,
+      sub_header_rhs_text: "Made in Europe",
+      sub_header_rhs: Europe,
+      download_content: SchneiderBMSPDF,
       information: [
         [
           `SmartStruxure™ solution enables you to monitor, measure, and optimize your building’s performance throughout its life cycle — saving you money. You can’t control what you don’t measure. SmartStruxure solution, powered by StruxureWare™ Building Operation software, facilitates the exchange and analysis of data from energy, lighting, fire safety, and HVAC`,
@@ -182,6 +215,9 @@ export const HexaGrid = [
       type: 1,
       img: WaterMeterBTU,
       scale: 0.5,
+
+      sub_header_rhs_text: "Made in Denmark",
+      sub_header_rhs: Denmark,
       information: [
         [
           `MULTICAL® 21 / flowIQ® 210x is the state-of-art and future proof smart water meter that employs ultrasonic technology which kamstrup has expertise over 21 years.`,
@@ -203,6 +239,8 @@ export const HexaGrid = [
       icon: VAV,
       type: 1,
       scale: 0.7,
+      sub_header_rhs_text: "Made in Canada",
+      sub_header_rhs: Canada,
       information: [
         [
           `The VAV unit controllers from Neptronic are packed with the most sophisticated features bringing the best in class technology for building management systems.`,
@@ -228,6 +266,8 @@ export const HexaGrid = [
       icon: HVACControl,
       type: 1,
       scale: 0.7,
+      sub_header_rhs_text: "Made in Japan",
+      sub_header_rhs: Japan,
       information: [
         [
           `Yaskawa is the largest global variable frequency drives manufacturer with over 30 years of Building Automation System (BAS) and HVAC experience. Our variable frequency drives are designed for HVAC applications, which include air handlers, cooling towers, and pumps, by combining reduced size and cost with advances in performance and quality.`,

@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 
 import { media, mediaType } from "../../Utils/media.js";
+import Boss from "../../Assets/boss/boss.jpg";
 
 const ParentContainer = styled(motion.div)`
   display: flex;
@@ -53,6 +54,11 @@ const ContainerBody = styled(motion.div)`
   padding: 5px;
   justify-content: center;
   align-items: center;
+
+  ${media.phone`
+  
+    flex-direction: column;
+  `};
 `;
 
 export default class AboutUs extends Component {
@@ -71,15 +77,48 @@ export default class AboutUs extends Component {
           <ContainerHeader>About Us</ContainerHeader>
 
           <ContainerBody>
-            Virgo Technologies is a decade old Premier Solutions Provider for
-            BMS products from Schneider Electric, Neptronic VAVs, Kamstrup BTU
-            meters, FUJI VFD, & Produal Finland for Field Devices. We partner
-            with M/S. Schneider Electric for the BMS system to provide Advanced
-            technology Building Automation System. Our solutions range from
-            implementing simple field control system to complete vision systems.
-            We provide proven cost - effective, quality-engineered solutions,
-            working in partnership to meet and exceed the expectations of our
-            valued customers.
+            <img
+              style={{
+                height: "300px",
+                width: "250px",
+                borderRadius: "10px",
+                margin: "10px",
+              }}
+              src={Boss}
+              alt="1"
+            ></img>
+            <div style={{ display: "flex", flexDirection: "column" }}>
+              <div style={{ display: "flex", flexDirection: "row" }}>
+                As the CEO & founder of Virgo Technologies, Mr.Srinivas is
+                responsible for running all facets of the business. Srinivas has
+                a proven executive management track record and close to 3
+                decades of experience driving sales growth and technical
+                expertise in the HVAC industry. Being a successful Entrepreneur,
+                Mr. Srinivas always believes in ...{" "}
+              </div>
+              <i style={{ marginTop: "20px" }}>
+                "You don’t need to be a genius or a visionary, or even a college
+                graduate for that matter, to be successful. You just need a
+                framework and a dream."
+              </i>
+              <div style={{ marginTop: "20px" }}>
+                Mr.Srinivas established Virgo Technologies with a foundation
+                driven by his moto to provide the state-of-art eco-friendly HVAC
+                solutions and provide customer satisfactory after-sales
+                services.{" "}
+              </div>
+            </div>
+          </ContainerBody>
+          <ContainerBody>
+            Virgo Technologies is more than a decade old Premier Solutions
+            Provider for BMS products from Schneider Electric, Neptronic VAVs,
+            Kamstrup BTU meters, FUJI VFD, & Produal Finland for Field Devices.
+            We partner with M/S. Schneider Electric for the BMS system to
+            provide Advanced technology Building Automation System. Our
+            solutions range from implementing simple field control system to
+            complete vision systems. We provide proven cost - effective,
+            quality-engineered solutions, working in partnership to meet and
+            exceed the expectations of our valued customers.
           </ContainerBody>
 
           <ContainerBody>

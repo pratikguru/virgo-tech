@@ -55,6 +55,24 @@ import GuruHVAC from "./Assets/Clients/guru-hvac.png";
 import VayuCon from "./Assets/Clients/vayu-con.jpg";
 import KMD from "./Assets/Clients/kmd.jpg";
 import ups from "./Assets/Clients/ups.jpg";
+import Alliance from "./Assets/Clients/alliance.svg";
+import Apotex from "./Assets/Clients/apotex.webp";
+import Atkins from "./Assets/Clients/atkins.png";
+import Carrier from "./Assets/Clients/carries.png";
+import EMC2 from "./Assets/Clients/emc2.png";
+import GE from "./Assets/Clients/ge.png";
+import Lucent from "./Assets/Clients/lucent-tech.png";
+import Manipal from "./Assets/Clients/manipal.jpeg";
+import Mogul from "./Assets/Clients/mogul.png";
+import Nokia from "./Assets/Clients/nokia.jpg";
+import Nvdia from "./Assets/Clients/nvdia.png";
+import Siemens from "./Assets/Clients/siemens.png";
+import SuperValue from "./Assets/Clients/super-value.jpeg";
+import Target from "./Assets/Clients/target.png";
+import UnitedSpirits from "./Assets/Clients/united-spirits.webp";
+import Verizon from "./Assets/Clients/verizon.png";
+import Wipro from "./Assets/Clients/wipro.jpeg";
+import Yahoo from "./Assets/Clients/yahoo.png";
 
 export const ClientsList = [
   {
@@ -75,6 +93,133 @@ export const ClientsList = [
   {
     id: "Boeing",
     logo: Boeing,
+    scale: 0.7,
+  },
+  {
+    id: "Qualcomm",
+    logo: Qualcomm,
+    scale: 0.9,
+  },
+  {
+    id: "Nvdia",
+    logo: Nvdia,
+    scale: 0.7,
+  },
+  {
+    id: "Bosch",
+    logo: Bosch,
+    scale: 0.4,
+  },
+  {
+    id: "Siemens",
+    logo: Siemens,
+    scale: 0.7,
+  },
+  {
+    id: "Samsung",
+    logo: Samsung,
+    scale: 0.5,
+  },
+  {
+    id: "Nokia",
+    logo: Nokia,
+    scale: 0.4,
+  },
+  {
+    id: "Wells Fargo",
+    logo: WellsFargo,
+    scale: 0.7,
+  },
+  {
+    id: "NTT Data",
+    logo: NTTData,
+    scale: 0.7,
+  },
+  {
+    id: "Wipro",
+    logo: Wipro,
+    scale: 0.7,
+  },
+  {
+    id: "Shell",
+    logo: Shell,
+    scale: 0.7,
+  },
+  {
+    id: "Blue Star",
+    logo: BlueStar,
+    scale: 0.5,
+  },
+  {
+    id: "Alliance",
+    logo: Alliance,
+    scale: 0.6,
+  },
+  {
+    id: "Apotex",
+    logo: Apotex,
+    scale: 0.3,
+  },
+  {
+    id: "Atknis",
+    logo: Atkins,
+    scale: 0.6,
+  },
+  {
+    id: "Carrier",
+    logo: Carrier,
+    scale: 0.6,
+  },
+  {
+    id: "EMC2",
+    logo: EMC2,
+    scale: 0.6,
+  },
+  {
+    id: "GE",
+    logo: GE,
+    scale: 0.6,
+  },
+  {
+    id: "Lucent",
+    logo: Lucent,
+    scale: 0.8,
+  },
+  {
+    id: "Manipal",
+    logo: Manipal,
+    scale: 0.6,
+  },
+  {
+    id: "Mogul",
+    logo: Mogul,
+    scale: 0.7,
+  },
+
+  {
+    id: "Super Value",
+    logo: SuperValue,
+    scale: 0.7,
+  },
+  {
+    id: "Target",
+    logo: Target,
+    scale: 0.7,
+  },
+  {
+    id: "United Spirits",
+    logo: UnitedSpirits,
+    scale: 0.7,
+  },
+  {
+    id: "Verizon",
+    logo: Verizon,
+    scale: 0.7,
+  },
+
+  {
+    id: "Yahoo",
+    logo: Yahoo,
     scale: 0.7,
   },
   {
@@ -103,21 +248,7 @@ export const ClientsList = [
     logo: Utility,
     scale: 0.8,
   },
-  {
-    id: "Samsung",
-    logo: Samsung,
-    scale: 0.5,
-  },
-  {
-    id: "Blue Star",
-    logo: BlueStar,
-    scale: 0.5,
-  },
-  {
-    id: "Qualcomm",
-    logo: Qualcomm,
-    scale: 0.9,
-  },
+
   {
     id: "My Home",
     logo: MyHome,
@@ -193,11 +324,7 @@ export const ClientsList = [
     logo: Aster,
     scale: 0.7,
   },
-  {
-    id: "Bosch",
-    logo: Bosch,
-    scale: 0.4,
-  },
+
   {
     id: "Marriot",
     logo: Marriot,
@@ -255,21 +382,13 @@ export const ClientsList = [
     logo: Misys,
     scale: 0.7,
   },
-  {
-    id: "NTT Data",
-    logo: NTTData,
-    scale: 0.7,
-  },
+
   {
     id: "SAP",
     logo: Sap,
     scale: 0.7,
   },
-  {
-    id: "Shell",
-    logo: Shell,
-    scale: 0.7,
-  },
+
   {
     id: "Star",
     logo: Start,
@@ -290,11 +409,7 @@ export const ClientsList = [
     logo: USTGlobal,
     scale: 0.7,
   },
-  {
-    id: "Wells Fargo",
-    logo: WellsFargo,
-    scale: 0.7,
-  },
+
   {
     id: "Prestige",
     logo: Prestige,
