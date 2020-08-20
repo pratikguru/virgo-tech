@@ -15,7 +15,7 @@ const ParentContainer = styled(motion.div)`
 `;
 
 const Container = styled(motion.div)`
-  width: 80%;
+  width: 95%;
   min-height: 500px;
   height: auto;
   display: flex;

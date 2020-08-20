@@ -2,29 +2,63 @@ import KamstrupBTUMeter from "./Assets/HVACProducts/kamstrup-btu-meter.png";
 import EFCFanCoilUnitController from "./Assets/HVACProducts/efc-fan-coil-unit-controller.png";
 import EVCVAVUnitController from "./Assets/HVACProducts/evc-vav-unit-controller.png";
 import SchneiderBMS from "./Assets/HVACProducts/schneider-bms.png";
-import VFDDrivers from "./Assets/HVACProducts/vfd-drivers.png";
+import VFDDrivers from "./Assets/HVACProducts/commander-200_50.png";
 import YaskawaLowHarmonicVFD from "./Assets/HVACProducts/yaskawa-low-harmonic-vfd.png";
-import ProdualSensors from "./Assets/HVACProducts/produal.png";
-
+import ProdualSensors from "./Assets/HVACProducts/sensors.png";
+import React from "react";
 /* Child products for Kamstrup BTU meters. */
 import Multical302 from "./Assets/HVACProducts/multical-302.png";
 import Multical403 from "./Assets/HVACProducts/multical-403.png";
 import Multical603 from "./Assets/HVACProducts/mulitcal-603.png";
 import Multical803 from "./Assets/HVACProducts/multical-803.png";
 import VelocitySensors from "./Assets/HVACProducts/velocity-sensor-produal.png";
+import SchniederOperation from "./Assets/HVACProducts/schneider-operation.JPG";
+import CommanderNidecC200 from "./Assets/HVACProducts/commander-c200-inside.png";
+import LHVFDU1000 from "./Assets/HVACProducts/U1000-lhvfd.png";
+
+/* PDF's. */
+import CommanderPDF from "./Assets/PDF/commander.pdf";
 
 export const HVACProductImageList = [
   {
     id: "Kamstrup BTU Meter",
     img: KamstrupBTUMeter,
+    scale: 0.7,
     sub_header: "Heat metering with ULTRAFLOW® 54",
-    information:
-      "Kamstrup’s heat meters are based on state of the art heat technology",
+    information: [
+      [
+        <div>
+          Your heat meter is the absolute corner stone in your network. It
+          provides you with data needed for billing and optimisation. For that
+          purpose, it needs to be accurate and stay accurate for many years.
+        </div>,
+      ],
+      [
+        <div style={{ marginTop: "10px" }}>
+          During this time, regulations and legislation may change many times
+          and your solution needs to change accordingly. This requires a high
+          level of flexibility from your meters in terms of installation,
+          reconfiguration and updates.
+        </div>,
+      ],
+      [
+        <div style={{ marginTop: "10px" }}>
+          {" "}
+          The value of the data from the intelligent heat meters goes beyond
+          correct billing. Put into use, this data can be utilised to optimise
+          the performance of your network. To reach the potential of this
+          optimisation, you must be able to trust your infrastructure to deliver
+          accurate and stable sets of data. Today, tomorrow and in the future.
+        </div>,
+      ],
+    ],
     child_products: [
       {
         id: "MULTICAL®302 ",
         img: Multical302,
         sub_header: "The Ultra-compact meter",
+        know_more_link:
+          "https://www.kamstrup.com/en-en/heat-solutions/heat-meters/multical-302",
         information: [
           [`Small and compact design`],
           [
@@ -49,6 +83,8 @@ export const HVACProductImageList = [
         id: "MULTICAL®403",
         img: Multical403,
         sub_header: "The compact and flexible meter",
+        know_more_link:
+          "https://www.kamstrup.com/en-en/heat-solutions/heat-meters/multical-403",
         information: [
           [
             `Remote reading with communication module via
@@ -69,6 +105,8 @@ export const HVACProductImageList = [
       {
         id: "MULTICAL®603",
         img: Multical603,
+        know_more_link:
+          "https://www.kamstrup.com/en-en/heat-solutions/heat-meters/multical-603",
         sub_header: "The compact and flexible meter",
         information: [
           [`Auto Detect`],
@@ -90,6 +128,8 @@ export const HVACProductImageList = [
       {
         id: "MULTICAL®803",
         img: Multical803,
+        know_more_link:
+          "https://www.kamstrup.com/en-en/heat-solutions/heat-meters/multical-803",
         sub_header: "The compact and flexible meter",
         information: [
           [`Auto Detect`],
@@ -112,54 +152,345 @@ export const HVACProductImageList = [
   {
     id: "EFC Fan Coilt Unit Controller",
     img: EFCFanCoilUnitController,
+    scale: 0.7,
     sub_header: "Unit Controller with TFL Thermostat",
-    information: "Controller mounted in fan coil unit",
+    know_more_link: "https://www.neptronic.com/Controls/Fancoils.aspx",
+    information: [
+      [`Controller mounted in fan coil unit.`],
+      [`Connect controller to room thermostat via 3 wires.`],
+      [`BACnet MS/TP communication.`],
+      [`24, 120 or 240Vac.`],
+      [`Up to 10 inputs and 12 outputs.`],
+    ],
   },
   {
     id: "Schneider BMS",
     img: SchneiderBMS,
+    scale: 0.7,
     sub_header: "EcoStruxure™ series",
-    information:
-      "The diverse flagship range of Building Management System products is what sets Schneider Electric India apart as one of the leading high-technology and innovation-driven brands in the country.",
+    information: [
+      [
+        "The diverse flagship range of Building Management System products is what sets Schneider Electric India apart as one of the leading high-technology and innovation-driven brands in the country.",
+      ],
+    ],
+
+    child_products: [
+      {
+        id: "EcoStruxure™ Building Operation",
+        know_more_link:
+          "https://www.se.com/in/en/product-range/62111-ecostruxure%E2%84%A2-building-operation/?parent-subcategory-id=1210&filter=business-2-building-automation-and-control",
+        img: SchniederOperation,
+        sub_header: "A single solution for your complex needs.",
+        information: [
+          [
+            `At the core of a EcoStruxure Building is a SmartStruxure server device, such as AS-B. AS-B performs key functionality, such as control logic, trend logging, and alarm supervision, provides builtin I/O, and supports communication and connectivity to the field buses.`,
+          ],
+          [
+            `The distributed intelligence of the EcoStruxure Building ensures fault tolerance in the system and provides a fully featured user interface through WorkStation and WebStation.`,
+          ],
+        ],
+      },
+    ],
   },
   {
     id: "VFD Drivers",
     img: VFDDrivers,
-    sub_header: "Nidec (Emerson) drives",
-    information:
-      "Unidrive M is designed specifically for industrial applications.",
+    scale: 0.8,
+    sub_header: "Nidec (Formarly Emerson) drives",
+    download_content: CommanderPDF,
+    information: [
+      [
+        <div style={{ fontSize: "12px", color: "grey" }}>
+          0.25 kW - 132 kW (0.33 hp to 200hp) <br></br>100 V | 200 V | 400 V
+        </div>,
+      ],
+      [
+        <div>
+          Commander variable speed drives have established the standard of
+          excellence in motor control since 1983 when Control Techniques
+          launched the first world commercial vector drive. Since then,
+          Commander has undergone several successful reiterations, each time
+          bringing new technology and innovations to the world of automation.
+          The new Commander C series has been designed to be a simple and
+          compact AC motor speed controller that meets advanced requirements in
+          a wide range of applications and provides optimum user experience.
+        </div>,
+      ],
+    ],
+    child_products: [
+      {
+        id: "Nidec (Formarly Emerson) Commander Edition.",
+        img: CommanderNidecC200,
+        sub_header: "Nidec (Formarly Emerson) Commander C200.",
+        know_more_link:
+          "https://acim.nidec.com/drives/control-techniques/products/ac-drives/commander-c-general-purpose-drives",
+        information: [
+          [
+            <div style={{ color: "grey", fontWeight: "600" }}>
+              {" "}
+              Commander C Highlights.{" "}
+            </div>,
+          ],
+          [
+            <div style={{ marginRight: "auto" }}>
+              &#10004; Set just 4 parameters to get your drive started.
+            </div>,
+          ],
+          [
+            <div style={{ marginRight: "auto" }}>
+              &#10004; Plug-in options for advanced control.{" "}
+            </div>,
+          ],
+          [
+            <div style={{ marginRight: "auto" }}>
+              &#10004;Dual Safe Torque Off (STO).{" "}
+            </div>,
+          ],
+          [
+            <div style={{ marginRight: "auto" }}>
+              &#10004;Equipped with the latest energy saving features.{" "}
+            </div>,
+          ],
+          [
+            <div style={{ marginRight: "auto" }}>
+              &#10004;Up to 180% overload for high torque applications.
+            </div>,
+          ],
+          [<div style={{ marginRight: "auto" }}>&#10004;On board PLC.</div>],
+          [
+            <div style={{ marginRight: "auto" }}>
+              &#10004;Straightforward installation and commissioning.
+            </div>,
+          ],
+          [
+            <div style={{ marginRight: "auto" }}>
+              &#10004;Easy motor pairing and performance control.
+            </div>,
+          ],
+          [
+            <div style={{ marginRight: "auto" }}>
+              &#10004;Robust and reliable design.
+            </div>,
+          ],
+        ],
+      },
+    ],
   },
   {
     id: "Yaskawa Low Harmonic VFD",
     img: YaskawaLowHarmonicVFD,
-    sub_header: "Z1000 Series Fan & Pump drives",
-    information:
-      "Our HVAC product family ranges from 1/2 to 500 horsepower and includes features for Building Automation Systems such as extensive parameter selection to simplify management of BAS applications for energy efficiency and closed loop control, industry-standard Hand-Off-Auto functionality, an internal PI controller and a Sleep function",
+    scale: 0.7,
+    sub_header: "U1000 Series Fan & Pump drives",
+    information: [
+      [
+        <div style={{ fontSize: "14px", fontWeight: "500" }}>
+          Merging Green & Technology for Building Automation
+        </div>,
+      ],
+      [<li>Capacity Range: 2.2 kW to 500 kW.</li>],
+      [
+        <li>
+          Motor Types: Induction Motor (IM), Permanent Magnet Motor (PM), both
+          with or without encoder.
+        </li>,
+      ],
+      [<li>Current Overload: 150% for 60 seconds.</li>],
+      [
+        <li>
+          Control Modes: V/f, Open loop Vector, Closed Loop Vector, Vector
+          control for PM motors.
+        </li>,
+      ],
+      [
+        <li>
+          Standard I/O:8 multi-function programmable digital inputs (24Vdc).
+        </li>,
+      ],
+      [<li>multi-function programmable analog inputs (0-10Vdc or 4-20mA).</li>],
+      [<li>programmable analog outputs (-10V to +10Vdc)</li>],
+      [<li>2 programmable relays, 2 photo couplers.</li>],
+      [<li>1 fault relay.</li>],
+    ],
+    child_products: [
+      {
+        id: "U1000 Low Harmonic Variable Frequency Drive.",
+        img: LHVFDU1000,
+        sub_header: "Yaskwaw U1000",
+        know_more_link:
+          "https://www.yaskawa.com/products/drives/industrial-ac-drives/general-purpose-drives/u1000-industrial-matrix-drive",
+        information: [
+          [
+            <li style={{ marginRight: "auto", marginTop: "20px" }}>
+              Yaskawa’s Matrix technology creates a variable output by switching
+              directly from input power (no DC bus).
+            </li>,
+          ],
+          [
+            <li style={{ marginRight: "auto", marginTop: "5px" }}>
+              IEEE compliant.
+            </li>,
+          ],
+          [
+            <li style={{ marginRight: "auto", marginTop: "5px" }}>
+              Near unity power factor.
+            </li>,
+          ],
+          [
+            <li style={{ marginRight: "auto", marginTop: "5px" }}>
+              Built-in PI Feature which maintains a set point for closed loop
+              control for fans and pumps for pressure, flow or temperature
+              regulation and eliminates the need for a closed loop output signal
+              from a BAS. Independent PI to control an external device in the
+              system.
+            </li>,
+          ],
+          [
+            <li style={{ marginRight: "auto", margnTop: "5px" }}>
+              Near unity power factor
+            </li>,
+          ],
+          [
+            <li style={{ marginRight: "auto", marginTop: "5px" }}>
+              High efficiency design provides Extra Energy Savings as compared
+              to other Low Harmonics solutions
+            </li>,
+          ],
+          [
+            <li style={{ marginRight: "auto", marginTop: "5px" }}>
+              Independent PI to control an external device in the system.
+            </li>,
+          ],
+          [
+            <li style={{ marginRight: "auto", marginTop: "5px" }}>
+              Critical frequency rejection capability: 3 selectable, adjustable
+              bands
+            </li>,
+          ],
+          [
+            <li style={{ marginRight: "auto", marginTop: "5px" }}>
+              Up/down floating point capability.
+            </li>,
+          ],
+          [
+            <li style={{ marginRight: "auto", marginTop: "5px" }}>
+              Low input Distortion across a Wide Load and Speed Range.
+            </li>,
+          ],
+          [
+            <li style={{ marginRight: "auto", marginTop: "5px" }}>
+              S-Curve soft start/stop capability.
+            </li>,
+          ],
+          [
+            <li style={{ marginRight: "auto", marginTop: "5px" }}>
+              Sleep function in both open and closed loop operation.
+            </li>,
+          ],
+          [
+            <li style={{ marginRight: "auto", marginTop: "5px" }}>
+              Excellent low level distortions without the use of passive filters
+              or multi pulse arrangements.
+            </li>,
+          ],
+          [
+            <li style={{ marginRight: "auto", marginTop: "5px" }}>
+              Motor overheat protection based on output current.
+            </li>,
+          ],
+          [
+            <li style={{ marginRight: "auto", marginTop: "5px" }}>
+              LCD keypad: Hand-Off-Auto functions with a built-in copy feature.
+            </li>,
+          ],
+          [
+            <li style={{ marginRight: "auto", marginTop: "5px" }}>
+              “Kinetic Energy Braking” (KEB) function stops the motor in up to
+              half the time it would take without this function.
+            </li>,
+          ],
+          [
+            <li style={{ marginRight: "auto", marginTop: "5px" }}>
+              Auto restart after power loss or resettable fault, selectable,
+              programmable.
+            </li>,
+          ],
+          [
+            <li style={{ marginRight: "auto", marginTop: "5px" }}>
+              Commercial Switch mode available i.e VFD bypass mode at input
+              frequency (ex. 50Hz).
+            </li>,
+          ],
+          [
+            <li style={{ marginRight: "auto", marginTop: "5px" }}>
+              Compact design.
+            </li>,
+          ],
+          [
+            <li style={{ marginRight: "auto", marginTop: "5px" }}>
+              Functional safety according (SIL3, PLe, Cat3).
+            </li>,
+          ],
+          [
+            <li style={{ marginRight: "auto", marginTop: "5px" }}>
+              NK, BV, DNV/GL, ABS, LR, KR, CE, RoHS certification.
+            </li>,
+          ],
+          [
+            <li style={{ marginRight: "auto", marginTop: "5px" }}>
+              Upto 50% smaller footprint.
+            </li>,
+          ],
+        ],
+      },
+    ],
   },
   {
     id: "EVC VAV Unit Controller",
     img: EVCVAVUnitController,
+    scale: 0.7,
     sub_header: "Unit Controller with TFL Thermostat",
-    information: "Built-in actuator and optional air pressure sensor",
+    know_more_link: "https://www.neptronic.com/Controls/Vav.aspx",
+    information: [
+      ["Built-in actuator and optional air pressure sensor."],
+      [`Mounts on jackshaft or damper.`],
+      [`Connects to room thermostat via 3 wires`],
+      [`BACnet MS/TP communication.`],
+      [`Up to 4 inputs and 6 outputs (I/O configuration).`],
+    ],
   },
   {
     id: "Produal Sensors",
     img: ProdualSensors,
+    scale: 0.8,
     sub_header: "Produal sensors for environment monitoring.",
-    information:
-      "Modern building automation is based on versatile, precise and high quality measurements. We have learnt that achieving optimal energy efficiency or indoor comfort requires more than that.",
-    child_products: [
-      {
-        id: "Air Velocity Sensors",
-        img: VelocitySensors,
-        sub_header: "Active Air Velocity Sensors.",
-
-        information: [
-          [
-            `IVL air velocity transmitters are designed for measuring air velocity and temperature inside the duct`,
-          ],
-        ],
-      },
+    know_more_link: "https://www.produal.com/",
+    information: [
+      [
+        <li>
+          5 Years' warranty for the Produal products from ISO 9001 DNV.GL
+          certified Manufacturing . Produal is from Finland. CE Certified.
+        </li>,
+      ],
+      [
+        <li>
+          We aim to be the one-stop-shop partner for measurement and control for
+          all our customers operating in the evolving business of building
+          automation.
+        </li>,
+      ],
+      [
+        <li>
+          Our wide product offering includes over 1000 products for controlling,
+          measuring, actuating and commissioning, completed with system
+          components.
+        </li>,
+      ],
+      [
+        <li>
+          Our design principles ensure a selection of accurate, multifunctional
+          and easy-to-install products, and our quality system is ISO certified.
+        </li>,
+      ],
     ],
   },
 ];

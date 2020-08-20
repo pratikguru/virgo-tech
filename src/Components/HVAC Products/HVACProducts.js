@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { media } from "../../Utils/media.js";
 import ModalProductShowcase from "../ModalProductShowCase/ModalProductShowcase.js";
 import { HVACProductImageList } from "../../HVACProductPageConfiguration.js";
+import Parser from "html-react-parser";
 
 const ParentContainer = styled(motion.div)`
   display: flex;
@@ -14,7 +15,7 @@ const ParentContainer = styled(motion.div)`
 `;
 
 const Container = styled(motion.div)`
-  width: 80%;
+  width: 95%;
   min-height: 500px;
   height: auto;
   display: flex;
@@ -64,12 +65,14 @@ const ContainerBody = styled.div`
   align-items: flex-start;
   font-size: 13px;
   font-weight: 450;
+
+  overflow-y: auto;
   flex-direction: column;
 `;
 
 const ProductPods = styled(motion.div)`
   width: 450px;
-  min-height: 450px;
+  height: 600px;
 
   border-radius: 10px;
   display: flex;
@@ -84,6 +87,10 @@ const ProductPods = styled(motion.div)`
   ${media.phone`
   margin-top: 10px;
 `}
+`;
+
+const ProductPodsHybrid = styled(ProductPods)`
+  height: auto;
 `;
 
 const ProductPodHeader = styled.div`
@@ -106,7 +113,7 @@ const ProductPodSubHeader = styled.div`
   height: auto;
   display: flex;
   align-self: flex-start;
-  color: #cccccc;
+  color: #1e7c43;
   font-size: 14px;
   font-weight: 400;
   justify-content: center;
@@ -142,7 +149,8 @@ const ProductPodFooter = styled.div`
   padding: 15px;
   display: flex;
   margin-top: auto;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
 `;
 
 const CustomButton = styled(motion.div)`
@@ -203,9 +211,12 @@ export default class ProductListing extends Component {
       id: value.id,
       img: value.img,
       sub_header: value.sub_header,
-      information: value.sub_header,
+      information: value.information,
       child_products: value.child_products,
       showChildProducts: false,
+      scale: value.scale,
+      know_more_link: value?.know_more_link,
+      download_content: value?.download_content,
     }));
     this.setState({
       filteredProducts: compiledList,
@@ -262,13 +273,13 @@ export default class ProductListing extends Component {
                   {this.state.filteredProducts[index]["child_products"] && (
                     <ModalProductShowcase
                       showModal={value.showChildProducts}
-                      title={"Kamstrup Products"}
+                      title={value.id}
                       onClose={() =>
                         this.handleProductShowCaseClosure(value, index)
                       }
                       information={value["child_products"].map(
                         (value2, index2) => (
-                          <ProductPods
+                          <ProductPodsHybrid
                             key={index2}
                             animate={{ opacity: [0, 1] }}
                           >
@@ -277,33 +288,51 @@ export default class ProductListing extends Component {
                               {value2.sub_header}
                             </ProductPodSubHeader>
                             <img
-                              style={{ height: "150px", width: "200px" }}
+                              style={{ height: "200px", width: "200px" }}
                               src={value2.img}
                               alt={index2}
                             />
                             <ContainerBody>
                               {value2.information &&
                                 value2.information.map((value3, index3) => (
-                                  <li>{value3}</li>
+                                  <div
+                                    style={{
+                                      display: "flex",
+                                      width: "100%",
+                                      justifyContent: "center",
+                                    }}
+                                  >
+                                    {value3}
+                                  </div>
                                 ))}
                             </ContainerBody>
                             <ProductPodFooter>
-                              <CustomButton whileTap={{ scale: 0.88 }}>
+                              <a
+                                href={value.download_content}
+                                download="My_File.pdf"
+                              >
+                                <CustomButton whileTap={{ scale: 0.88 }}>
+                                  {" "}
+                                  DOWNLOAD BROCHURE{" "}
+                                </CustomButton>
+                              </a>
+                              <CustomButton
+                                onClick={() => {
+                                  window.open(value2.know_more_link);
+                                }}
+                                whileTap={{ scale: 0.88 }}
+                              >
                                 {" "}
-                                DOWNLOAD BROCHURE{" "}
+                                KNOW MORE{" "}
                               </CustomButton>
                             </ProductPodFooter>
-                          </ProductPods>
+                          </ProductPodsHybrid>
                         )
                       )}
                     ></ModalProductShowcase>
                   )}
 
-                  <ProductPods
-                    variants={item}
-                    onClick={() => this.handleChildProductsPage(value, index)}
-                    key={index}
-                  >
+                  <ProductPods variants={item} key={index}>
                     <ProductPodHeader>{value.id}</ProductPodHeader>
                     <ProductPodSubHeader>
                       {value.sub_header}
@@ -311,27 +340,44 @@ export default class ProductListing extends Component {
                     <img
                       src={value.img}
                       alt={index}
-                      style={{ transform: "scale(0.7)" }}
+                      style={{ transform: `scale(${value.scale})` }}
                     />
-                    <ContainerBody>{value.information}</ContainerBody>
+                    <ContainerBody>
+                      {value.information.length > 0 &&
+                        value.information.map((value2, index2) => (
+                          <div>{value2}</div>
+                        ))}
+                    </ContainerBody>
                     <ProductPodFooter>
-                      {value.child_products && (
-                        <div
-                          style={{
-                            alignSelf: "flex-end",
-                            fontSize: "12px",
-                            fontWeight: 450,
-                          }}
+                      <a
+                        href={value.download_content}
+                        download="My_File.pdf"
+                        style={{ textDecoration: "none" }}
+                      >
+                        <CustomButton whileTap={{ scale: 0.88 }}>
+                          {" "}
+                          DOWNLOAD BROCHURE{" "}
+                        </CustomButton>
+                      </a>
+                      {value.child_products ? (
+                        <CustomButton
+                          whileTap={{ scale: 0.88 }}
+                          onClick={() =>
+                            this.handleChildProductsPage(value, index)
+                          }
                         >
                           {" "}
-                          {value.child_products.length} more products.{" "}
-                        </div>
+                          READ MORE{" "}
+                        </CustomButton>
+                      ) : (
+                        <CustomButton
+                          whileTap={{ scale: 0.88 }}
+                          onClick={() => window.open(value.know_more_link)}
+                        >
+                          {" "}
+                          KNOW MORE{" "}
+                        </CustomButton>
                       )}
-
-                      <CustomButton whileTap={{ scale: 0.88 }}>
-                        {" "}
-                        DOWNLOAD BROCHURE{" "}
-                      </CustomButton>
                     </ProductPodFooter>
                   </ProductPods>
                 </>

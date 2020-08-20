@@ -32,7 +32,7 @@ import KamstrupBTUMeter from "./Assets/HVACProducts/kamstrup-btu-meter.png";
 import EFCFanCoilUnitController from "./Assets/HVACProducts/efc-fan-coil-unit-controller.png";
 import EVCVAVUnitController from "./Assets/HVACProducts/evc-vav-unit-controller.png";
 import SchneiderBMS from "./Assets/HVACProducts/schneider-bms.png";
-import VFDDrivers from "./Assets/HVACProducts/vfd-drivers.png";
+import VFDDrivers from "./Assets/HVACProducts/commander-200_50.png";
 import YaskawaLowHarmonicVFD from "./Assets/HVACProducts/yaskawa-low-harmonic-vfd.png";
 import SensorsImage from "./Assets/HVACProducts/sensors.jpg";
 
@@ -45,12 +45,30 @@ import SensorsImage from "./Assets/HVACProducts/sensors.jpg";
 /*--------------------------------------------------------------*/
 
 export const PartnerListImages = [
-  Kamstrup,
-  Neptronic,
-  Nidec,
-  Produal,
-  Schneider,
-  Yaskawa,
+  {
+    img: Kamstrup,
+    link: "https://www.kamstrup.com/en-en",
+  },
+  {
+    img: Neptronic,
+    link: "https://www.neptronic.com/home.aspx",
+  },
+  {
+    img: Nidec,
+    link: "https://www.nidec.com/en/",
+  },
+  {
+    img: Produal,
+    link: "https://www.produal.com/",
+  },
+  {
+    img: Schneider,
+    link: "https://www.se.com/in/en/",
+  },
+  {
+    img: Yaskawa,
+    link: "https://www.yaskawa.eu.com/",
+  },
 ];
 
 /*--------------------------------------------------------------*/
@@ -63,14 +81,14 @@ export const HexaGrid = [
       icon: vfd,
       img: VFDDrivers,
       type: 1,
-      scale: 0.7,
+      scale: 0.9,
       information: [
         [
-          `Control Techniques Unidrive M400 variable frequency AC drive (VFD) minimizes downtime with an optional plain-text, multi-language backlit LCD keypad enabling rapid setup and clear diagnostic help.
+          `Control Techniques Unidrive C200 variable frequency AC drive (VFD) minimizes downtime with an optional plain-text, multi-language backlit LCD keypad enabling rapid setup and clear diagnostic help.
       The integrated PLC can execute a substantial range of sequencing and logic programs`,
         ],
         [
-          `Unidrive M400 has an impressive onboard I/O count, dual Safe Torque Off (STO) inputs, and can accommodate a single SI option module for additional flexibility`,
+          `Unidrive C200 has an impressive onboard I/O count, dual Safe Torque Off (STO) inputs, and can accommodate a single SI option module for additional flexibility`,
         ],
         [
           `The SI module has options for industry standard fieldbus, Ethernet, and expanded I/O. Additionally, an AI option slot is available for parameter cloning, 24V backup, and Modbus RTU communication options.`,
@@ -80,7 +98,7 @@ export const HexaGrid = [
         ],
       ],
       header: "VFD Drivers",
-      sub_header: "Nidec (Emerson) drives",
+      sub_header: "Nidec (Formarly Emerson) drives",
     },
     {
       text: "BTU Meter",
@@ -175,7 +193,7 @@ export const HexaGrid = [
           `As an ultasonic water meter, MULTICAL® 21 / flowIQ® 210x has a low start flow down to 2 l/hour which ensures that even very low flows are measured.`,
         ],
       ],
-      header: "BTU water meters.",
+      header: "Kamstrup Ultrasonic Water Meter",
       sub_header: "Heat metering with ULTRAFLOW.",
     },
   ],

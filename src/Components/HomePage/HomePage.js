@@ -23,7 +23,7 @@ const ParentContainer = styled(motion.div)`
 `;
 
 const Container = styled(motion.div)`
-  width: 80%;
+  width: 95%;
   height: auto;
   display: flex;
   background-color: white;
@@ -115,7 +115,8 @@ const PartnerCubes = styled(motion.div)`
   align-items: center;
   box-shadow: 15px 15px 60px rgba(221, 148, 148, 0.25),
     -10px -10px 60px rgba(0, 0, 0, 0.25);
-
+  user-select: none;
+  cursor: pointer;
   ${media.phone`
   
     margin-top: 10px;
@@ -162,9 +163,6 @@ export default class HomePage extends Component {
   }
 
   handlePopup = (index, index2) => {
-    console.log(index, index2);
-    console.log(HexaGrid[index][index2]);
-
     this.setState({
       showModal: true,
       selectedInformation: HexaGrid[index][index2].information,
@@ -241,8 +239,14 @@ export default class HomePage extends Component {
             transition={{ delay: 0.1 }}
           >
             {PartnerListImages.map((value, index) => (
-              <PartnerCubes>
-                <img src={value} alt={index} alt="some image" />
+              <PartnerCubes
+                whileTap={{ scale: 0.88 }}
+                transition={{ duration: 0.2, ease: "linear" }}
+                onClick={() => {
+                  window.open(value.link);
+                }}
+              >
+                <img src={value.img} alt={index} alt="some image" />
               </PartnerCubes>
             ))}
           </PartnerListBody>

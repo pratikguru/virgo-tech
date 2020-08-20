@@ -512,11 +512,6 @@ const CarouselCardsContent = [
       "Kamstrup ultrasonic smart water meter enables induvidual users to measure and monitor their water consumption in real time and comes equipped with leakage, reverse-flow and burst detection.",
   },
   {
-    header: "Invest in the future!",
-    content:
-      "Invest in our future-proof smart ultrasound water meter with a ROI in less than 2 years!",
-  },
-  {
     header: "Pay ONLY for what you use!",
     content:
       "Many residential apartments do not monitor the induvidual consumption of water and are being charged a a Many residential apartments do not monitor the induvidual consumption of water and are being charged a a fixed rate. This makes people unaware of their water usage resulting in water wastage.",

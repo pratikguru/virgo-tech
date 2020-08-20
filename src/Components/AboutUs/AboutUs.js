@@ -102,10 +102,9 @@ export default class AboutUs extends Component {
           </ContainerBody>
 
           <ContainerBody>
-            Mr. Srinivas, CEO of the company has 25 years of experience in HVAC
-            industry. The team consists of 20 skilled engineers, 3 Specialist &
-            Certified Engineers in BMS & 10 engineers specialized in VAV system
-            which can be customized as per client requirement.
+            The team consists of 20 skilled engineers, 3 Specialist & Certified
+            Engineers in BMS & 10 engineers specialized in VAV system which can
+            be customized as per client requirement.
           </ContainerBody>
         </Container>
 

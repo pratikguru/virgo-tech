@@ -43,8 +43,25 @@ import Sterlings from "./Assets/Clients/sterling-wilson.png";
 import HTLAircon from "./Assets/Clients/htl-aircon.jpeg";
 import BlueStar from "./Assets/Clients/blue-star.jpg";
 import Zamil from "./Assets/Clients/zamil.png";
+import ISRO from "./Assets/Clients/isro.png";
+import Brigade from "./Assets/Clients/brigade-wtc.png";
+import GAR from "./Assets/Clients/gar.png";
+import MyHome from "./Assets/Clients/my-home.png";
+import Samsung from "./Assets/Clients/samsung.png";
+import Qualcomm from "./Assets/Clients/qualcomm.png";
+import ETA from "./Assets/Clients/eta.jpg";
+import Utility from "./Assets/Clients/utility.jpg";
+import GuruHVAC from "./Assets/Clients/guru-hvac.png";
+import VayuCon from "./Assets/Clients/vayu-con.jpg";
+import KMD from "./Assets/Clients/kmd.jpg";
+import ups from "./Assets/Clients/ups.jpg";
 
 export const ClientsList = [
+  {
+    id: "ISRO",
+    logo: ISRO,
+    scale: 0.5,
+  },
   {
     id: "Google",
     logo: Google,
@@ -56,9 +73,40 @@ export const ClientsList = [
     scale: 0.7,
   },
   {
-    id: "Zamil",
-    logo: Zamil,
+    id: "Boeing",
+    logo: Boeing,
     scale: 0.7,
+  },
+  {
+    id: "Laxmi Info Ban Ghar",
+    logo: GAR,
+    scale: 0.9,
+  },
+  {
+    id: "UPS",
+    logo: ups,
+    scale: 0.8,
+  },
+  {
+    id: "KMD",
+    logo: KMD,
+    scale: 0.8,
+  },
+  {
+    id: "Guru HVAC",
+    logo: GuruHVAC,
+    scale: 0.8,
+  },
+
+  {
+    id: "Utility",
+    logo: Utility,
+    scale: 0.8,
+  },
+  {
+    id: "Samsung",
+    logo: Samsung,
+    scale: 0.5,
   },
   {
     id: "Blue Star",
@@ -66,14 +114,34 @@ export const ClientsList = [
     scale: 0.5,
   },
   {
+    id: "Qualcomm",
+    logo: Qualcomm,
+    scale: 0.9,
+  },
+  {
+    id: "My Home",
+    logo: MyHome,
+    scale: 0.9,
+  },
+  {
     id: "HTL Aircons",
     logo: HTLAircon,
+    scale: 0.9,
+  },
+  {
+    id: "ETA Contractors",
+    logo: ETA,
+    scale: 0.8,
+  },
+  {
+    id: "Brigade",
+    logo: Brigade,
     scale: 0.7,
   },
   {
     id: "Sterlings Wilson",
     logo: Sterlings,
-    scale: 0.7,
+    scale: 0.9,
   },
   {
     id: "Pavani Engineers",
@@ -83,12 +151,12 @@ export const ClientsList = [
   {
     id: "VK Building Services",
     logo: VkBuildingServices,
-    scale: 0.7,
+    scale: 0.9,
   },
   {
     id: "PJP",
     logo: PJP,
-    scale: 0.5,
+    scale: 0.8,
   },
   {
     id: "Voltas",
@@ -133,7 +201,7 @@ export const ClientsList = [
   {
     id: "Marriot",
     logo: Marriot,
-    scale: 0.7,
+    scale: 0.8,
   },
   {
     id: "ZF",
