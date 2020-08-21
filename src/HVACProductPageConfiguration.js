@@ -40,7 +40,7 @@ import Japan from "./Assets/flags/japan.webp";
 export const HVACProductImageList = [
   {
     id: "Kamstrup BTU Meter",
-    img: KamstrupBTUMeter,
+    img: Multical603,
     scale: 0.7,
     sub_header: "Heat metering with ULTRAFLOW® 54",
     sub_header_rhs: Denmark,
@@ -238,7 +238,7 @@ export const HVACProductImageList = [
     ],
   },
   {
-    id: "VFD Drivers",
+    id: "VFD",
     img: VFDDrivers,
     scale: 0.8,
     sub_header: "Nidec (Formarly Emerson) drives",

@@ -153,7 +153,7 @@ export const ClientsList = [
   {
     id: "Alliance",
     logo: Alliance,
-    scale: 0.6,
+    scale: 0.3,
   },
   {
     id: "Apotex",
@@ -163,7 +163,7 @@ export const ClientsList = [
   {
     id: "Atknis",
     logo: Atkins,
-    scale: 0.6,
+    scale: 0.3,
   },
   {
     id: "Carrier",
@@ -287,7 +287,7 @@ export const ClientsList = [
   {
     id: "PJP",
     logo: PJP,
-    scale: 0.8,
+    scale: 0.6,
   },
   {
     id: "Voltas",

@@ -141,9 +141,8 @@ export default class AboutUs extends Component {
           </ContainerBody>
 
           <ContainerBody>
-            The team consists of 20 skilled engineers, 3 Specialist & Certified
-            Engineers in BMS & 10 engineers specialized in VAV system which can
-            be customized as per client requirement.
+            The team consists of 25 skilled engineers, apart from 5 Certified
+            Engineers & 12 supporting staff which can be customized.
           </ContainerBody>
         </Container>
 

@@ -28,7 +28,7 @@ import WaterMeter from "./Assets/BMSImages/water-meter.svg";
 /*--------------------------------------------------------------*/
 
 import WaterMeterBTU from "./Assets/HVACProducts/meter.svg";
-import KamstrupBTUMeter from "./Assets/HVACProducts/kamstrup-btu-meter.png";
+import KamstrupBTUMeter from "./Assets/HVACProducts/mulitcal-603.png";
 import EFCFanCoilUnitController from "./Assets/HVACProducts/efc-fan-coil-unit-controller.png";
 import EVCVAVUnitController from "./Assets/HVACProducts/evc-vav-unit-controller.png";
 import SchneiderBMS from "./Assets/HVACProducts/schneider-bms.png";
@@ -121,7 +121,7 @@ export const HexaGrid = [
           `A CI-485-ADAPTOR is also available to provide additional Modbus RTU communications in place of the optional keypad.`,
         ],
       ],
-      header: "VFD Drivers",
+      header: "VFD",
       sub_header: "Nidec (Formarly Emerson) drives",
     },
     {
@@ -130,7 +130,7 @@ export const HexaGrid = [
       sub_header_rhs_text: "Made in Denmark",
       sub_header_rhs: Denmark,
       type: 1,
-      scale: 0.7,
+      scale: 0.8,
       img: KamstrupBTUMeter,
       download_content: MulticalSeries,
       information: [
