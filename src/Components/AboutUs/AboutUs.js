@@ -90,11 +90,11 @@ export default class AboutUs extends Component {
             <div style={{ display: "flex", flexDirection: "column" }}>
               <div style={{ display: "flex", flexDirection: "row" }}>
                 As the CEO & founder of Virgo Technologies, Mr.Srinivas is
-                responsible for running all facets of the business. Srinivas has
+                responsible for running all facets of the business. He has
                 a proven executive management track record and close to 3
                 decades of experience driving sales growth and technical
                 expertise in the HVAC industry. Being a successful Entrepreneur,
-                Mr. Srinivas always believes in ...{" "}
+                Mr. Srinivas always believes in the saying...{" "}
               </div>
               <i style={{ marginTop: "20px" }}>
                 "You don’t need to be a genius or a visionary, or even a college

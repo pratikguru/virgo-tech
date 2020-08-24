@@ -135,7 +135,7 @@ export const HexaGrid = [
       download_content: MulticalSeries,
       information: [
         [
-          "Kamstrup’s heat meters are based on state of the art heat technology.The advanced calculator, MULTICAL ®602, is used together with the flow sensor, ULTRAFLOW® 54, as well as two temperature sensors for calculation of energy and measurement of flow, power and temperature - with the best measuring accuracy on the market",
+          "Kamstrup’s heat meters are based on state of the art heat technology.The advanced calculator, MULTICAL ®603, is used together with the flow sensor, ULTRAFLOW® 54, as well as two temperature sensors for calculation of energy and measurement of flow, power and temperature - with the best measuring accuracy on the market",
         ],
         [
           `The energy calculations and flow, power and temperature measurements are data logged and can be read directly from the display or through remote reading in a wireless network.`,
