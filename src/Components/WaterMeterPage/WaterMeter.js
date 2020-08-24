@@ -13,6 +13,10 @@ import YouTube from "react-youtube";
 import WaterMeter from "../../Assets/Water Meter/meter.svg";
 import RainbowResidency from "../../Assets/Water Meter/rainbow-residency.png";
 import CanadaFlag from "../../Assets/flags/canada.jpg";
+
+
+import WaterMeterPDF from "../../Assets/PDF/water-meter.pdf";
+
 const ParentContainer = styled(motion.div)`
   display: flex;
   flex-direction: column;
@@ -678,10 +682,16 @@ export default class WaterMeterPage extends Component {
               alt="some-image"
             />
           </ImageContainer>
-          <CustomButton whileTap={{ scale: 0.88 }}>
-            {" "}
-            DOWNLOAD BROCHURE{" "}
-          </CustomButton>
+          <a
+            href={WaterMeterPDF}
+            download
+            style={{ textDecoration: "none" }}
+          >
+            <CustomButton whileTap={{ scale: 0.88 }}>
+              {" "}
+              DOWNLOAD BROCHURE{" "}
+            </CustomButton>
+            </a>
         </Container>
 
         <Container style={{ justifyContent: "center" }}>
