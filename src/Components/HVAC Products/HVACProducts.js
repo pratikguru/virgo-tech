@@ -306,7 +306,7 @@ export default class ProductListing extends Component {
                                     style={{
                                       display: "flex",
                                       width: "100%",
-                                      justifyContent: "center",
+                                      justifyContent: "flex-start",
                                     }}
                                   >
                                     {value3}

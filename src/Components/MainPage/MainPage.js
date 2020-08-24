@@ -14,6 +14,8 @@ import IndustrialProducts from "../Industrial Products/IndustrialProducts.js";
 import WaterMeterPage from "../WaterMeterPage/WaterMeter.js";
 import Services from "../ServicesPage/ServicesPage.js";
 import AboutUs from "../AboutUs/AboutUs.js";
+import ContactUs from "../ContactUs/ContactUs.js";
+
 
 const MainContainer = styled.div`
   display: flex;
@@ -70,7 +72,7 @@ const NavigationButtonContainer = styled(motion.div)`
 
 const NavigationButtons = styled(motion.div)`
   width: auto;
-  width: 120px;
+  width: 100px;
   height: 30px;
   display: flex;
   background-color: white;
@@ -80,7 +82,7 @@ const NavigationButtons = styled(motion.div)`
   justify-content: center;
   align-items: center;
   padding: 7px;
-  font-size : 14px
+  font-size : 12px
   user-select: none;
   cursor: pointer;
 
@@ -139,6 +141,7 @@ const NavigationLinks = [
   "Water Meter",
   "Services",
   "About Us",
+  "Contact Us"
 ];
 
 const CurrentPage = {
@@ -148,6 +151,7 @@ const CurrentPage = {
   "Water Meter": <WaterMeterPage />,
   Services: <Services />,
   "About Us": <AboutUs />,
+  "Contact Us" : <ContactUs/>
 };
 
 export default class MainPage extends Component {

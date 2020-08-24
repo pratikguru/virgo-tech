@@ -86,22 +86,22 @@ export const HVACProductImageList = [
           "https://www.kamstrup.com/en-en/heat-solutions/heat-meters/multical-302",
         download_content: Multical302PDF,
         information: [
-          [`Small and compact design`],
+          [<li>Small and compact design</li>],
           [
-            `Integrated remote reading options are wired
-        M-Bus or wireless M-Bus`,
+            <li>Integrated remote reading options are wired
+        M-Bus or wireless M-Bus</li>,
           ],
-          [`On-site configuration.`],
-          [`Flow sensor range DN15…20`],
-          [`Flow sensor cable length 1.2 m`],
+          [<li>On-site configuration.</li>],
+          [<li>Flow sensor range DN15…20</li>],
+          [<li>Flow sensor cable length 1.2 m</li>],
           [
-            `Permanent condensation accepted for flow
-        sensor and temperature sensor pair`,
+            <li>Permanent condensation accepted for flow
+        sensor and temperature sensor pair</li>,
           ],
-          [`IP68 rating.`],
+          [<li>IP68 rating.</li>],
           [
-            `One temperature sensor is always mounted in
-        the flow sensor`,
+            <li>One temperature sensor is always mounted in
+        the flow sensor</li>,
           ],
         ],
       },
@@ -114,18 +114,18 @@ export const HVACProductImageList = [
         download_content: Multical403PDF,
         information: [
           [
-            `Remote reading with communication module via
-        wired/wireless* M-Bus, Modbus, BACnet etc`,
+            <li>Remote reading with communication module via
+        wired/wireless* M-Bus, Modbus, BACnet etc</li>,
           ],
-          [`On-site configuration available`],
-          [`Flow sensor range DN15…50`],
-          [`Flow sensor cable length 1.5 m`],
-          [`Permanent condensation accepted (IP68 rating)`],
-          [`IP68 rating.`],
-          [`Can be insulated`],
+          [<li>On-site configuration available</li>],
+          [<li>Flow sensor range DN15…50</li>],
+          [<li>Flow sensor cable length 1.5 m</li>],
+          [<li>Permanent condensation accepted (IP68 rating)</li>],
+          [<li>IP68 rating.</li>],
+          [<li>Can be insulated</li>],
           [
-            `Possibility for direct temperature sensor mounting
-        in flow sensor`,
+            <li>Possibility for direct temperature sensor mounting
+        in flow sensor</li>,
           ],
         ],
       },
@@ -137,20 +137,20 @@ export const HVACProductImageList = [
         sub_header: "The compact and flexible meter",
         download_content: Multical603PDF,
         information: [
-          [`Auto Detect`],
+          [<li>Auto Detect</li>],
           [
-            `Remote reading with communication module
-        via wired/wireless* M-Bus, Modbus, BACnet etc`,
+            <li>Remote reading with communication module
+        via wired/wireless* M-Bus, Modbus, BACnet etc</li>,
           ],
-          [`Direct temperature sensor mounting up to DN40`],
-          [`Can be insulated`],
+          [<li>Direct temperature sensor mounting up to DN40</li>],
+          [<li>Can be insulated</li>],
           [
-            `Cable lengths 2.5…10 m (can be extended to 100
-        m)`,
+            <li>Cable lengths 2.5…10 m (can be extended to 100
+        m)</li>,
           ],
-          [`Permanent condensation accepted`],
-          [`On-site configuration`],
-          [`IP65 rating`],
+          [<li>Permanent condensation accepted</li>],
+          [<li>On-site configuration</li>],
+          [<li>IP65 rating</li>],
         ],
       },
       {
