@@ -40,81 +40,7 @@ import Finland from "./Assets/flags/finland.jpg";
 import Japan from "./Assets/flags/japan.webp";
 
 export const HVACProductImageList = [
-  {
-    id : "VFD",
-    img : HV600,
-    scale :0.8,
-    sub_header : "Yaskawa HV 600",
-    sub_header_rhs : Japan,
-    sub_header_rhs_text : "From Japan | India",
-    download_content: Yaskawa600PDF,
-    information : [
-      [
-        <li style={{ marginTop: "10px" }}>
-          The HV600 was specifically designed as a variable frequency drive for HVAC, Refrigeration and weater applications.
-        </li>
-      ],
-      [
-        <li style={{ marginTop: "10px" }}>
-          Its high contrast disaplay and LED status ring gives out clear indication of drive parametes and operation status.
-        </li>
-      ],
-      [
-        <li style={{ marginTop: "10px" }}>
-          These features and mobile device programming combine to make the complicated seem simple.
-        </li>
-      ],
-      [
-        <li style={{ marginTop: "10px" }}>
-          The HV600 also includes as standard PID functions to maintain control of set points for temperature, flow, or pressure without the need for external control devices.
-        </li>
-      ],
-      [
-        <li style={{ marginTop: "10px" }}>
-          Flexible motor control is achieved through induction and permanent magnent motors and synchronous reluctance (SynRM) motors producing an output frequency of 400Hz.
-        </li>
-      ]
-    ],
-    child_products : [
-      {
-        id: "VFD ",
-        img: HV600,
-        sub_header: "Yaskawa HV 600",
-        know_more_link:
-        "https:https://www.yaskawa.com/documents/20197/890813/ahr2020.html/979d2fa4-5339-4c4d-afe6-50d2c1b07edb",
-        download_content: Yaskawa600PDF,
-        information: [
-          [<li style={{ marginTop: "10px" }}>
-            The HV600 comes in standard from the factory with a choice of IP20, IP55 with ambient temperature ratings upto 50C. Ratings upto 60 can be achieved with current derating.
-          </li>],
-          [
-            <li style={{ marginTop: "10px" }}>
-              Most HV600 models can be mounted side-by-side with bottom entry wiring to maximize cabinet space. 
-            </li >,
-          ],
-          [<li style={{ marginTop: "10px" }}>
-            When mounted in a seperate enclosure, heat management can be accomplished by removing detachable top and bottom covers on the drive or by "back-side" mounting the standard drive with the heatsink external to the enclosure.
-          </li>],
-          [
-            <li>
-              All the featuers expected for efficient building operation come standard with the HV600. Customer-supplied 24 VDC input control power ensures network communications are maintined even during loss of main input power.
-            </li>
-          ],
-          [
-            <li>
-              A full complement of analog and digital inputs are built in for connection to sensors and safeties.
-            </li>
-          ],
-          [
-            <li>
-              All HV600 IP20 and IP55 models are plenum ratd for building automation applications.
-            </li>
-          ]
-         
-        ],
-      }
-    ]
-  },
+  
 
 
   {
@@ -401,6 +327,81 @@ export const HVACProductImageList = [
         ],
       },
     ],
+  },
+  {
+    id : "VFD",
+    img : HV600,
+    scale :0.8,
+    sub_header : "Yaskawa HV 600",
+    sub_header_rhs : Japan,
+    sub_header_rhs_text : "From Japan | India",
+    download_content: Yaskawa600PDF,
+    information : [
+      [
+        <li style={{ marginTop: "10px" }}>
+          The HV600 was specifically designed as a variable frequency drive for HVAC, Refrigeration and weater applications.
+        </li>
+      ],
+      [
+        <li style={{ marginTop: "10px" }}>
+          Its high contrast disaplay and LED status ring gives out clear indication of drive parametes and operation status.
+        </li>
+      ],
+      [
+        <li style={{ marginTop: "10px" }}>
+          These features and mobile device programming combine to make the complicated seem simple.
+        </li>
+      ],
+      [
+        <li style={{ marginTop: "10px" }}>
+          The HV600 also includes as standard PID functions to maintain control of set points for temperature, flow, or pressure without the need for external control devices.
+        </li>
+      ],
+      [
+        <li style={{ marginTop: "10px" }}>
+          Flexible motor control is achieved through induction and permanent magnent motors and synchronous reluctance (SynRM) motors producing an output frequency of 400Hz.
+        </li>
+      ]
+    ],
+    child_products : [
+      {
+        id: "VFD ",
+        img: HV600,
+        sub_header: "Yaskawa HV 600",
+        know_more_link:
+        "https:https://www.yaskawa.com/documents/20197/890813/ahr2020.html/979d2fa4-5339-4c4d-afe6-50d2c1b07edb",
+        download_content: Yaskawa600PDF,
+        information: [
+          [<li style={{ marginTop: "10px" }}>
+            The HV600 comes in standard from the factory with a choice of IP20, IP55 with ambient temperature ratings upto 50C. Ratings upto 60 can be achieved with current derating.
+          </li>],
+          [
+            <li style={{ marginTop: "10px" }}>
+              Most HV600 models can be mounted side-by-side with bottom entry wiring to maximize cabinet space. 
+            </li >,
+          ],
+          [<li style={{ marginTop: "10px" }}>
+            When mounted in a seperate enclosure, heat management can be accomplished by removing detachable top and bottom covers on the drive or by "back-side" mounting the standard drive with the heatsink external to the enclosure.
+          </li>],
+          [
+            <li>
+              All the featuers expected for efficient building operation come standard with the HV600. Customer-supplied 24 VDC input control power ensures network communications are maintined even during loss of main input power.
+            </li>
+          ],
+          [
+            <li>
+              A full complement of analog and digital inputs are built in for connection to sensors and safeties.
+            </li>
+          ],
+          [
+            <li>
+              All HV600 IP20 and IP55 models are plenum ratd for building automation applications.
+            </li>
+          ]
+         
+        ],
+      }
+    ]
   },
   {
     id: "Yaskawa Low Harmonic VFD",
