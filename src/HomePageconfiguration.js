@@ -180,7 +180,7 @@ export const HexaGrid = [
         {
           sub_header_rhs_text: "Made in Denmark",
           sub_header_rhs: Denmark,
-          scale: 0.8,
+          scale: 1,
           img: KamstrupBTUMeter,
           download_content: MulticalSeries,
           header: "Kamstrup BTU Meter",
@@ -218,7 +218,7 @@ export const HexaGrid = [
       type: 1,
       items: [
         {
-          scale: 0.9,
+          scale: 1.5,
           img: SensorsImage,
           sub_header_rhs_text: "Made in Finland",
           sub_header_rhs: Finland,

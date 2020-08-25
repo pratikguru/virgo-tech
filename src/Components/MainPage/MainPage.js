@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { media, mediaType } from "../../Utils/media.js";
 
 /* Images and logo import */
-import MainLogo from "../../Assets/Logo/image 1.svg";
+import MainLogo from "../../Assets/Logo/main-logo.jpg";
 
 /* Main content components import. */
 import HomePage from "../HomePage/HomePage.js";
@@ -15,7 +15,6 @@ import WaterMeterPage from "../WaterMeterPage/WaterMeter.js";
 import Services from "../ServicesPage/ServicesPage.js";
 import AboutUs from "../AboutUs/AboutUs.js";
 import ContactUs from "../ContactUs/ContactUs.js";
-
 
 const MainContainer = styled.div`
   display: flex;
@@ -30,7 +29,7 @@ const TopHeader = styled.div`
   display: flex;
   width: 100%;
   height: auto;
-  margin: 5px;
+
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
@@ -46,8 +45,7 @@ const LogoContainer = styled.div`
   display: flex;
   width: auto;
   height: auto;
-  padding: 1px;
-  margin-left: 10px;
+
   margin-top: 10px;
 `;
 
@@ -134,6 +132,15 @@ const NavigationTrayOpenButtonContent = styled.div`
   border-radius: 10px;
 `;
 
+const ImageHolder = styled.img`
+  width: 400px;
+  cursor: pointer;
+  text-selection: pointer;
+  ${media.phone`
+    width: 100%;
+  `};
+`;
+
 const NavigationLinks = [
   "Home",
   "Clients",
@@ -141,7 +148,7 @@ const NavigationLinks = [
   "Water Meter",
   "Services",
   "About Us",
-  "Contact Us"
+  "Contact Us",
 ];
 
 const CurrentPage = {
@@ -151,7 +158,7 @@ const CurrentPage = {
   "Water Meter": <WaterMeterPage />,
   Services: <Services />,
   "About Us": <AboutUs />,
-  "Contact Us" : <ContactUs/>
+  "Contact Us": <ContactUs />,
 };
 
 export default class MainPage extends Component {
@@ -201,7 +208,7 @@ export default class MainPage extends Component {
               });
             }}
           >
-            <img src={MainLogo} alt="logo" />
+            <ImageHolder src={MainLogo} alt="logo" />
           </LogoContainer>
           <NavigationButtonContainer
             animate={{ opacity: [0, 1] }}

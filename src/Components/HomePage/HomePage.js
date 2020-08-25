@@ -18,7 +18,7 @@ const ParentContainer = styled(motion.div)`
 
   ${media.phone`
     width: auto;
-  
+
   `};
 `;
 
@@ -270,6 +270,18 @@ export default class HomePage extends Component {
           // sub_header_rhs_text={this.state.sub_header_rhs_text}
           items={this.state.items}
         ></CustomModal>
+        <div
+          style={{
+            marginTop: "20px",
+            width: "80%",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          The logos & products used in this catalog/website are acknowledged to
+          be trademark and property of respective manufacturers.
+        </div>
       </ParentContainer>
     );
   }

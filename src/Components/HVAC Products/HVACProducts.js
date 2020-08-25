@@ -80,8 +80,7 @@ const ProductPods = styled(motion.div)`
   align-items: center;
   box-shadow: 4px 4px 12px rgba(170, 226, 156, 0.87),
     -4px -4px 12px rgba(217, 217, 217, 0.1);
-  user-select: none;
-  cursor: pointer;
+
   margin: 10px;
   flex-direction: column;
   ${media.phone`
@@ -393,9 +392,18 @@ export default class ProductListing extends Component {
                         alignItems: "center",
                         height: "200px",
                         width: "200px",
+                        userSelect: "pointer",
+                        cursor: "pointer",
                       }}
                     >
                       <img
+                        style={{
+                          userSelect: "none",
+                          cursor: "pointer",
+                        }}
+                        onClick={() =>
+                          this.handleChildProductsPage(value, index)
+                        }
                         src={value.img}
                         alt={index}
                         style={{ transform: `scale(${value.scale})` }}

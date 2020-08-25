@@ -26,6 +26,7 @@ import Multical302PDF from "./Assets/PDF/multical-302.pdf";
 import Multical403PDF from "./Assets/PDF/multical-403.pdf";
 import Multical603PDF from "./Assets/PDF/multical-603.pdf";
 import Multical803PDF from "./Assets/PDF/multical-803.pdf";
+import MulticalSeriesPDF from "./Assets/PDF/multical-series.pdf";
 import EFCNeptronic from "./Assets/PDF/neptronic-efc.pdf";
 import NeptronicVAVPDF from "./Assets/PDF/neptronic-vav.pdf";
 import ProdualSensorsPDF from "./Assets/PDF/produal-sensors.pdf";
@@ -47,6 +48,7 @@ export const HVACProductImageList = [
     sub_header: "Heat metering with ULTRAFLOW® 54",
     sub_header_rhs: Denmark,
     sub_header_rhs_text: "Made In Denmark",
+    download_content: MulticalSeriesPDF,
     information: [
       [
         <li>
@@ -287,7 +289,7 @@ export const HVACProductImageList = [
       {
         id: "Nidec (Formarly Emerson) Commander Edition.",
         img: CommanderNidecC200,
-        scale: 0.6,
+        scale: 0.2,
         sub_header: "Nidec (Formarly Emerson) Commander C200.",
         know_more_link:
           "https://acim.nidec.com/drives/control-techniques/products/ac-drives/commander-c-general-purpose-drives",

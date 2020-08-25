@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 
 import styled from "styled-components";
 import "./fonts/Mont.css";
+import { Helmet } from "react-helmet";
 
 const Wrapper = styled.div`
   display: flex;
