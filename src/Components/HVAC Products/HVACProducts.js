@@ -127,6 +127,9 @@ const ProductPodSubHeader = styled.div`
   margin-top: -15px;
   align-items: center;
   justify-content: flex-start;
+  ${media.phone`
+    margin-top: 10px;
+  `};
 `;
 
 const ProductContainer = styled(motion.div)`
@@ -294,11 +297,22 @@ export default class ProductListing extends Component {
                             <ProductPodSubHeader>
                               {value2.sub_header}
                             </ProductPodSubHeader>
-                            <img
-                              style={{ height: "200px", width: "200px" }}
-                              src={value2.img}
-                              alt={index2}
-                            />
+                            <div
+                              style={{
+                                display: "flex",
+                                width: "200px",
+                                height: "200px",
+                                justifyContent: "center",
+                                alignItems: "center",
+                              }}
+                            >
+                              <img
+                                style={{ transform: `scale(${value2.scale})` }}
+                                src={value2.img}
+                                alt={index2}
+                              />
+                            </div>
+
                             <ContainerBody>
                               {value2.information &&
                                 value2.information.map((value3, index3) => (
@@ -372,11 +386,22 @@ export default class ProductListing extends Component {
                     <ProductPodSubHeader>
                       {value.sub_header}
                     </ProductPodSubHeader>
-                    <img
-                      src={value.img}
-                      alt={index}
-                      style={{ transform: `scale(${value.scale})` }}
-                    />
+                    <div
+                      style={{
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        height: "200px",
+                        width: "200px",
+                      }}
+                    >
+                      <img
+                        src={value.img}
+                        alt={index}
+                        style={{ transform: `scale(${value.scale})` }}
+                      />
+                    </div>
+
                     <ContainerBody>
                       {value.information.length > 0 &&
                         value.information.map((value2, index2) => (

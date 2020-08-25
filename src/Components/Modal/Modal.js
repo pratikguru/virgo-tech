@@ -30,14 +30,17 @@ const SplashScreen = styled(motion.div)`
   padding: 10px;
   border: none;
   border-radius: 10px;
-  width: 60%;
+  width: 90%;
   height: auto;
   box-shadow: 20px 20px 60px rgba(170, 231, 209, 0.25),
     -20px -20px 60px rgba(163, 230, 189, 0.25);
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  margin-left: auto;
 
   ${media.phone`
+    flex-direction: column;
+    overflow-x : auto;
     width: 100%;
     height: 100%;
   `};
@@ -170,92 +173,117 @@ export default class CustomModal extends Component {
         transition={{ duration: 0.2, ease: "linear" }}
       >
         <SplashScreen
+          style={{
+            marginLeft: this.props.items.length === 1 ? "auto" : "10px",
+          }}
           animate={{ opacity: [0, 10, 40, 80, 100] }}
           transition={{ duration: 0.5, ease: "linear" }}
         >
-          <SplashScreenHeader>
-            <Title>{this.props.header}</Title>
+          {this.props.items.map((value, index) => (
             <div
               style={{
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
-              }}
-            >
-              <motion.div
-                whileHover={{
-                  fontWeight: [400, 600],
-                }}
-                transition={{ duration: 0.2, ease: "linear" }}
-                style={{
-                  display: "flex",
-                  color: "grey",
-                  fontWeight: 400,
-                  fontSize: "14px",
-                  marginRight: "10px",
-                }}
-              >
-                {this.props.sub_header_rhs_text}
-                <div>
-                  <img
-                    style={{
-                      height: "20px",
-                      marginLeft: "10px",
-                      borderRadius: "5px",
-                    }}
-                    src={this.props.sub_header_rhs}
-                    alt="1"
-                  />
-                </div>
-              </motion.div>
-              <CloseButton
-                whileTap={{ scale: 0.88 }}
-                onClick={this.props.onClose}
-              >
-                X
-              </CloseButton>
-            </div>
-          </SplashScreenHeader>
-          <SplashScreenSubheader>{this.props.subHeader}</SplashScreenSubheader>
-
-          <SplashScreenBody>
-            {this.props.img && (
-              <div>
-                <img
-                  src={this.props.img}
-                  alt={"some image"}
-                  style={{
-                    transform: `scale(${this.props.scale})`,
-                  }}
-                />
-              </div>
-            )}
-            <div
-              style={{
-                display: "flex",
                 flexDirection: "column",
-                maxHeight: "300px",
-                overflowY: "auto",
+                margin: "10px",
               }}
             >
-              {this.props.information &&
-                this.props.information.map((value, index) => (
-                  <li style={{ marginTop: "10px" }}>{value}</li>
-                ))}
+              <SplashScreenHeader>
+                <Title>{this.props.items[0].header}</Title>
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <motion.div
+                    whileHover={{
+                      fontWeight: [400, 600],
+                    }}
+                    transition={{ duration: 0.2, ease: "linear" }}
+                    style={{
+                      display: "flex",
+                      color: "grey",
+                      fontWeight: 400,
+                      fontSize: "14px",
+                      marginRight: "10px",
+                    }}
+                  >
+                    {this.props.items[0].sub_header_rhs_text}
+                    <div>
+                      <img
+                        style={{
+                          height: "20px",
+                          marginLeft: "10px",
+                          borderRadius: "5px",
+                        }}
+                        src={this.props.items[0].sub_header_rhs}
+                        alt="1"
+                      />
+                    </div>
+                  </motion.div>
+                  <CloseButton
+                    whileTap={{ scale: 0.88 }}
+                    onClick={this.props.onClose}
+                  >
+                    X
+                  </CloseButton>
+                </div>
+              </SplashScreenHeader>
+              <SplashScreenSubheader>
+                {this.props.items[0].sub_header}
+              </SplashScreenSubheader>
+              <SplashScreenBody>
+                {value.img && (
+                  <div
+                    style={{
+                      width: "200px",
+                      height: "200px",
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                    }}
+                  >
+                    <img
+                      src={value.img}
+                      alt={"some image"}
+                      style={{
+                        transform: `scale(${value.scale})`,
+                      }}
+                    />
+                  </div>
+                )}
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    maxHeight: "300px",
+                    overflowY: "auto",
+                  }}
+                >
+                  {value.information &&
+                    value.information.map((value2, index) => (
+                      <li style={{ marginTop: "10px" }}>{value2}</li>
+                    ))}
+                </div>
+              </SplashScreenBody>
+
+              <SplashScreenFooter>
+                <a
+                  href={value.download_content}
+                  download
+                  style={{ textDecoration: "none" }}
+                >
+                  <CustomButton whileTap={{ scale: 0.88 }}>
+                    {" "}
+                    DOWNLOAD BROCHURE{" "}
+                  </CustomButton>
+                </a>
+              </SplashScreenFooter>
             </div>
-          </SplashScreenBody>
-          <SplashScreenFooter>
-            <a
-              href={this.props.download_content}
-              download
-              style={{ textDecoration: "none" }}
-            >
-              <CustomButton whileTap={{ scale: 0.88 }}>
-                {" "}
-                DOWNLOAD BROCHURE{" "}
-              </CustomButton>
-            </a>
-          </SplashScreenFooter>
+          ))}
         </SplashScreen>
       </Wrapper>
     );

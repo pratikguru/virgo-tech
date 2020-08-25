@@ -124,8 +124,7 @@ export default class ClientPage extends Component {
       <ParentContainer>
         <Container variants={container} initial="hidden" animate="visible">
           <ContainerHeader>
-            OUR CLIENTS
-            <ClientCount>{ClientsList.length} CLIENTS</ClientCount>
+            SOME OF OUR FEW PRESTIGIOUS CLIENTS
             <SearchBar
               type="search"
               placeholder="Search Client..."

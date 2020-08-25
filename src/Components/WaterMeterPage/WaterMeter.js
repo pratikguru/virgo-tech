@@ -12,8 +12,7 @@ import YouTube from "react-youtube";
 
 import WaterMeter from "../../Assets/Water Meter/meter.svg";
 import RainbowResidency from "../../Assets/Water Meter/rainbow-residency.png";
-import CanadaFlag from "../../Assets/flags/canada.jpg";
-
+import DenmarkFlag from "../../Assets/flags/denmark.jpg";
 
 import WaterMeterPDF from "../../Assets/PDF/water-meter.pdf";
 
@@ -608,7 +607,7 @@ export default class WaterMeterPage extends Component {
                 fontSize: "14px",
               }}
             >
-              Made in Canada
+              Made in Denmark
               <div>
                 <img
                   style={{
@@ -616,7 +615,7 @@ export default class WaterMeterPage extends Component {
                     marginLeft: "10px",
                     borderRadius: "5px",
                   }}
-                  src={CanadaFlag}
+                  src={DenmarkFlag}
                   alt="1"
                 />
               </div>
@@ -682,16 +681,12 @@ export default class WaterMeterPage extends Component {
               alt="some-image"
             />
           </ImageContainer>
-          <a
-            href={WaterMeterPDF}
-            download
-            style={{ textDecoration: "none" }}
-          >
+          <a href={WaterMeterPDF} download style={{ textDecoration: "none" }}>
             <CustomButton whileTap={{ scale: 0.88 }}>
               {" "}
               DOWNLOAD BROCHURE{" "}
             </CustomButton>
-            </a>
+          </a>
         </Container>
 
         <Container style={{ justifyContent: "center" }}>

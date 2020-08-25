@@ -160,20 +160,22 @@ export default class HomePage extends Component {
       selectedSubheader: "",
       scale: 0.7,
       download_content: "",
+      items: [{}],
     };
   }
 
   handlePopup = (index, index2) => {
     this.setState({
       showModal: true,
-      selectedInformation: HexaGrid[index][index2].information,
-      selectedHeader: HexaGrid[index][index2].header,
-      selectedImage: HexaGrid[index][index2].img,
-      selectedSubheader: HexaGrid[index][index2].sub_header,
-      scale: HexaGrid[index][index2].scale,
-      download_content: HexaGrid[index][index2].download_content,
-      sub_header_rhs: HexaGrid[index][index2].sub_header_rhs,
-      sub_header_rhs_text: HexaGrid[index][index2].sub_header_rhs_text,
+      items: HexaGrid[index][index2].items,
+      // selectedInformation: HexaGrid[index][index2].information,
+      // selectedHeader: HexaGrid[index][index2].header,
+      // selectedImage: HexaGrid[index][index2].img,
+      // selectedSubheader: HexaGrid[index][index2].sub_header,
+      // scale: HexaGrid[index][index2].scale,
+      // download_content: HexaGrid[index][index2].download_content,
+      // sub_header_rhs: HexaGrid[index][index2].sub_header_rhs,
+      // sub_header_rhs_text: HexaGrid[index][index2].sub_header_rhs_text,
     });
   };
 
@@ -258,14 +260,15 @@ export default class HomePage extends Component {
         <CustomModal
           showModal={this.state.showModal}
           onClose={this.handleClose}
-          img={this.state.selectedImage}
-          information={this.state.selectedInformation}
-          subHeader={this.state.selectedSubheader}
-          header={this.state.selectedHeader}
-          scale={this.state.scale}
-          download_content={this.state.download_content}
-          sub_header_rhs={this.state.sub_header_rhs}
-          sub_header_rhs_text={this.state.sub_header_rhs_text}
+          // img={this.state.selectedImage}
+          // information={this.state.selectedInformation}
+          // subHeader={this.state.selectedSubheader}
+          // header={this.state.selectedHeader}
+          // scale={this.state.scale}
+          // download_content={this.state.download_content}
+          // sub_header_rhs={this.state.sub_header_rhs}
+          // sub_header_rhs_text={this.state.sub_header_rhs_text}
+          items={this.state.items}
         ></CustomModal>
       </ParentContainer>
     );

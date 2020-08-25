@@ -2,10 +2,10 @@ import KamstrupBTUMeter from "./Assets/HVACProducts/kamstrup-btu-meter.png";
 import EFCFanCoilUnitController from "./Assets/HVACProducts/efc-fan-coil-unit-controller.png";
 import EVCVAVUnitController from "./Assets/HVACProducts/evc-vav-unit-controller.png";
 import SchneiderBMS from "./Assets/HVACProducts/schneider-bms.png";
-import VFDDrivers from "./Assets/HVACProducts/commander-200_50.png";
+import VFDDrivers from "./Assets/HVACProducts/commander-200.png";
 import YaskawaLowHarmonicVFD from "./Assets/HVACProducts/yaskawa-low-harmonic-vfd.png";
 import ProdualSensors from "./Assets/HVACProducts/sensors.png";
-import HV600 from "./Assets/HVACProducts/hv600.png";
+import HV600 from "./Assets/HVACProducts/hv600_new.jpg";
 
 import React from "react";
 
@@ -16,8 +16,8 @@ import Multical603 from "./Assets/HVACProducts/mulitcal-603.png";
 import Multical803 from "./Assets/HVACProducts/multical-803.png";
 import VelocitySensors from "./Assets/HVACProducts/velocity-sensor-produal.png";
 import SchniederOperation from "./Assets/HVACProducts/schneider-operation.JPG";
-import CommanderNidecC200 from "./Assets/HVACProducts/commander-c200-inside.png";
-import LHVFDU1000 from "./Assets/HVACProducts/U1000-lhvfd.png";
+import CommanderNidecC200 from "./Assets/HVACProducts/commander-c200.png";
+import LHVFDU1000 from "./Assets/HVACProducts/hvac-600.png";
 
 /* PDF's. */
 import CommanderPDF from "./Assets/PDF/commander.pdf";
@@ -40,13 +40,10 @@ import Finland from "./Assets/flags/finland.jpg";
 import Japan from "./Assets/flags/japan.webp";
 
 export const HVACProductImageList = [
-  
-
-
   {
     id: "Kamstrup BTU Meter",
     img: Multical603,
-    scale: 0.7,
+    scale: 0.8,
     sub_header: "Heat metering with ULTRAFLOW® 54",
     sub_header_rhs: Denmark,
     sub_header_rhs_text: "Made In Denmark",
@@ -81,6 +78,7 @@ export const HVACProductImageList = [
       {
         id: "MULTICAL®302 ",
         img: Multical302,
+        scale: 0.4,
         sub_header: "The Ultra-compact meter",
         know_more_link:
           "https://www.kamstrup.com/en-en/heat-solutions/heat-meters/multical-302",
@@ -88,50 +86,62 @@ export const HVACProductImageList = [
         information: [
           [<li>Small and compact design</li>],
           [
-            <li>Integrated remote reading options are wired
-        M-Bus or wireless M-Bus</li>,
+            <li>
+              Integrated remote reading options are wired M-Bus or wireless
+              M-Bus
+            </li>,
           ],
           [<li>On-site configuration.</li>],
           [<li>Flow sensor range DN15…20</li>],
           [<li>Flow sensor cable length 1.2 m</li>],
           [
-            <li>Permanent condensation accepted for flow
-        sensor and temperature sensor pair</li>,
+            <li>
+              Permanent condensation accepted for flow sensor and temperature
+              sensor pair
+            </li>,
+          ],
+
+          [
+            <li>
+              One temperature sensor is always mounted in the flow sensor
+            </li>,
           ],
           [<li>IP68 rating.</li>],
-          [
-            <li>One temperature sensor is always mounted in
-        the flow sensor</li>,
-          ],
         ],
       },
       {
         id: "MULTICAL®403",
         img: Multical403,
+        scale: 0.4,
         sub_header: "The compact and flexible meter",
         know_more_link:
           "https://www.kamstrup.com/en-en/heat-solutions/heat-meters/multical-403",
         download_content: Multical403PDF,
         information: [
           [
-            <li>Remote reading with communication module via
-        wired/wireless* M-Bus, Modbus, BACnet etc</li>,
+            <li>
+              Remote reading with communication module via wired/wireless*
+              M-Bus, Modbus, BACnet etc
+            </li>,
           ],
           [<li>On-site configuration available</li>],
           [<li>Flow sensor range DN15…50</li>],
           [<li>Flow sensor cable length 1.5 m</li>],
           [<li>Permanent condensation accepted (IP68 rating)</li>],
-          [<li>IP68 rating.</li>],
+
           [<li>Can be insulated</li>],
           [
-            <li>Possibility for direct temperature sensor mounting
-        in flow sensor</li>,
+            <li>
+              Possibility for direct temperature sensor mounting in flow sensor
+            </li>,
           ],
+          [<li>IP68 rating.</li>],
         ],
       },
       {
         id: "MULTICAL®603",
         img: Multical603,
+        scale: 0.8,
         know_more_link:
           "https://www.kamstrup.com/en-en/heat-solutions/heat-meters/multical-603",
         sub_header: "The compact and flexible meter",
@@ -139,15 +149,14 @@ export const HVACProductImageList = [
         information: [
           [<li>Auto Detect</li>],
           [
-            <li>Remote reading with communication module
-        via wired/wireless* M-Bus, Modbus, BACnet etc</li>,
+            <li>
+              Remote reading with communication module via wired/wireless*
+              M-Bus, Modbus, BACnet etc
+            </li>,
           ],
           [<li>Direct temperature sensor mounting up to DN40</li>],
           [<li>Can be insulated</li>],
-          [
-            <li>Cable lengths 2.5…10 m (can be extended to 100
-        m)</li>,
-          ],
+          [<li>Cable lengths 2.5…10 m (can be extended to 100 m)</li>],
           [<li>Permanent condensation accepted</li>],
           [<li>On-site configuration</li>],
           [<li>IP65 rating</li>],
@@ -156,45 +165,49 @@ export const HVACProductImageList = [
       {
         id: "MULTICAL®803",
         img: Multical803,
+        scale: 0.8,
         know_more_link:
           "https://www.kamstrup.com/en-en/heat-solutions/heat-meters/multical-803",
         sub_header: "The compact and flexible meter",
         download_content: Multical803PDF,
         information: [
-          [`Auto Detect`],
+          [<li>Auto Detect</li>],
           [
-            `Remote reading with communication module via
-        wired/wireless* M-Bus, Modbus, BACnet etc.`,
+            <li>
+              Remote reading with communication module via wired/wireless*
+              M-Bus, Modbus, BACnet etc.
+            </li>,
           ],
-          [`4 slots for communication modules`],
+          [<li>4 slots for communication modules</li>],
 
-          [`Direct temperature sensor mounting up to DN40`],
-          [`Can be insulated`],
-          [`Cable lengths 2.5…10 m (can be extended to 100 m)`],
-          [`Permanent condensation accepted*`],
-          [`On-site configuration`],
-          [`IP65 rating`],
+          [<li>Direct temperature sensor mounting up to DN40</li>],
+          [<li>Can be insulated</li>],
+          [<li>Cable lengths 2.5…10 m (can be extended to 100 m)</li>],
+          [<li>Permanent condensation accepted*</li>],
+          [<li>On-site configuration</li>],
+          [<li>IP65 rating</li>],
         ],
       },
     ],
   },
   {
-    id: "EFC Fan Coilt Unit Controller",
-    img: EFCFanCoilUnitController,
+    id: "EVC VAV Unit Controller",
+    img: EVCVAVUnitController,
     scale: 0.7,
     sub_header: "Unit Controller with TFL Thermostat",
-    know_more_link: "https://www.neptronic.com/Controls/Fancoils.aspx",
-    download_content: EFCNeptronic,
+    know_more_link: "https://www.neptronic.com/Controls/Vav.aspx",
+    download_content: NeptronicVAVPDF,
     sub_header_rhs: Canada,
     sub_header_rhs_text: "Made In Canada",
     information: [
-      [<li>Controller mounted in fan coil unit.</li>],
-      [<li>Connect controller to room thermostat via 3 wires.</li>],
+      [<li>Built-in actuator and optional air pressure sensor.</li>],
+      [<li>Mounts on jackshaft or damper.</li>],
+      [<li>Connects to room thermostat via 3 wires</li>],
       [<li>BACnet MS/TP communication.</li>],
-      [<li>24, 120 or 240Vac.</li>],
-      [<li>Up to 10 inputs and 12 outputs.</li>],
+      [<li>Up to 4 inputs and 6 outputs (I/O configuration).</li>],
     ],
   },
+
   {
     id: "Schneider BMS",
     img: SchneiderBMS,
@@ -226,6 +239,7 @@ export const HVACProductImageList = [
     child_products: [
       {
         id: "EcoStruxure™ Building Operation",
+        scale: 0.6,
         know_more_link:
           "https://www.se.com/in/en/product-range/62111-ecostruxure%E2%84%A2-building-operation/?parent-subcategory-id=1210&filter=business-2-building-automation-and-control",
         download_content: SchneiderBMSPDF,
@@ -245,7 +259,7 @@ export const HVACProductImageList = [
   {
     id: "VFD",
     img: VFDDrivers,
-    scale: 0.8,
+    scale: 0.6,
     sub_header: "Nidec (Formarly Emerson) drives",
     download_content: CommanderPDF,
     sub_header_rhs: Japan,
@@ -273,6 +287,7 @@ export const HVACProductImageList = [
       {
         id: "Nidec (Formarly Emerson) Commander Edition.",
         img: CommanderNidecC200,
+        scale: 0.6,
         sub_header: "Nidec (Formarly Emerson) Commander C200.",
         know_more_link:
           "https://acim.nidec.com/drives/control-techniques/products/ac-drives/commander-c-general-purpose-drives",
@@ -329,79 +344,101 @@ export const HVACProductImageList = [
     ],
   },
   {
-    id : "VFD",
-    img : HV600,
-    scale :0.8,
-    sub_header : "Yaskawa HV 600",
-    sub_header_rhs : Japan,
-    sub_header_rhs_text : "From Japan | India",
+    id: "VFD",
+    img: HV600,
+    scale: 0.7,
+    sub_header: "Yaskawa HV 600",
+    sub_header_rhs: Japan,
+    sub_header_rhs_text: "From Japan | India",
     download_content: Yaskawa600PDF,
-    information : [
+    information: [
       [
         <li style={{ marginTop: "10px" }}>
-          The HV600 was specifically designed as a variable frequency drive for HVAC, Refrigeration and weater applications.
-        </li>
+          The HV600 was specifically designed as a variable frequency drive for
+          HVAC, Refrigeration and weater applications.
+        </li>,
       ],
       [
         <li style={{ marginTop: "10px" }}>
-          Its high contrast disaplay and LED status ring gives out clear indication of drive parametes and operation status.
-        </li>
+          Its high contrast disaplay and LED status ring gives out clear
+          indication of drive parametes and operation status.
+        </li>,
       ],
       [
         <li style={{ marginTop: "10px" }}>
-          These features and mobile device programming combine to make the complicated seem simple.
-        </li>
+          These features and mobile device programming combine to make the
+          complicated seem simple.
+        </li>,
       ],
       [
         <li style={{ marginTop: "10px" }}>
-          The HV600 also includes as standard PID functions to maintain control of set points for temperature, flow, or pressure without the need for external control devices.
-        </li>
+          The HV600 also includes as standard PID functions to maintain control
+          of set points for temperature, flow, or pressure without the need for
+          external control devices.
+        </li>,
       ],
       [
         <li style={{ marginTop: "10px" }}>
-          Flexible motor control is achieved through induction and permanent magnent motors and synchronous reluctance (SynRM) motors producing an output frequency of 400Hz.
-        </li>
-      ]
+          Flexible motor control is achieved through induction and permanent
+          magnent motors and synchronous reluctance (SynRM) motors producing an
+          output frequency of 400Hz.
+        </li>,
+      ],
     ],
-    child_products : [
+    child_products: [
       {
         id: "VFD ",
         img: HV600,
+        scale: 0.6,
         sub_header: "Yaskawa HV 600",
         know_more_link:
-        "https:https://www.yaskawa.com/documents/20197/890813/ahr2020.html/979d2fa4-5339-4c4d-afe6-50d2c1b07edb",
+          "https:https://www.yaskawa.com/documents/20197/890813/ahr2020.html/979d2fa4-5339-4c4d-afe6-50d2c1b07edb",
         download_content: Yaskawa600PDF,
         information: [
-          [<li style={{ marginTop: "10px" }}>
-            The HV600 comes in standard from the factory with a choice of IP20, IP55 with ambient temperature ratings upto 50C. Ratings upto 60 can be achieved with current derating.
-          </li>],
           [
             <li style={{ marginTop: "10px" }}>
-              Most HV600 models can be mounted side-by-side with bottom entry wiring to maximize cabinet space. 
-            </li >,
-          ],
-          [<li style={{ marginTop: "10px" }}>
-            When mounted in a seperate enclosure, heat management can be accomplished by removing detachable top and bottom covers on the drive or by "back-side" mounting the standard drive with the heatsink external to the enclosure.
-          </li>],
-          [
-            <li>
-              All the featuers expected for efficient building operation come standard with the HV600. Customer-supplied 24 VDC input control power ensures network communications are maintined even during loss of main input power.
-            </li>
+              The HV600 comes in standard from the factory with a choice of
+              IP20, IP55 with ambient temperature ratings upto 50C. Ratings upto
+              60 can be achieved with current derating.
+            </li>,
           ],
           [
-            <li>
-              A full complement of analog and digital inputs are built in for connection to sensors and safeties.
-            </li>
+            <li style={{ marginTop: "10px" }}>
+              Most HV600 models can be mounted side-by-side with bottom entry
+              wiring to maximize cabinet space.
+            </li>,
+          ],
+          [
+            <li style={{ marginTop: "10px" }}>
+              When mounted in a seperate enclosure, heat management can be
+              accomplished by removing detachable top and bottom covers on the
+              drive or by "back-side" mounting the standard drive with the
+              heatsink external to the enclosure.
+            </li>,
           ],
           [
             <li>
-              All HV600 IP20 and IP55 models are plenum ratd for building automation applications.
-            </li>
-          ]
-         
+              All the featuers expected for efficient building operation come
+              standard with the HV600. Customer-supplied 24 VDC input control
+              power ensures network communications are maintined even during
+              loss of main input power.
+            </li>,
+          ],
+          [
+            <li>
+              A full complement of analog and digital inputs are built in for
+              connection to sensors and safeties.
+            </li>,
+          ],
+          [
+            <li>
+              All HV600 IP20 and IP55 models are plenum ratd for building
+              automation applications.
+            </li>,
+          ],
         ],
-      }
-    ]
+      },
+    ],
   },
   {
     id: "Yaskawa Low Harmonic VFD",
@@ -410,7 +447,7 @@ export const HVACProductImageList = [
     sub_header: "U1000 Series Fan & Pump drives",
     download_content: YaskawaLHVFD,
     sub_header_rhs: Japan,
-    sub_header_rhs_text: "Made In Japan",
+    sub_header_rhs_text: "From Japan | India",
     information: [
       [
         <div style={{ fontSize: "14px", fontWeight: "500" }}>
@@ -446,6 +483,7 @@ export const HVACProductImageList = [
         id: "U1000 Low Harmonic Variable Frequency Drive.",
         img: LHVFDU1000,
         sub_header: "Yaskwaw U1000",
+        scale: 0.3,
         know_more_link:
           "https://www.yaskawa.com/products/drives/industrial-ac-drives/general-purpose-drives/u1000-industrial-matrix-drive",
         information: [
@@ -574,23 +612,7 @@ export const HVACProductImageList = [
       },
     ],
   },
-  {
-    id: "EVC VAV Unit Controller",
-    img: EVCVAVUnitController,
-    scale: 0.7,
-    sub_header: "Unit Controller with TFL Thermostat",
-    know_more_link: "https://www.neptronic.com/Controls/Vav.aspx",
-    download_content: NeptronicVAVPDF,
-    sub_header_rhs: Canada,
-    sub_header_rhs_text: "Made In Canada",
-    information: [
-      [<li>Built-in actuator and optional air pressure sensor.</li>],
-      [<li>Mounts on jackshaft or damper.</li>],
-      [<li>Connects to room thermostat via 3 wires</li>],
-      [<li>BACnet MS/TP communication.</li>],
-      [<li>Up to 4 inputs and 6 outputs (I/O configuration).</li>],
-    ],
-  },
+
   {
     id: "Produal Sensors",
     img: ProdualSensors,
@@ -627,6 +649,23 @@ export const HVACProductImageList = [
           and easy-to-install products, and our quality system is ISO certified.
         </li>,
       ],
+    ],
+  },
+  {
+    id: "EFC Fan Coilt Unit Controller",
+    img: EFCFanCoilUnitController,
+    scale: 0.7,
+    sub_header: "Unit Controller with TFL Thermostat",
+    know_more_link: "https://www.neptronic.com/Controls/Fancoils.aspx",
+    download_content: EFCNeptronic,
+    sub_header_rhs: Canada,
+    sub_header_rhs_text: "Made In Canada",
+    information: [
+      [<li>Controller mounted in fan coil unit.</li>],
+      [<li>Connect controller to room thermostat via 3 wires.</li>],
+      [<li>BACnet MS/TP communication.</li>],
+      [<li>24, 120 or 240Vac.</li>],
+      [<li>Up to 10 inputs and 12 outputs.</li>],
     ],
   },
 ];

@@ -28,7 +28,9 @@ const Container = styled(motion.div)`
   ${media.phone`
       flex-direction : column;
       width : 90%;
+      overflow-y:auto;
       height: 90%;
+      padding-bottom: 10px;
     `};
 `;
 
@@ -40,6 +42,11 @@ const FormContainer = styled.div`
   align-items: center;
   margin-top: 50px;
   flex-direction: column;
+
+  ${media.phone`
+    overflow-y: auto;
+
+  `};
 `;
 
 const FormLabel = styled.div`
@@ -78,11 +85,11 @@ const CustomButton = styled(motion.div)`
 `;
 
 const TextAreaCustom = styled.textarea`
-  width: 400px;
+  width: 300px;
   height: 180px;
 
   ${media.phone`
-    width: auto;
+    width: 260px;
   
   `};
 `;
@@ -154,16 +161,53 @@ export default class ContactUS extends Component {
               animate={{ scale: [0.88, 1] }}
               transform={{ duration: 0.2, ease: "lienar", delay: 0.5 }}
             >
+              <div style={{ fontWeight: 600 }}>Bangalore (Head-office)</div>
               <div style={{ fontWeight: 600 }}>Company Address</div>
               <div style={{ marginTop: "10px", fontSize: "14px" }}>
-                #437-B, 1st Floor, 5th Cross, Near BDA Complex, 2nd Block, HBR
-                Layout, Bangalore- 560 043. Karnataka, India
+                M/S. Virgo Technologies, #437-B, 1st Floor, 5th Cross, Near BDA
+                Complex, 2nd Block, HBR Layout, Bangalore- 560 043. Karnataka,
+                India
               </div>
               <div style={{ fontWeight: 600, marginTop: "10px" }}>
                 Contact Info
               </div>
               <div style={{ fontSize: "14px" }}>
-                +91-80-25441141 | +91-80-25441151
+                +91-80-25441141 | +91-80-25441151 | +91 9448055569
+              </div>
+            </InformationCard>
+            <InformationCard
+              animate={{ scale: [0.88, 1] }}
+              transform={{ duration: 0.2, ease: "lienar", delay: 0.5 }}
+            >
+              <div style={{ fontWeight: 600 }}>Hyderabad (Branch-office)</div>
+              <div style={{ fontWeight: 600 }}>Company Address</div>
+              <div style={{ marginTop: "10px", fontSize: "14px" }}>
+                M/S. Virgo Technologies F.NO: 202, 7-1-65/1/A, NEST APTS, DK
+                ROAD, SBI COLONY, AMEERPET, Hyderabad-500 016 ,Telangana
+              </div>
+              <div style={{ fontWeight: "600", marginTop: "5px" }}>
+                Mr.Naresh
+              </div>
+              <div style={{ fontWeight: 600, marginTop: "10px" }}>
+                Contact Info
+              </div>
+              <div style={{ fontSize: "14px" }}>
+                +91 9611816464 | +91 9448055569
+              </div>
+            </InformationCard>
+            <InformationCard
+              animate={{ scale: [0.88, 1] }}
+              transform={{ duration: 0.2, ease: "lienar", delay: 0.5 }}
+            >
+              <div style={{ fontWeight: 600 }}>Chennai (Branch-office)</div>
+              <div style={{ fontWeight: "600", marginTop: "5px" }}>
+                Mr.Sevugan
+              </div>
+              <div style={{ fontWeight: 600, marginTop: "10px" }}>
+                Contact Info
+              </div>
+              <div style={{ fontSize: "14px" }}>
+                +91 9840766413 | +91-80-25441151{" "}
               </div>
             </InformationCard>
             <InformationCard
@@ -197,3 +241,10 @@ export default class ContactUS extends Component {
     );
   }
 }
+
+/*
++91-9448055569
+Extra Number to be added.
+
+Address - Chennai, Hyderabad & Bangalore.
+*/
