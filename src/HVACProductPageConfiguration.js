@@ -241,7 +241,7 @@ export const HVACProductImageList = [
     child_products: [
       {
         id: "EcoStruxure™ Building Operation",
-        scale: 0.6,
+        scale: 0.4,
         know_more_link:
           "https://www.se.com/in/en/product-range/62111-ecostruxure%E2%84%A2-building-operation/?parent-subcategory-id=1210&filter=business-2-building-automation-and-control",
         download_content: SchneiderBMSPDF,

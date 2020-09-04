@@ -80,12 +80,13 @@ const ProductPods = styled(motion.div)`
   align-items: center;
   box-shadow: 4px 4px 12px rgba(170, 226, 156, 0.87),
     -4px -4px 12px rgba(217, 217, 217, 0.1);
-
   margin: 10px;
   flex-direction: column;
+
   ${media.phone`
-  margin-top: 10px;
-`}
+    margin-top: 10px;
+    height: auto;
+  `}
 `;
 
 const ProductPodsHybrid = styled(ProductPods)`

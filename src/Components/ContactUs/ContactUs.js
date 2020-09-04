@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { media, mediaType } from "../../Utils/media.js";
+import emailjs from "emailjs-com";
 
 const ParentContainer = styled(motion.div)`
   display: flex;
@@ -35,7 +36,7 @@ const Container = styled(motion.div)`
 `;
 
 const FormContainer = styled.div`
-  width: 90%;
+  width: 40%;
   height: auto;
   display: flex;
   justify-content: space-between;
@@ -52,19 +53,25 @@ const FormContainer = styled.div`
 const FormLabel = styled.div`
   margin-right: auto;
   margin-top: 20px;
+  display: flex;
 `;
 
 const FormInput = styled.div`
   margin-top: 5px;
+  font-family: Montserrat;
+  font-size: 14px;
+  border-radius: 10px;
 `;
 
 const FormElement = styled.input`
   width: 100%;
-  border-radius: 3px;
+  border-radius: 10px;
   border: 1px solid grey;
   height: 35px;
   width: 250px;
   padding: 10px;
+  font-family: Montserrat;
+  font-size: 14px;
 `;
 
 const CustomButton = styled(motion.div)`
@@ -87,7 +94,10 @@ const CustomButton = styled(motion.div)`
 const TextAreaCustom = styled.textarea`
   width: 300px;
   height: 180px;
-
+  font-family: Montserrat;
+  font-size: 14px;
+  border-radius: 10px;
+  padding: 10px;
   ${media.phone`
     width: 260px;
   
@@ -134,7 +144,73 @@ const InformationCard = styled(motion.div)`
 export default class ContactUS extends Component {
   constructor() {
     super();
+    this.state = {
+      name: "",
+      designation: "",
+      organization: "",
+      country: "",
+      email: "",
+      message: "",
+    };
   }
+
+  componentDidMount() {
+    emailjs.init("user_dyTFL9M0BH0haRjSeAlXO");
+  }
+
+  handleEmail = () => {
+    let message = {
+      from_name: this.state.name,
+      designation: this.state.designation,
+      organization: this.state.organization,
+      country: this.state.country,
+      email: this.state.email,
+      message: this.state.message,
+    };
+
+    console.log(message);
+    if (
+      message.from_name === "" ||
+      message.designation === "" ||
+      message.organization === "" ||
+      message.country === "" ||
+      message.email === "" ||
+      message.message === ""
+    ) {
+      alert("Please enter all the fields.");
+      return;
+    } else {
+      emailjs
+        .send("default_service", "template_bb3g6d2", {
+          from_name: message.from_name,
+          designation: message.designation,
+          organization: message.organization,
+          country: message.country,
+          email: message.email,
+          message: message.message,
+        })
+        .then(
+          (result) => {
+            console.log(result.text);
+            alert("Email Sent");
+          },
+          (error) => {
+            console.log(error.text);
+          }
+        );
+    }
+  };
+
+  handleChange = (type, e) => {
+    this.setState(
+      {
+        [type]: e.target.value,
+      },
+      () => {
+        console.log(this.state[type]);
+      }
+    );
+  };
 
   render() {
     return (
@@ -142,34 +218,39 @@ export default class ContactUS extends Component {
         <Container>
           <FormContainer>
             <FormLabel>Name</FormLabel>
-            <FormInput>
+            <FormInput onChange={(e) => this.handleChange("name", e)}>
               <FormElement placeholder="Name"></FormElement>
             </FormInput>
             <FormLabel>Designation</FormLabel>
-            <FormInput>
+            <FormInput onChange={(e) => this.handleChange("designation", e)}>
               <FormElement placeholder="Designation"></FormElement>
             </FormInput>
             <FormLabel>Organisation</FormLabel>
-            <FormInput>
+            <FormInput onChange={(e) => this.handleChange("organization", e)}>
               <FormElement placeholder="Organisation"></FormElement>
             </FormInput>
             <FormLabel>Country</FormLabel>
-            <FormInput>
+            <FormInput onChange={(e) => this.handleChange("country", e)}>
               <FormElement placeholder="Country"></FormElement>
             </FormInput>
             <FormLabel>Email</FormLabel>
-            <FormInput>
+            <FormInput onChange={(e) => this.handleChange("email", e)}>
               <FormElement placeholder="Email"></FormElement>
             </FormInput>
             <FormLabel>Message</FormLabel>
-            <FormInput style={{ marginBottom: "50px" }}>
+            <FormInput
+              onChange={(e) => this.handleChange("message", e)}
+              style={{ marginBottom: "50px" }}
+            >
               <TextAreaCustom
                 name="description"
                 rows="10"
                 col="105"
               ></TextAreaCustom>
             </FormInput>
-            <CustomButton whileTap={{ scale: 0.88 }}>SUBMIT</CustomButton>
+            <CustomButton whileTap={{ scale: 0.88 }} onClick={this.handleEmail}>
+              SUBMIT
+            </CustomButton>
           </FormContainer>
           <AddressBox>
             <InformationCard

@@ -528,7 +528,7 @@ const CarouselCardsContent = [
   {
     header: "Trust in technology!",
     content:
-      "Trust is our accurate meter reading since we employ ultrasonic technology with over 25 years of experience.",
+      "Trust in our accurate meter reading, since we employ ultrasonic technology with over 25 years of experience.",
   },
   {
     header: "Reduction in Non-Revenue Water",
