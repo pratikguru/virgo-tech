@@ -45,7 +45,8 @@ const LogoContainer = styled.div`
   display: flex;
   width: auto;
   height: auto;
-
+  justify-content: center;
+  align-items: center;
   margin-top: 10px;
 `;
 
@@ -133,11 +134,16 @@ const NavigationTrayOpenButtonContent = styled.div`
 `;
 
 const ImageHolder = styled.img`
-  width: 400px;
+  width: 430px;
+  height: 180px;
   cursor: pointer;
   text-selection: pointer;
+
   ${media.phone`
-    width: 100%;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   `};
 `;
 

@@ -102,6 +102,21 @@ const AddressBox = styled.div`
   justify-content: flex-start;
   flex-direction: column;
   align-items: flex-start;
+
+  ${media.phone`
+    width: auto;
+    height: auto;
+  `};
+
+  ${media.tablet`
+    width : auto;
+    height: auto;
+  `};
+
+  ${media.desktop`
+    width: auto;
+    height: auto;
+  `};
 `;
 
 const InformationCard = styled(motion.div)`

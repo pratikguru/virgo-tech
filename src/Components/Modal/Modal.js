@@ -174,7 +174,7 @@ export default class CustomModal extends Component {
       >
         <SplashScreen
           style={{
-            marginLeft: this.props.items.length === 1 ? "auto" : "10px",
+            marginLeft: this.props.items.length === 1 ? "auto" : "auto",
           }}
           animate={{ opacity: [0, 10, 40, 80, 100] }}
           transition={{ duration: 0.5, ease: "linear" }}

@@ -62,7 +62,7 @@ import Denmark from "./Assets/flags/denmark.jpg";
 import Canada from "./Assets/flags/canada.jpg";
 import Europe from "./Assets/flags/europe.svg";
 import Finland from "./Assets/flags/finland.jpg";
-import Japan from "./Assets/flags/japan.webp";
+import Japan from "./Assets/flags/japan.jpeg";
 
 /*--------------------------------------------------------------*/
 /* PARTNER IMAGE LIST TO BE EXPORTED.
