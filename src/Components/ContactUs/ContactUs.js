@@ -46,7 +46,7 @@ const FormContainer = styled.div`
 
   ${media.phone`
     overflow-y: auto;
-
+    width: 90%;
   `};
 `;
 

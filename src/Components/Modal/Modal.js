@@ -133,6 +133,7 @@ const SplashScreenBody = styled.div`
   width: 80%;
   height: auto;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   padding: 3px;
   display: flex;
   justify-content: center;
