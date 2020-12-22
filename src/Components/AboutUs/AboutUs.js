@@ -90,11 +90,11 @@ export default class AboutUs extends Component {
             <div style={{ display: "flex", flexDirection: "column" }}>
               <div style={{ display: "flex", flexDirection: "row" }}>
                 As the CEO & founder of Virgo Technologies, Mr.Srinivas is
-                responsible for running all facets of the business. He has
-                a proven executive management track record and close to 3
-                decades of experience driving sales growth and technical
-                expertise in the HVAC industry. Being a successful Entrepreneur,
-                Mr. Srinivas always believes in the saying...{" "}
+                responsible for running all facets of the business. He has a
+                proven executive management track record and close to 3 decades
+                of experience driving sales growth and technical expertise in
+                the HVAC industry. Being a successful Entrepreneur, Mr. Srinivas
+                always believes in the saying...{" "}
               </div>
               <i style={{ marginTop: "20px" }}>
                 "You don’t need to be a genius or a visionary, or even a college
@@ -112,13 +112,13 @@ export default class AboutUs extends Component {
           <ContainerBody>
             Virgo Technologies is more than a decade old Premier Solutions
             Provider for BMS products from Schneider Electric, Neptronic VAVs,
-            Kamstrup BTU meters, FUJI VFD, & Produal Finland for Field Devices.
-            We partner with M/S. Schneider Electric for the BMS system to
-            provide Advanced technology Building Automation System. Our
-            solutions range from implementing simple field control system to
-            complete vision systems. We provide proven cost - effective,
-            quality-engineered solutions, working in partnership to meet and
-            exceed the expectations of our valued customers.
+            Kamstrup BTU meters, & Produal Finland for Field Devices. We partner
+            with M/S. Schneider Electric for the BMS system to provide Advanced
+            technology Building Automation System. Our solutions range from
+            implementing simple field control system to complete vision systems.
+            We provide proven cost - effective, quality-engineered solutions,
+            working in partnership to meet and exceed the expectations of our
+            valued customers.
           </ContainerBody>
 
           <ContainerBody>
