@@ -282,14 +282,12 @@ export default class ContactUS extends Component {
                 ROAD, SBI COLONY, AMEERPET, Hyderabad-500 016 ,Telangana
               </div>
               <div style={{ fontWeight: "600", marginTop: "5px" }}>
-                Mr.Naresh
+                Mr. Sowmya Keshav
               </div>
               <div style={{ fontWeight: 600, marginTop: "10px" }}>
                 Contact Info
               </div>
-              <div style={{ fontSize: "14px" }}>
-                +91 9611816464 | +91 9448055569
-              </div>
+              <div style={{ fontSize: "14px" }}>+91 9448055569</div>
             </InformationCard>
             <InformationCard
               animate={{ scale: [0.88, 1] }}
